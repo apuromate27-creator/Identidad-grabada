@@ -1,0 +1,8 @@
+
+"use client";
+import React,{createContext,useContext,useEffect,useMemo,useState}from"react";
+export type CartItem={id:string;slug:string;name:string;price:string;priceValue:number;quantity:number;personalization:string};
+type Ctx={items:CartItem[];addItem:(item:Omit<CartItem,"id"|"quantity">)=>void;removeItem:(id:string)=>void;updateQuantity:(id:string,q:number)=>void;clearCart:()=>void;totalItems:number;totalValue:number};
+const CartContext=createContext<Ctx|null>(null);
+export function CartProvider({children}:{children:React.ReactNode}){const[items,setItems]=useState<CartItem[]>([]);useEffect(()=>{try{const s=localStorage.getItem("identidad-grabada-cart");if(s)setItems(JSON.parse(s))}catch{}},[]);useEffect(()=>{localStorage.setItem("identidad-grabada-cart",JSON.stringify(items))},[items]);function addItem(item:Omit<CartItem,"id"|"quantity">){setItems(c=>[...c,{...item,id:`${item.slug}-${Date.now()}`,quantity:1}])}function removeItem(id:string){setItems(c=>c.filter(i=>i.id!==id))}function updateQuantity(id:string,q:number){setItems(c=>q<=0?c.filter(i=>i.id!==id):c.map(i=>i.id===id?{...i,quantity:q}:i))}function clearCart(){setItems([])}const totalItems=items.reduce((s,i)=>s+i.quantity,0);const totalValue=items.reduce((s,i)=>s+i.priceValue*i.quantity,0);const value=useMemo(()=>({items,addItem,removeItem,updateQuantity,clearCart,totalItems,totalValue}),[items,totalItems,totalValue]);return <CartContext.Provider value={value}>{children}</CartContext.Provider>}
+export function useCart(){const ctx=useContext(CartContext);if(!ctx)throw new Error("useCart debe usarse dentro de CartProvider");return ctx}
