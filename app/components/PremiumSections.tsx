@@ -8,6 +8,14 @@ export function PremiumHomeSections() {
   const featured = products.filter((product) => product.featured).slice(0, 3);
   return (
     <>
+      <section className="border-b border-white/10 bg-[#080808]">
+        <div className="max-w-7xl mx-auto px-6 py-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center text-sm text-zinc-300">
+          <p>🎁 Personalizados a tu medida</p>
+          <p>✦ Grabados de alta precisión</p>
+          <p>🏅 Materiales premium</p>
+          <p>🚚 Envíos a toda Argentina</p>
+        </div>
+      </section>
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="flex items-end justify-between gap-6 mb-12">
           <Title eyebrow="Colección destacada" title="Mates elegidos para regalar" text="Modelos premium preparados para personalizar con nombres, frases, iniciales o logos." />

@@ -2,3 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 html{scroll-behavior:smooth}body{margin:0;background:#050505;color:white}
+
+@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.035)}}

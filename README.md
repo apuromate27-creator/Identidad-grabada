@@ -1,16 +1,11 @@
-# Identidad Grabada V10.5A Premium Experience
+# Identidad Grabada V10.6 — Hero con imagen real
 
-Primera etapa del rediseño premium.
+Incluye la imagen enviada integrada en el Hero principal.
 
-Incluye:
-- Hero completamente renovado.
-- Presentación más cercana a una marca premium.
-- Productos destacados.
-- Sección visual de proceso de trabajo.
-- Sección de materiales.
-- Comparador de modelos.
-- Accesos destacados a Empresas y Seguimiento.
-- Mantiene carrito, checkout, Mercado Pago preparado, trabajos, empresas y seguimiento.
+- Imagen: `public/hero/hero-identidad-grabada.png`
+- Zoom suave
+- Botones de la imagen clicables
+- Botones adicionales para celulares
+- Mantiene carrito, checkout, trabajos, empresas y seguimiento
 
-Próxima etapa:
-V10.5B — rediseño completo de páginas de producto y configurador por pasos.
+Para cambiar la imagen más adelante, reemplazá el archivo por otro con el mismo nombre.
