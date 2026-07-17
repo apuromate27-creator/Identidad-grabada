@@ -1,11 +1,5 @@
-# Identidad Grabada V10.6 — Hero con imagen real
+# Identidad Grabada V10.7 — Hero Premium
 
-Incluye la imagen enviada integrada en el Hero principal.
+Incluye el nuevo Hero premium, menú clicable, botones funcionales, animación suave y compatibilidad móvil.
 
-- Imagen: `public/hero/hero-identidad-grabada.png`
-- Zoom suave
-- Botones de la imagen clicables
-- Botones adicionales para celulares
-- Mantiene carrito, checkout, trabajos, empresas y seguimiento
-
-Para cambiar la imagen más adelante, reemplazá el archivo por otro con el mismo nombre.
+Imagen: `public/hero/hero-v10-7.png`
