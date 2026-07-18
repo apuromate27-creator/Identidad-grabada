@@ -94,15 +94,29 @@ html{scroll-behavior:smooth}body{margin:0;background:#050505;color:white}
   }
 }
 
-@keyframes heroSceneMotion {
-  0% { transform: scale(1.015) translate3d(0,0,0); }
-  50% { transform: scale(1.045) translate3d(-0.6%,-0.3%,0); }
-  100% { transform: scale(1.025) translate3d(0.4%,0.25%,0); }
+
+@keyframes heroCleanMotion {
+  0% { transform: scale(1.03) translate3d(0,0,0); }
+  50% { transform: scale(1.065) translate3d(-0.8%,-0.4%,0); }
+  100% { transform: scale(1.04) translate3d(0.35%,0.25%,0); }
 }
-.hero-scene-motion {
-  animation: heroSceneMotion 20s ease-in-out infinite alternate;
+
+.hero-clean-motion {
+  animation: heroCleanMotion 20s ease-in-out infinite alternate;
   will-change: transform;
 }
+
+@media (max-width: 1023px) {
+  .hero-clean-motion {
+    object-position: 58% 50%;
+    opacity: .58;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-scene-motion { animation: none !important; }
+  .hero-clean-motion,
+  .hero-glow-motion,
+  .hero-copy-enter {
+    animation: none !important;
+  }
 }

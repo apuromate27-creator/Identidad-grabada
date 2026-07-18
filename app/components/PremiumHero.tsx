@@ -4,40 +4,79 @@ import Link from "next/link";
 
 export function PremiumHero() {
   return (
-    <section className="relative overflow-hidden border-b border-white/10 bg-black">
-      <div className="relative mx-auto max-w-[1536px]">
-        <div className="relative aspect-[3/2] min-h-[560px] max-h-[900px] w-full overflow-hidden bg-black">
+    <>
+      <section className="relative isolate min-h-[86vh] overflow-hidden border-b border-white/10 bg-black">
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] overflow-hidden">
           <Image
-            src="/hero/hero-v11-1.png"
-            alt="Identidad Grabada: regalos personalizados con tecnología láser"
+            src="/hero/hero-productos-limpio.jpg"
+            alt="Mate, tabla y termo personalizados de Identidad Grabada"
             fill
             priority
-            sizes="100vw"
-            className="object-cover object-center hero-scene-motion"
+            sizes="(min-width: 1024px) 62vw, 100vw"
+            className="object-cover object-[55%_52%] hero-clean-motion"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-black/5" />
-
-          <Link href="/" aria-label="Inicio" className="absolute left-[22.4%] top-[5%] h-[5.2%] w-[5.5%]" />
-          <Link href="/productos" aria-label="Productos" className="absolute left-[28.2%] top-[5%] h-[5.2%] w-[8.6%]" />
-          <Link href="/#como-trabajamos" aria-label="Cómo trabajamos" className="absolute left-[36.4%] top-[5%] h-[5.2%] w-[12.5%]" />
-          <Link href="/trabajos" aria-label="Trabajos realizados" className="absolute left-[48%] top-[5%] h-[5.2%] w-[14.5%]" />
-          <Link href="/empresas" aria-label="Empresas" className="absolute left-[60.8%] top-[5%] h-[5.2%] w-[8%]" />
-          <Link href="/nosotros" aria-label="Nosotros" className="absolute left-[68.8%] top-[5%] h-[5.2%] w-[7.5%]" />
-          <Link href="/contacto" aria-label="Contacto" className="absolute left-[75.7%] top-[5%] h-[5.2%] w-[8%]" />
-
-          <Link href="/productos" aria-label="Ver productos" className="absolute bottom-[23.2%] left-[4.3%] h-[7.6%] w-[18.3%] rounded-xl focus-visible:ring-4 focus-visible:ring-[#d6b17a]/70" />
-          <Link href="/contacto" aria-label="Pedir diseño personalizado" className="absolute bottom-[23.2%] left-[23.9%] h-[7.6%] w-[21.6%] rounded-xl focus-visible:ring-4 focus-visible:ring-[#d6b17a]/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/35 to-black/5" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
         </div>
-      </div>
 
-      <div className="grid gap-3 bg-black px-5 py-5 md:hidden">
-        <Link href="/productos" className="rounded-2xl bg-[#b68b52] py-4 text-center font-black text-white">
-          Ver productos
-        </Link>
-        <Link href="/contacto" className="rounded-2xl border border-[#b68b52] py-4 text-center font-black text-[#d6b17a]">
-          Pedir diseño personalizado
-        </Link>
+        <div className="pointer-events-none absolute right-[17%] top-[24%] h-72 w-72 rounded-full bg-[#b68b52]/20 blur-3xl hero-glow-motion" />
+
+        <div className="relative z-10 mx-auto flex min-h-[86vh] max-w-7xl items-center px-6 py-20">
+          <div className="max-w-3xl space-y-8 hero-copy-enter">
+            <p className="text-sm uppercase tracking-[0.35em] text-[#d6b17a] md:text-base">
+              Grabados láser premium
+            </p>
+
+            <h1 className="text-5xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+              Tu historia,
+              <span className="block text-[#c99249]">grabada para siempre.</span>
+            </h1>
+
+            <p className="max-w-xl text-lg leading-relaxed text-zinc-300 md:text-2xl">
+              Regalos personalizados con tecnología láser y materiales de primera calidad.
+            </p>
+
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link
+                href="/productos"
+                className="hero-button-primary rounded-2xl bg-[#b68b52] px-8 py-5 text-lg font-black text-white shadow-2xl"
+              >
+                Ver productos
+              </Link>
+
+              <Link
+                href="/contacto"
+                className="hero-button-secondary rounded-2xl border border-[#b68b52] bg-black/45 px-8 py-5 text-lg font-black text-[#d6b17a] backdrop-blur"
+              >
+                Pedir diseño personalizado
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-[#080808]">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-6 lg:grid-cols-4">
+          <Benefit icon="👥" title="+500" text="Clientes felices" />
+          <Benefit icon="🕒" title="24 hs" text="Respuesta rápida" />
+          <Benefit icon="🛡" title="Calidad" text="Garantizada" />
+          <Benefit icon="📍" title="Argentina" text="Envíos a todo el país" />
+        </div>
+      </section>
+    </>
+  );
+}
+
+function Benefit({ icon, title, text }: { icon: string; title: string; text: string }) {
+  return (
+    <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/35 p-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#b68b52]/50 text-xl">
+        {icon}
       </div>
-    </section>
+      <div>
+        <p className="text-lg font-black text-white">{title}</p>
+        <p className="text-sm text-zinc-500">{text}</p>
+      </div>
+    </div>
   );
 }
