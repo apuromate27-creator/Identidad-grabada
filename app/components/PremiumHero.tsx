@@ -6,28 +6,28 @@ export function PremiumHero() {
   return (
     <>
       <section className="relative isolate min-h-[86vh] overflow-hidden border-b border-white/10 bg-black">
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] overflow-hidden">
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[64%]">
           <Image
-            src="/hero/hero-productos-limpio.jpg"
-            alt="Mate, tabla y termo personalizados de Identidad Grabada"
+            src="/hero/hero-v12-clean.png"
+            alt="Mate, tabla de madera y termo de Identidad Grabada"
             fill
             priority
-            sizes="(min-width: 1024px) 62vw, 100vw"
-            className="object-cover object-[55%_52%] hero-clean-motion"
+            sizes="(min-width: 1024px) 64vw, 100vw"
+            className="object-cover object-[66%_52%] hero-v12-motion"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/35 to-black/5" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
         </div>
 
-        <div className="pointer-events-none absolute right-[17%] top-[24%] h-72 w-72 rounded-full bg-[#b68b52]/20 blur-3xl hero-glow-motion" />
+        <div className="pointer-events-none absolute right-[16%] top-[24%] h-72 w-72 rounded-full bg-[#b68b52]/20 blur-3xl hero-glow-motion" />
 
         <div className="relative z-10 mx-auto flex min-h-[86vh] max-w-7xl items-center px-6 py-20">
           <div className="max-w-3xl space-y-8 hero-copy-enter">
-            <p className="text-sm uppercase tracking-[0.35em] text-[#d6b17a] md:text-base">
+            <p className="text-sm uppercase tracking-[0.36em] text-[#d6b17a] md:text-base">
               Grabados láser premium
             </p>
 
-            <h1 className="text-5xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+            <h1 className="text-5xl font-black leading-[0.94] tracking-tight md:text-7xl lg:text-8xl">
               Tu historia,
               <span className="block text-[#c99249]">grabada para siempre.</span>
             </h1>
@@ -46,7 +46,7 @@ export function PremiumHero() {
 
               <Link
                 href="/contacto"
-                className="hero-button-secondary rounded-2xl border border-[#b68b52] bg-black/45 px-8 py-5 text-lg font-black text-[#d6b17a] backdrop-blur"
+                className="hero-button-secondary rounded-2xl border border-[#b68b52] bg-black/50 px-8 py-5 text-lg font-black text-[#d6b17a] backdrop-blur"
               >
                 Pedir diseño personalizado
               </Link>
@@ -60,7 +60,7 @@ export function PremiumHero() {
           <Benefit icon="👥" title="+500" text="Clientes felices" />
           <Benefit icon="🕒" title="24 hs" text="Respuesta rápida" />
           <Benefit icon="🛡" title="Calidad" text="Garantizada" />
-          <Benefit icon="📍" title="Argentina" text="Envíos a todo el país" />
+          <Benefit icon="🚚" title="Argentina" text="Envíos a todo el país" />
         </div>
       </section>
     </>
@@ -69,7 +69,7 @@ export function PremiumHero() {
 
 function Benefit({ icon, title, text }: { icon: string; title: string; text: string }) {
   return (
-    <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/35 p-4">
+    <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/35 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#b68b52]/60">
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#b68b52]/50 text-xl">
         {icon}
       </div>

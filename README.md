@@ -1,29 +1,39 @@
-# Identidad Grabada V11.2 — Hero limpio
+# Identidad Grabada V12 Profesional
 
-Esta versión corrige la superposición del Hero.
+Versión comercial base de la tienda.
 
-## Qué cambia
+## Incluye
 
-- La imagen del Hero contiene solamente:
-  - mate
-  - tabla de madera
-  - termo
-  - tapa metálica
-  - fondo oscuro
-- El menú superior aparece una sola vez y pertenece a la web.
-- El título, subtítulo y botones son HTML reales.
-- La franja inferior de beneficios es una sección independiente.
-- Se mantiene una animación lenta de profundidad.
-- Adaptación para celular.
+- Hero limpio con imagen exclusiva sin textos incrustados.
+- Menú superior real, una sola vez.
+- Texto y botones del Hero en HTML.
+- Animación suave de profundidad.
+- Beneficios independientes.
+- Catálogo y filtros.
+- Páginas individuales de producto.
+- Galería y personalización visual.
+- Carrito y checkout.
+- Mercado Pago preparado.
+- Trabajos realizados.
+- Empresas.
+- Seguimiento de pedidos.
+- Proceso de compra.
+- Sección de confianza.
+- Preguntas frecuentes.
+- Diseño adaptable a computadora, tablet y celular.
 
-## Imagen limpia
+## Imagen del Hero
 
-`public/hero/hero-productos-limpio.jpg`
+`public/hero/hero-v12-clean.png`
 
-## Probar
+## Probar localmente
 
 npm install
 npm run dev
 
 Abrir:
 http://localhost:3000
+
+## Publicar en Vercel
+
+Subir el contenido del proyecto a GitHub y esperar el despliegue automático.
