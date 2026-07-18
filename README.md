@@ -1,30 +1,23 @@
-# Identidad Grabada V12 Profesional
+# Identidad Grabada V13 — Premium Visual
 
-Versión comercial base de la tienda.
+Esta versión se enfoca exclusivamente en la imagen y experiencia visual.
 
-## Incluye
+## Mejoras principales
 
-- Hero limpio con imagen exclusiva sin textos incrustados.
-- Menú superior real, una sola vez.
-- Texto y botones del Hero en HTML.
-- Animación suave de profundidad.
-- Beneficios independientes.
-- Catálogo y filtros.
-- Páginas individuales de producto.
-- Galería y personalización visual.
-- Carrito y checkout.
-- Mercado Pago preparado.
-- Trabajos realizados.
-- Empresas.
-- Seguimiento de pedidos.
-- Proceso de compra.
-- Sección de confianza.
-- Preguntas frecuentes.
-- Diseño adaptable a computadora, tablet y celular.
+- Sistema visual negro, dorado y madera.
+- Tarjetas de producto renovadas.
+- Sección de colecciones por categoría.
+- Historia de marca.
+- Testimonios visuales.
+- Franja de confianza.
+- Footer profesional.
+- Microanimaciones y efectos de profundidad.
+- Brillos sutiles y transiciones premium.
+- Mantiene carrito, checkout, Mercado Pago preparado, seguimiento, empresas y trabajos.
 
-## Imagen del Hero
+## Fotos reales
 
-`public/hero/hero-v12-clean.png`
+Los espacios siguen preparados para reemplazar los placeholders por fotografías reales.
 
 ## Probar localmente
 
@@ -33,7 +26,3 @@ npm run dev
 
 Abrir:
 http://localhost:3000
-
-## Publicar en Vercel
-
-Subir el contenido del proyecto a GitHub y esperar el despliegue automático.

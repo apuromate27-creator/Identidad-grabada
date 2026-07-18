@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v12-profesional",
-  "version": "12.0.0",
+  "name": "identidad-grabada-v13-premium-visual",
+  "version": "13.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
