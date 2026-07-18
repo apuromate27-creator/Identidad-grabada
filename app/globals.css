@@ -93,3 +93,16 @@ html{scroll-behavior:smooth}body{margin:0;background:#050505;color:white}
     transition: none;
   }
 }
+
+@keyframes heroSceneMotion {
+  0% { transform: scale(1.015) translate3d(0,0,0); }
+  50% { transform: scale(1.045) translate3d(-0.6%,-0.3%,0); }
+  100% { transform: scale(1.025) translate3d(0.4%,0.25%,0); }
+}
+.hero-scene-motion {
+  animation: heroSceneMotion 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scene-motion { animation: none !important; }
+}

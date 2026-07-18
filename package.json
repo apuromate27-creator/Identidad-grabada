@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v11-hero-animado",
-  "version": "11.0.0",
+  "name": "identidad-grabada-v11-1-hero-premium",
+  "version": "11.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
