@@ -230,3 +230,33 @@ body {
     transition: none !important;
   }
 }
+
+
+.ig-page-background {
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.ig-page-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, .74);
+}
+
+.ig-page-productos { background-image: url("/backgrounds/productos.jpg"); }
+.ig-page-trabajos { background-image: url("/backgrounds/trabajos.jpg"); }
+.ig-page-empresas { background-image: url("/backgrounds/empresas.jpg"); }
+.ig-page-seguimiento { background-image: url("/backgrounds/seguimiento.jpg"); }
+.ig-page-contacto { background-image: url("/backgrounds/contacto.jpg"); }
+
+@media (max-width: 1023px) {
+  .ig-page-background,
+  [style*="background-attachment: fixed"] {
+    background-attachment: scroll !important;
+  }
+}

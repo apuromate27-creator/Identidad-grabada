@@ -1,25 +1,46 @@
-# Identidad Grabada V13 — Premium Visual
+# Identidad Grabada V14 LTS — Fondos por sección
 
-Esta versión se enfoca exclusivamente en la imagen y experiencia visual.
+Versión base estable para probar la nueva identidad visual con fondos diferentes.
 
-## Mejoras principales
+## Biblioteca de fondos
 
-- Sistema visual negro, dorado y madera.
-- Tarjetas de producto renovadas.
-- Sección de colecciones por categoría.
-- Historia de marca.
-- Testimonios visuales.
-- Franja de confianza.
-- Footer profesional.
-- Microanimaciones y efectos de profundidad.
-- Brillos sutiles y transiciones premium.
-- Mantiene carrito, checkout, Mercado Pago preparado, seguimiento, empresas y trabajos.
+`public/backgrounds/`
 
-## Fotos reales
+- hero.jpg
+- categorias.jpg
+- productos.jpg
+- historia.jpg
+- laser.jpg
+- trabajos.jpg
+- empresas.jpg
+- seguimiento.jpg
+- testimonios.jpg
+- contacto.jpg
+- footer.jpg
 
-Los espacios siguen preparados para reemplazar los placeholders por fotografías reales.
+## Cómo cambiar un fondo
 
-## Probar localmente
+Reemplazá la imagen correspondiente conservando el mismo nombre.
+
+Ejemplo:
+`public/backgrounds/productos.jpg`
+
+No hace falta tocar el código.
+
+## Incluye
+
+- Fondos distintos en la página principal.
+- Fondo independiente para Productos.
+- Fondo independiente para Trabajos.
+- Fondo independiente para Empresas.
+- Fondo independiente para Seguimiento.
+- Fondo independiente para Contacto.
+- Overlays oscuros para mantener legibilidad.
+- Efecto parallax en computadoras.
+- Adaptación automática en celulares.
+- Mantiene carrito, checkout, seguimiento y Mercado Pago preparado.
+
+## Probar
 
 npm install
 npm run dev

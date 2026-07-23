@@ -8,7 +8,7 @@ export function PremiumHero() {
       <section className="relative isolate min-h-[86vh] overflow-hidden border-b border-white/10 bg-black">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[64%]">
           <Image
-            src="/hero/hero-v12-clean.png"
+            src="/backgrounds/hero.jpg"
             alt="Mate, tabla de madera y termo de Identidad Grabada"
             fill
             priority
