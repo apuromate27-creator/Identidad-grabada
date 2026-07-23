@@ -1,44 +1,29 @@
-# Identidad Grabada V14 LTS — Fondos por sección
+# Identidad Grabada V14.2 — Identidad Argentina
 
-Versión base estable para probar la nueva identidad visual con fondos diferentes.
+Versión visual de prueba sin fondos negros planos.
+
+## Cambios
+
+- Paleta tierra, cuero, madera y dorado.
+- Fondos fotográficos argentinos en todas las secciones.
+- Patagonia para historia y marca.
+- Paisaje rural para categorías y productos.
+- Láser trabajando para el proceso.
+- Collage de grabados para trabajos.
+- Ciudad argentina para empresas.
+- Mapa texturado para seguimiento.
+- Costa y faro para contacto.
+- Bandera y montañas para el footer.
+- Tarjetas marrones translúcidas en lugar de negras.
+- Overlays más claros para que las imágenes sean visibles.
+- Efecto parallax en computadora.
+- Adaptación automática para celular.
 
 ## Biblioteca de fondos
 
 `public/backgrounds/`
 
-- hero.jpg
-- categorias.jpg
-- productos.jpg
-- historia.jpg
-- laser.jpg
-- trabajos.jpg
-- empresas.jpg
-- seguimiento.jpg
-- testimonios.jpg
-- contacto.jpg
-- footer.jpg
-
-## Cómo cambiar un fondo
-
-Reemplazá la imagen correspondiente conservando el mismo nombre.
-
-Ejemplo:
-`public/backgrounds/productos.jpg`
-
-No hace falta tocar el código.
-
-## Incluye
-
-- Fondos distintos en la página principal.
-- Fondo independiente para Productos.
-- Fondo independiente para Trabajos.
-- Fondo independiente para Empresas.
-- Fondo independiente para Seguimiento.
-- Fondo independiente para Contacto.
-- Overlays oscuros para mantener legibilidad.
-- Efecto parallax en computadoras.
-- Adaptación automática en celulares.
-- Mantiene carrito, checkout, seguimiento y Mercado Pago preparado.
+Podés reemplazar cualquier imagen conservando el mismo nombre.
 
 ## Probar
 

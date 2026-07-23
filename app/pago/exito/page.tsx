@@ -4,10 +4,10 @@ import { Header, Footer, WhatsAppFloat } from "../../components/ui";
 
 export default function PaymentStatusPage() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
+    <main className="min-h-screen bg-[#21150e] text-white">
       <Header />
       <section className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <div className="bg-[#0b0b0b] border border-white/10 rounded-[3rem] p-10">
+        <div className="bg-[#2d1d13] border border-white/10 rounded-[3rem] p-10">
           <div className="text-6xl mb-6">✅</div>
           <h1 className="text-5xl font-black mb-5">Pago aprobado</h1>
           <p className="text-zinc-400 text-lg mb-8">Tu pago fue procesado correctamente. Coordinaremos el diseño y la producción.</p>

@@ -21,7 +21,7 @@ const reviews = [
 
 export function SocialProof() {
   return (
-    <section className="border-y border-white/10 bg-[#090909] py-24">
+    <section className="border-y border-white/10 bg-[#2a1b12] py-24">
       <div className="mx-auto max-w-7xl px-6">
         <Title
           eyebrow="Experiencias"

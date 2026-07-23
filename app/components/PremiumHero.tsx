@@ -5,7 +5,7 @@ import Link from "next/link";
 export function PremiumHero() {
   return (
     <>
-      <section className="relative isolate min-h-[86vh] overflow-hidden border-b border-white/10 bg-black">
+      <section className="relative isolate min-h-[86vh] overflow-hidden border-b border-white/10 bg-[#1d130d]">
         <div className="absolute inset-y-0 right-0 w-full lg:w-[64%]">
           <Image
             src="/backgrounds/hero.jpg"
@@ -46,7 +46,7 @@ export function PremiumHero() {
 
               <Link
                 href="/contacto"
-                className="hero-button-secondary rounded-2xl border border-[#b68b52] bg-black/50 px-8 py-5 text-lg font-black text-[#d6b17a] backdrop-blur"
+                className="hero-button-secondary rounded-2xl border border-[#b68b52] bg-[#1d130d]/50 px-8 py-5 text-lg font-black text-[#d6b17a] backdrop-blur"
               >
                 Pedir diseño personalizado
               </Link>
@@ -55,7 +55,7 @@ export function PremiumHero() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#080808]">
+      <section className="border-b border-white/10 bg-[#281a11]">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-6 lg:grid-cols-4">
           <Benefit icon="👥" title="+500" text="Clientes felices" />
           <Benefit icon="🕒" title="24 hs" text="Respuesta rápida" />
@@ -69,7 +69,7 @@ export function PremiumHero() {
 
 function Benefit({ icon, title, text }: { icon: string; title: string; text: string }) {
   return (
-    <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/35 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#b68b52]/60">
+    <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#1d130d]/35 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#b68b52]/60">
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#b68b52]/50 text-xl">
         {icon}
       </div>

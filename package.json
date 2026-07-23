@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v14-lts-fondos",
-  "version": "14.0.0",
+  "name": "identidad-grabada-v14-2-identidad-argentina",
+  "version": "14.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

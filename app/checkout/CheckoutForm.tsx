@@ -41,7 +41,7 @@ export function CheckoutForm() {
 
   if (sent) {
     return (
-      <div className="bg-[#0b0b0b] border border-white/10 rounded-[3rem] p-10 text-center">
+      <div className="bg-[#2d1d13] border border-white/10 rounded-[3rem] p-10 text-center">
         <h1 className="text-4xl font-black mb-4">Pedido generado</h1>
         <p className="text-zinc-400 mb-8">
           El pedido quedó confirmado visualmente. Si elegiste Mercado Pago, también podés pagar online.
@@ -65,7 +65,7 @@ export function CheckoutForm() {
       <div className="space-y-6">
         <Progress />
 
-        <div className="bg-[#0b0b0b] border border-white/10 rounded-[3rem] p-8 space-y-5">
+        <div className="bg-[#2d1d13] border border-white/10 rounded-[3rem] p-8 space-y-5">
           <h1 className="text-4xl font-black mb-6">Datos de entrega</h1>
           <Input label="Nombre completo" value={form.name} onChange={(v) => setForm({ ...form, name: v })} />
           <Input label="Teléfono" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} />
@@ -76,7 +76,7 @@ export function CheckoutForm() {
           <Input label="Dirección" value={form.address} onChange={(v) => setForm({ ...form, address: v })} />
         </div>
 
-        <div className="bg-[#0b0b0b] border border-white/10 rounded-[3rem] p-8 space-y-5">
+        <div className="bg-[#2d1d13] border border-white/10 rounded-[3rem] p-8 space-y-5">
           <h2 className="text-3xl font-black">Pago y envío</h2>
           <Select label="Medio de envío" value={form.shipping} options={shippingOptions} onChange={(v) => setForm({ ...form, shipping: v })} />
           <Select label="Forma de pago" value={form.payment} options={paymentOptions} onChange={(v) => setForm({ ...form, payment: v })} />
@@ -84,7 +84,7 @@ export function CheckoutForm() {
         </div>
       </div>
 
-      <div className="bg-[#0b0b0b] border border-white/10 rounded-[3rem] p-8 sticky top-24">
+      <div className="bg-[#2d1d13] border border-white/10 rounded-[3rem] p-8 sticky top-24">
         <h2 className="text-3xl font-black mb-6">Resumen del pedido</h2>
 
         {items.length === 0 ? (
@@ -101,7 +101,7 @@ export function CheckoutForm() {
               </div>
             ))}
 
-            <div className="bg-black/40 rounded-2xl p-4 space-y-2 text-zinc-300">
+            <div className="bg-[#1d130d]/40 rounded-2xl p-4 space-y-2 text-zinc-300">
               <p>🚚 {form.shipping}</p>
               <p>💳 {form.payment}</p>
               <p>⏱ Producción: 2 a 5 días hábiles</p>
@@ -131,7 +131,7 @@ export function CheckoutForm() {
 
 function Progress() {
   return (
-    <div className="bg-[#0b0b0b] border border-white/10 rounded-[2rem] p-5">
+    <div className="bg-[#2d1d13] border border-white/10 rounded-[2rem] p-5">
       <div className="flex gap-3">
         {["Carrito", "Datos", "Pago", "Confirmación"].map((x, i) => (
           <div key={x} className="flex-1 text-center">
@@ -160,7 +160,7 @@ function Input({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required
-        className="w-full bg-black border border-white/10 rounded-2xl px-4 py-4 outline-none focus:border-[#b68b52]"
+        className="w-full bg-[#1d130d] border border-white/10 rounded-2xl px-4 py-4 outline-none focus:border-[#b68b52]"
       />
     </div>
   );
@@ -183,7 +183,7 @@ function Select({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-black border border-white/10 rounded-2xl px-4 py-4 outline-none focus:border-[#b68b52]"
+        className="w-full bg-[#1d130d] border border-white/10 rounded-2xl px-4 py-4 outline-none focus:border-[#b68b52]"
       >
         {options.map((o) => (
           <option key={o}>{o}</option>

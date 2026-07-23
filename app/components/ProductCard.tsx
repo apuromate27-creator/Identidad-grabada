@@ -7,13 +7,13 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="ig-card ig-hover-lift group rounded-[2.25rem]">
       <Link href={`/productos/${product.slug}`} className="block">
-        <div className="relative h-80 overflow-hidden bg-[#111]">
+        <div className="relative h-80 overflow-hidden bg-[#342217]">
           <ImageSlot title={product.categoryLabel} small />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
 
           <div className="absolute left-5 top-5 flex gap-2">
-            <span className="rounded-full border border-[#b68b52]/40 bg-black/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-[#d6b17a] backdrop-blur">
+            <span className="rounded-full border border-[#b68b52]/40 bg-[#1d130d]/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-[#d6b17a] backdrop-blur">
               {product.badge}
             </span>
 
@@ -24,7 +24,7 @@ export function ProductCard({ product }: { product: Product }) {
             )}
           </div>
 
-          <div className="absolute bottom-5 right-5 rounded-full border border-white/10 bg-black/65 px-4 py-2 text-xs text-zinc-300 backdrop-blur">
+          <div className="absolute bottom-5 right-5 rounded-full border border-white/10 bg-[#1d130d]/65 px-4 py-2 text-xs text-zinc-300 backdrop-blur">
             Personalizable
           </div>
         </div>

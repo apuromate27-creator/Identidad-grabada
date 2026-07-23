@@ -260,3 +260,81 @@ body {
     background-attachment: scroll !important;
   }
 }
+
+
+:root {
+  --ig-earth-1: #21150e;
+  --ig-earth-2: #2d1d13;
+  --ig-earth-3: #3a2618;
+  --ig-gold: #b68b52;
+  --ig-cream: #efe3cf;
+}
+
+html, body {
+  background: #21150e !important;
+}
+
+body {
+  background-image:
+    linear-gradient(rgba(33,21,14,.28), rgba(33,21,14,.28)),
+    url("/backgrounds/argentina.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.ig-card {
+  background: linear-gradient(
+    145deg,
+    rgba(64, 41, 25, .80),
+    rgba(37, 24, 16, .70)
+  ) !important;
+  backdrop-filter: blur(10px);
+}
+
+.ig-page-background {
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.ig-page-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 21, 13, .55),
+    rgba(58, 36, 21, .30)
+  );
+}
+
+.ig-page-productos { background-image: url("/backgrounds/productos.jpg"); }
+.ig-page-trabajos { background-image: url("/backgrounds/trabajos.jpg"); }
+.ig-page-empresas { background-image: url("/backgrounds/empresas.jpg"); }
+.ig-page-seguimiento { background-image: url("/backgrounds/seguimiento.jpg"); }
+.ig-page-contacto { background-image: url("/backgrounds/contacto.jpg"); }
+
+.ig-argentina-divider {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(116,172,223,.9),
+    rgba(255,255,255,.9),
+    rgba(244,184,61,.9),
+    rgba(255,255,255,.9),
+    rgba(116,172,223,.9)
+  );
+  opacity: .72;
+}
+
+@media (max-width: 1023px) {
+  body,
+  .ig-page-background,
+  [style*="background-attachment: fixed"] {
+    background-attachment: scroll !important;
+  }
+}

@@ -11,32 +11,56 @@ import { BackgroundSection } from "./components/BackgroundSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#21150e] text-white">
       <Header />
       <PremiumHero />
 
-      <BackgroundSection image="/backgrounds/categorias.jpg" overlay="bg-black/62">
+      <BackgroundSection
+        image="/backgrounds/categorias.jpg"
+        overlay="bg-[#2b1b11]/34"
+        position="center"
+      >
         <TrustStrip />
         <CategoryShowcase />
       </BackgroundSection>
 
-      <BackgroundSection image="/backgrounds/productos.jpg" overlay="bg-black/74">
+      <BackgroundSection
+        image="/backgrounds/productos.jpg"
+        overlay="bg-[#21140d]/48"
+        position="center"
+      >
         <PremiumHomeSections />
       </BackgroundSection>
 
-      <BackgroundSection image="/backgrounds/historia.jpg" overlay="bg-black/64">
+      <BackgroundSection
+        image="/backgrounds/historia.jpg"
+        overlay="bg-[#1d130d]/38"
+        position="center"
+      >
         <BrandStory />
       </BackgroundSection>
 
-      <BackgroundSection image="/backgrounds/testimonios.jpg" overlay="bg-black/72">
+      <BackgroundSection
+        image="/backgrounds/testimonios.jpg"
+        overlay="bg-[#2a1b12]/44"
+        position="center"
+      >
         <SocialProof />
       </BackgroundSection>
 
-      <BackgroundSection image="/backgrounds/laser.jpg" overlay="bg-black/68">
+      <BackgroundSection
+        image="/backgrounds/laser.jpg"
+        overlay="bg-[#24150d]/42"
+        position="center"
+      >
         <CommercialSections />
       </BackgroundSection>
 
-      <BackgroundSection image="/backgrounds/footer.jpg" overlay="bg-black/80">
+      <BackgroundSection
+        image="/backgrounds/footer.jpg"
+        overlay="bg-[#1d130d]/48"
+        position="center"
+      >
         <Footer />
       </BackgroundSection>
 
