@@ -392,3 +392,7 @@ body {
   .v15-copy,
   .v15-sun-glow { animation: none !important; }
 }
+
+/* V15.1 — navegación premium */
+html { scroll-padding-top: 92px; }
+@media (max-width: 767px) { html { scroll-padding-top: 78px; } }

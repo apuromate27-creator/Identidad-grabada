@@ -1,34 +1,20 @@
-# Identidad Grabada V14.2 — Identidad Argentina
+# Identidad Grabada V15.1 — Header y navegación premium
 
-Versión visual de prueba sin fondos negros planos.
+Conserva el Hero aprobado de V15.0 y mejora la navegación.
 
-## Cambios
-
-- Paleta tierra, cuero, madera y dorado.
-- Fondos fotográficos argentinos en todas las secciones.
-- Patagonia para historia y marca.
-- Paisaje rural para categorías y productos.
-- Láser trabajando para el proceso.
-- Collage de grabados para trabajos.
-- Ciudad argentina para empresas.
-- Mapa texturado para seguimiento.
-- Costa y faro para contacto.
-- Bandera y montañas para el footer.
-- Tarjetas marrones translúcidas en lugar de negras.
-- Overlays más claros para que las imágenes sean visibles.
-- Efecto parallax en computadora.
-- Adaptación automática para celular.
-
-## Biblioteca de fondos
-
-`public/backgrounds/`
-
-Podés reemplazar cualquier imagen conservando el mismo nombre.
+## Incluye
+- Header transparente sobre el Hero.
+- Fondo tipo vidrio al desplazarse.
+- Menú fijo y compacto.
+- Navegación completa en computadora.
+- Menú lateral en celular y tablet.
+- Carrito y WhatsApp siempre accesibles.
+- Transiciones suaves.
+- Mismo header en páginas internas.
 
 ## Probar
-
+```bash
 npm install
 npm run dev
-
-Abrir:
-http://localhost:3000
+```
+Abrir http://localhost:3000

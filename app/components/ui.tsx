@@ -1,8 +1,81 @@
+"use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {contact,whatsappLink}from"../data/contact";
 import {CartButton}from"./CartDrawer";
-export function Header({overlay=false}:{overlay?:boolean}){return <header className={`${overlay?"absolute left-0 right-0 top-0 bg-gradient-to-b from-[#0d0907]/90 to-transparent border-transparent":"sticky top-0 border-b border-white/10 bg-[#1d130d]/85 backdrop-blur-xl"} z-50`}><div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between gap-6"><Link href="/"><h1 className="text-2xl font-black tracking-wide">{contact.brand}</h1><p className="text-[#d6b17a] uppercase tracking-[0.3em] text-xs mt-1">Grabados Láser Premium</p></Link><nav className="hidden lg:flex gap-6 text-sm text-stone-100"><Link href="/" className="hover:text-[#d6b17a]">Inicio</Link><Link href="/productos" className="hover:text-[#d6b17a]">Productos</Link><Link href="/#como-trabajamos" className="hover:text-[#d6b17a]">Cómo trabajamos</Link><Link href="/empresas" className="hover:text-[#d6b17a]">Empresas</Link><Link href="/nosotros" className="hover:text-[#d6b17a]">Nosotros</Link><Link href="/seguimiento" className="hover:text-[#d6b17a]">Seguimiento</Link><Link href="/contacto" className="hover:text-[#d6b17a]">Contacto</Link></nav><div className="flex gap-3"><CartButton/><a href={whatsappLink("Hola, vi tu página web y quiero consultar por un producto personalizado.")} className="hidden sm:block bg-[#b68b52] px-5 py-3 rounded-xl font-bold hover:scale-105 transition">WhatsApp</a></div></div></header>}
+
+const navigation = [
+  ["/", "Inicio"],
+  ["/productos", "Productos"],
+  ["/trabajos", "Trabajos"],
+  ["/empresas", "Empresas"],
+  ["/nosotros", "Nosotros"],
+  ["/seguimiento", "Seguimiento"],
+  ["/contacto", "Contacto"],
+] as const;
+
+export function Header({overlay=false}:{overlay?:boolean}){
+  const [scrolled,setScrolled]=useState(false);
+  const [menuOpen,setMenuOpen]=useState(false);
+
+  useEffect(()=>{
+    const onScroll=()=>setScrolled(window.scrollY>28);
+    onScroll();
+    window.addEventListener("scroll",onScroll,{passive:true});
+    return()=>window.removeEventListener("scroll",onScroll);
+  },[]);
+
+  useEffect(()=>{
+    document.body.style.overflow=menuOpen?"hidden":"";
+    return()=>{document.body.style.overflow=""};
+  },[menuOpen]);
+
+  const transparent=overlay&&!scrolled;
+
+  return <>
+    <header className={`${overlay?"fixed":"sticky"} inset-x-0 top-0 z-[70] border-b transition-all duration-500 ${transparent?"border-white/10 bg-gradient-to-b from-[#120c08]/72 to-transparent py-3":"border-[#d6b17a]/15 bg-[#1d130d]/88 py-1.5 shadow-[0_18px_55px_rgba(0,0,0,.32)] backdrop-blur-xl"}`}>
+      <div className="max-w-7xl mx-auto px-5 lg:px-6 min-h-[76px] flex items-center justify-between gap-5">
+        <Link href="/" className="group flex items-center gap-3 shrink-0">
+          <div className="h-12 w-12 rounded-full border border-[#d6b17a]/60 bg-[#24170f]/55 backdrop-blur flex items-center justify-center text-[#d6b17a] font-black text-lg shadow-[0_0_32px_rgba(182,139,82,.14)] transition group-hover:scale-105">IG</div>
+          <div className="leading-none">
+            <p className="text-lg md:text-xl font-black tracking-wide text-white">{contact.brand}</p>
+            <p className="mt-2 text-[9px] md:text-[10px] text-[#d6b17a] uppercase tracking-[0.31em]">Grabados láser premium</p>
+          </div>
+        </Link>
+
+        <nav className="hidden xl:flex items-center gap-1" aria-label="Navegación principal">
+          {navigation.map(([href,label])=><Link key={href} href={href} className="px-4 py-3 rounded-full text-sm font-semibold text-stone-100 hover:text-[#d6b17a] hover:bg-white/[0.06] transition">{label}</Link>)}
+        </nav>
+
+        <div className="hidden md:flex items-center gap-3 shrink-0">
+          <CartButton/>
+          <a href={whatsappLink("Hola, vi tu página web y quiero consultar por un producto personalizado.")} className="bg-[#b68b52] px-5 py-3 rounded-2xl font-black text-white shadow-[0_12px_32px_rgba(182,139,82,.24)] hover:-translate-y-0.5 hover:bg-[#c89a5d] transition">WhatsApp</a>
+        </div>
+
+        <button type="button" onClick={()=>setMenuOpen(true)} className="xl:hidden h-12 w-12 rounded-2xl border border-white/10 bg-[#24170f]/60 backdrop-blur text-white text-xl" aria-label="Abrir menú">☰</button>
+      </div>
+    </header>
+
+    <div className={`fixed inset-0 z-[90] xl:hidden transition-opacity duration-300 ${menuOpen?"opacity-100 pointer-events-auto":"opacity-0 pointer-events-none"}`}>
+      <button type="button" className="absolute inset-0 bg-black/65 backdrop-blur-sm" onClick={()=>setMenuOpen(false)} aria-label="Cerrar menú"/>
+      <aside className={`absolute right-0 top-0 h-full w-[88%] max-w-sm bg-[#1d130d] border-l border-[#d6b17a]/20 p-6 shadow-2xl transition-transform duration-300 ${menuOpen?"translate-x-0":"translate-x-full"}`}>
+        <div className="flex items-center justify-between">
+          <div><p className="text-xl font-black">Identidad Grabada</p><p className="mt-1 text-xs uppercase tracking-[0.25em] text-[#d6b17a]">Navegación</p></div>
+          <button type="button" onClick={()=>setMenuOpen(false)} className="h-11 w-11 rounded-xl border border-white/10 text-xl" aria-label="Cerrar menú">×</button>
+        </div>
+        <nav className="mt-8 grid gap-2" aria-label="Navegación móvil">
+          {navigation.map(([href,label])=><Link key={href} href={href} onClick={()=>setMenuOpen(false)} className="rounded-2xl border border-white/10 bg-white/[0.025] px-5 py-4 text-lg font-bold hover:border-[#d6b17a]/50 hover:text-[#d6b17a] transition">{label}</Link>)}
+        </nav>
+        <div className="mt-8 grid gap-3">
+          <div className="rounded-2xl border border-[#d6b17a]/35 p-2"><CartButton/></div>
+          <a href={whatsappLink("Hola, vi tu página web y quiero consultar por un producto personalizado.")} className="rounded-2xl bg-[#b68b52] px-5 py-4 text-center font-black text-white">Consultar por WhatsApp</a>
+        </div>
+      </aside>
+    </div>
+  </>;
+}
+
 export function Footer(){return <footer className="border-t border-white/10 bg-[#1d130d]"><div className="max-w-7xl mx-auto px-6 py-16"><div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4"><div><h3 className="text-3xl font-black">Identidad Grabada</h3><p className="mt-3 text-[#d6b17a]">Grabados láser personalizados.</p><p className="mt-5 max-w-sm text-zinc-500">Productos con identidad, diseño aprobado antes de grabar y atención directa durante todo el proceso.</p><p className="mt-5 text-sm text-zinc-600">{contact.city}</p></div><div><h4 className="font-black text-white">Tienda</h4><div className="mt-5 grid gap-3 text-zinc-400"><Link href="/productos">Productos</Link><Link href="/trabajos">Trabajos realizados</Link><Link href="/empresas">Empresas</Link><Link href="/seguimiento">Seguimiento</Link></div></div><div><h4 className="font-black text-white">Información</h4><div className="mt-5 grid gap-3 text-zinc-400"><Link href="/nosotros">Nosotros</Link><Link href="/contacto">Contacto</Link><p>Envíos a toda Argentina</p><p>Producción estimada: 2 a 5 días</p></div></div><div><h4 className="font-black text-white">Contacto</h4><div className="mt-5 grid gap-3"><a href={contact.instagramUrl} target="_blank" rel="noreferrer" className="rounded-2xl border border-white/10 px-5 py-4 text-center hover:border-[#b68b52]">Instagram</a><a href={whatsappLink("Hola, quiero consultar por un grabado personalizado.")} className="rounded-2xl bg-[#b68b52] px-5 py-4 text-center font-black">WhatsApp</a></div></div></div><div className="ig-gold-line mt-12"/><div className="mt-6 flex flex-col gap-3 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between"><p>© 2026 Identidad Grabada</p><p>General Las Heras · Buenos Aires · Argentina</p></div></div></footer>}
 
 export function WhatsAppFloat(){return <a href={whatsappLink("Hola, vi tu página web y quiero consultar por un producto personalizado.")} className="fixed bottom-6 right-6 z-30 bg-green-700 hover:bg-green-600 text-white px-5 py-4 rounded-full shadow-2xl font-black">WhatsApp</a>}
