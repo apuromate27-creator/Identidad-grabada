@@ -1,82 +1,72 @@
-
-import Image from "next/image";
 import Link from "next/link";
 
 export function PremiumHero() {
   return (
-    <>
-      <section className="relative isolate min-h-[86vh] overflow-hidden border-b border-white/10 bg-[#1d130d]">
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[64%]">
-          <Image
-            src="/backgrounds/hero.jpg"
-            alt="Mate, tabla de madera y termo de Identidad Grabada"
-            fill
-            priority
-            sizes="(min-width: 1024px) 64vw, 100vw"
-            className="object-cover object-[66%_52%] hero-v12-motion"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/35 to-black/5" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
-        </div>
+    <section className="v15-hero relative isolate min-h-[100svh] overflow-hidden text-white">
+      <div className="v15-hero-image absolute inset-0" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#100a07]/95 via-[#100a07]/62 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#100a07]/78 via-transparent to-[#100a07]/30" />
+      <div className="v15-sun-glow pointer-events-none absolute left-[48%] top-[31%] h-72 w-72 rounded-full bg-[#d99b42]/15 blur-3xl" />
 
-        <div className="pointer-events-none absolute right-[16%] top-[24%] h-72 w-72 rounded-full bg-[#b68b52]/20 blur-3xl hero-glow-motion" />
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-6 pb-44 pt-36 md:pt-40">
+        <div className="v15-copy max-w-2xl">
+          <p className="mb-5 text-sm font-medium uppercase tracking-[0.34em] text-[#d6a85f] md:text-base">
+            Grabados láser premium
+          </p>
 
-        <div className="relative z-10 mx-auto flex min-h-[86vh] max-w-7xl items-center px-6 py-20">
-          <div className="max-w-3xl space-y-8 hero-copy-enter">
-            <p className="text-sm uppercase tracking-[0.36em] text-[#d6b17a] md:text-base">
-              Grabados láser premium
-            </p>
+          <h1 className="font-serif text-5xl leading-[0.98] tracking-tight md:text-7xl lg:text-[5.5rem]">
+            Tu historia,
+            <span className="mt-2 block text-[#c58d3f]">grabada para siempre.</span>
+          </h1>
 
-            <h1 className="text-5xl font-black leading-[0.94] tracking-tight md:text-7xl lg:text-8xl">
-              Tu historia,
-              <span className="block text-[#c99249]">grabada para siempre.</span>
-            </h1>
+          <div className="my-6 h-px w-20 bg-[#c58d3f]" />
 
-            <p className="max-w-xl text-lg leading-relaxed text-zinc-300 md:text-2xl">
-              Regalos personalizados con tecnología láser y materiales de primera calidad.
-            </p>
+          <p className="max-w-xl text-lg leading-relaxed text-stone-100 md:text-2xl">
+            Regalos personalizados con tecnología láser y materiales de primera calidad.
+          </p>
+          <p className="mt-3 text-base italic text-[#e8c58f] md:text-lg">
+            Hecho en Argentina, para regalar o regalarte.
+          </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Link
-                href="/productos"
-                className="hero-button-primary rounded-2xl bg-[#b68b52] px-8 py-5 text-lg font-black text-white shadow-2xl"
-              >
-                Ver productos
-              </Link>
-
-              <Link
-                href="/contacto"
-                className="hero-button-secondary rounded-2xl border border-[#b68b52] bg-[#1d130d]/50 px-8 py-5 text-lg font-black text-[#d6b17a] backdrop-blur"
-              >
-                Pedir diseño personalizado
-              </Link>
-            </div>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="/productos"
+              className="v15-primary inline-flex items-center justify-center rounded-xl bg-[#c58d3f] px-7 py-4 text-base font-black text-white shadow-2xl"
+            >
+              Ver catálogo
+            </Link>
+            <Link
+              href="/contacto"
+              className="v15-secondary inline-flex items-center justify-center rounded-xl border border-[#d6a85f]/80 bg-[#130d09]/35 px-7 py-4 text-base font-black text-[#f0d4a6] backdrop-blur-md"
+            >
+              Diseñar mi producto
+            </Link>
           </div>
-        </div>
-      </section>
 
-      <section className="border-b border-white/10 bg-[#281a11]">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-6 lg:grid-cols-4">
-          <Benefit icon="👥" title="+500" text="Clientes felices" />
-          <Benefit icon="🕒" title="24 hs" text="Respuesta rápida" />
-          <Benefit icon="🛡" title="Calidad" text="Garantizada" />
-          <Benefit icon="🚚" title="Argentina" text="Envíos a todo el país" />
+          <p className="mt-7 flex items-center gap-3 text-sm uppercase tracking-[0.12em] text-stone-200">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[#c58d3f] text-[#d6a85f]">✓</span>
+            Más de 500 clientes felices en Argentina
+          </p>
         </div>
-      </section>
-    </>
+      </div>
+
+      <div className="absolute inset-x-0 bottom-5 z-20 mx-auto max-w-7xl px-6">
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-[#c58d3f]/25 bg-[#c58d3f]/20 shadow-2xl backdrop-blur-xl md:grid-cols-4">
+          <HeroBenefit title="Calidad premium" text="Materiales seleccionados y alta precisión." />
+          <HeroBenefit title="Hecho en Argentina" text="Diseño y producción con identidad nacional." />
+          <HeroBenefit title="Regalos únicos" text="Nombres, frases, fechas y logos." />
+          <HeroBenefit title="Envíos nacionales" text="Entregas coordinadas a todo el país." />
+        </div>
+      </div>
+    </section>
   );
 }
 
-function Benefit({ icon, title, text }: { icon: string; title: string; text: string }) {
+function HeroBenefit({ title, text }: { title: string; text: string }) {
   return (
-    <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#1d130d]/35 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#b68b52]/60">
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#b68b52]/50 text-xl">
-        {icon}
-      </div>
-      <div>
-        <p className="text-lg font-black text-white">{title}</p>
-        <p className="text-sm text-zinc-500">{text}</p>
-      </div>
+    <div className="bg-[#120c08]/82 p-5 md:p-6">
+      <p className="font-black text-[#e8c58f]">{title}</p>
+      <p className="mt-2 text-sm leading-relaxed text-stone-300">{text}</p>
     </div>
   );
 }

@@ -12,7 +12,7 @@ import { BackgroundSection } from "./components/BackgroundSection";
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#21150e] text-white">
-      <Header />
+      <Header overlay />
       <PremiumHero />
 
       <BackgroundSection

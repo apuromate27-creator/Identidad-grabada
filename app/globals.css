@@ -338,3 +338,57 @@ body {
     background-attachment: scroll !important;
   }
 }
+
+/* V15.0 — Hero Premium Argentina */
+.v15-hero-image {
+  background-image: url('/hero/hero-v15-argentina.png');
+  background-size: cover;
+  background-position: center;
+  animation: v15HeroDrift 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.v15-copy {
+  animation: v15CopyIn 900ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.v15-sun-glow {
+  animation: v15Glow 7s ease-in-out infinite alternate;
+}
+
+.v15-primary,
+.v15-secondary {
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+.v15-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(197,141,63,.28); }
+.v15-secondary:hover { transform: translateY(-3px); background-color: rgba(197,141,63,.12); }
+
+@keyframes v15HeroDrift {
+  0% { transform: scale(1.015) translate3d(0,0,0); }
+  100% { transform: scale(1.055) translate3d(-.6%,-.3%,0); }
+}
+@keyframes v15CopyIn {
+  from { opacity: 0; transform: translate3d(-28px,20px,0); }
+  to { opacity: 1; transform: translate3d(0,0,0); }
+}
+@keyframes v15Glow {
+  from { opacity: .35; transform: scale(.9); }
+  to { opacity: .8; transform: scale(1.15); }
+}
+
+@media (max-width: 1023px) {
+  .v15-hero-image { background-position: 68% center; }
+  .v15-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15,9,6,.22);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v15-hero-image,
+  .v15-copy,
+  .v15-sun-glow { animation: none !important; }
+}
