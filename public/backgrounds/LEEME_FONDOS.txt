@@ -1,0 +1,40 @@
+IDENTIDAD GRABADA V15.5 — FONDOS EDITABLES
+
+Reemplazá cada archivo conservando exactamente su nombre:
+
+inicio.jpg
+  Página principal después del Hero.
+
+productos.jpg
+  Catálogo general de productos.
+
+producto-detalle.jpg
+  Todas las fichas individuales de producto.
+
+trabajos.jpg
+  Página Trabajos realizados.
+
+empresas.jpg
+  Página Empresas.
+
+nosotros.jpg
+  Página Nosotros.
+
+seguimiento.jpg
+  Página Seguimiento.
+
+contacto.jpg
+  Página Contacto.
+
+checkout.jpg
+  Checkout y datos de compra.
+
+pago.jpg
+  Pantallas de pago aprobado, pendiente o rechazado.
+
+Formatos recomendados:
+- JPG
+- Horizontal 16:9
+- 1920 × 1080 px como mínimo
+- Ideal: 2560 × 1440 px
+- Mantener espacio visual libre para textos y tarjetas

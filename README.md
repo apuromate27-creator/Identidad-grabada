@@ -1,31 +1,52 @@
-# Identidad Grabada V15.4 — Lago Patagónico
+# Identidad Grabada V15.5 — Fondos individuales transparentes
 
-Esta versión mantiene el formato aprobado de V15.3 y cambia únicamente el fondo continuo de la página de inicio.
+Esta versión conserva el Hero y la Home aprobados, y aplica el mismo lenguaje transparente a todas las páginas internas.
 
-## Fondo elegido
+## Funcionamiento
 
-Opción 2 — Lago Patagónico
+Cada página toma su fondo desde un archivo distinto en:
 
-Características:
+`public/backgrounds/`
 
-- Lago y montañas argentinas.
-- Atardecer cálido.
-- Bandera argentina integrada en el paisaje.
-- Mismo lenguaje visual del Hero.
-- Un solo fondo continuo después del Hero.
-- Paneles translúcidos y transiciones suaves.
-- Adaptación para celular y computadora.
+Archivos editables:
 
-## Archivo del fondo
+- `inicio.jpg`
+- `productos.jpg`
+- `producto-detalle.jpg`
+- `trabajos.jpg`
+- `empresas.jpg`
+- `nosotros.jpg`
+- `seguimiento.jpg`
+- `contacto.jpg`
+- `checkout.jpg`
+- `pago.jpg`
 
-`public/backgrounds/inicio-lago-patagonico-v15.jpg`
+Para cambiar un fondo:
 
-Para cambiarlo más adelante, reemplazá ese archivo conservando el mismo nombre.
+1. Prepará una imagen JPG horizontal.
+2. Poné exactamente el mismo nombre del archivo correspondiente.
+3. Reemplazá el archivo dentro de `public/backgrounds`.
+4. Subí el cambio a GitHub.
+5. Vercel hará el nuevo despliegue automáticamente.
+
+## Diseño
+
+- Fondos a pantalla completa.
+- Paneles marrones translúcidos.
+- Efecto de vidrio.
+- Degradado cálido común.
+- Textos legibles sin ocultar el paisaje.
+- Fondo fijo en computadora.
+- Adaptación para celular.
+- El Hero conserva su imagen independiente.
 
 ## Probar localmente
 
+```bash
 npm install
 npm run dev
+```
 
 Abrir:
-http://localhost:3000
+
+`http://localhost:3000`

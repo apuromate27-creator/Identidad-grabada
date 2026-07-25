@@ -456,7 +456,7 @@ html { scroll-padding-top: 92px; }
 .v15-home-continuity {
   position: relative;
   isolation: isolate;
-  background-image: url("/backgrounds/inicio-lago-patagonico-v15.jpg");
+  background-image: url("/backgrounds/inicio.jpg");
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
@@ -555,5 +555,134 @@ html { scroll-padding-top: 92px; }
 @media (max-width: 1023px) {
   .v15-home-continuity {
     background-position: 67% top;
+  }
+}
+
+
+/* =========================================================
+   V15.5 — Fondos individuales con interfaz transparente
+   Para cambiar un fondo, reemplazar el JPG correspondiente
+   dentro de public/backgrounds conservando su nombre.
+   ========================================================= */
+
+.ig-page-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -50;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transform: translateZ(0);
+}
+
+.ig-page-scene-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17, 22, 22, .34) 0%,
+      rgba(28, 23, 17, .43) 38%,
+      rgba(28, 18, 11, .58) 100%
+    );
+}
+
+.ig-page-scene-light {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 15%, rgba(234, 180, 87, .14), transparent 30%),
+    linear-gradient(90deg, rgba(20, 12, 7, .28), transparent 58%);
+}
+
+/* Las páginas internas dejan visible la fotografía de fondo. */
+body:has(.ig-route-internal) {
+  background: transparent !important;
+}
+
+body:has(.ig-route-internal) main {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+body:has(.ig-route-internal) main > section,
+body:has(.ig-route-internal) main > div > section,
+body:has(.ig-route-internal) footer {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Contenedores principales: vidrio marrón cálido, no bloques opacos. */
+body:has(.ig-route-internal) .ig-card,
+body:has(.ig-route-internal) [class*="rounded-[2rem]"],
+body:has(.ig-route-internal) [class*="rounded-[3rem]"] {
+  backdrop-filter: blur(12px);
+}
+
+/* Tarjetas y formularios que antes eran sólidos se vuelven translúcidos. */
+body:has(.ig-route-internal) .bg-\[\#0b0b0b\],
+body:has(.ig-route-internal) .bg-\[\#111\],
+body:has(.ig-route-internal) .bg-\[\#2d1d13\],
+body:has(.ig-route-internal) .bg-\[\#342217\] {
+  background-color: rgba(44, 28, 17, .66) !important;
+  border-color: rgba(229, 184, 109, .18) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Paneles negros translúcidos conservan contraste sin ocultar el paisaje. */
+body:has(.ig-route-internal) .bg-black\/40,
+body:has(.ig-route-internal) .bg-black\/60,
+body:has(.ig-route-internal) .bg-black\/65 {
+  background-color: rgba(26, 16, 10, .48) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Encabezados internos tienen espacio para el header fijo. */
+body:has(.ig-route-internal) main {
+  padding-top: 82px;
+}
+
+/* Separación dorada sutil entre grandes secciones. */
+body:has(.ig-route-internal) main > section + section {
+  position: relative;
+}
+
+body:has(.ig-route-internal) main > section + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 7%;
+  right: 7%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(225, 180, 107, .34),
+    transparent
+  );
+}
+
+/* La Home conserva su fondo continuo ya aprobado. */
+body:has(.ig-route-home) .ig-page-scene {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+  .ig-page-scene {
+    background-attachment: scroll;
+    background-position: 62% center !important;
+  }
+
+  body:has(.ig-route-internal) main {
+    padding-top: 76px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ig-page-scene {
+    background-attachment: scroll;
   }
 }
