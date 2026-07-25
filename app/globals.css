@@ -450,3 +450,87 @@ html { scroll-padding-top: 92px; }
     animation: none !important;
   }
 }
+
+
+/* V15.3 — Fondo único y continuidad visual después del Hero */
+.v15-home-continuity {
+  position: relative;
+  isolation: isolate;
+  background-image: url("/backgrounds/inicio-continuidad-v15.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.v15-home-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(25, 15, 9, .38) 0%,
+      rgba(31, 19, 11, .52) 28%,
+      rgba(28, 17, 10, .58) 58%,
+      rgba(20, 12, 7, .70) 100%
+    );
+}
+
+.v15-home-continuity section {
+  background-color: transparent !important;
+}
+
+.v15-home-continuity section + section {
+  position: relative;
+}
+
+.v15-home-continuity section + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 7%;
+  right: 7%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214, 177, 122, .28),
+    transparent
+  );
+}
+
+.v15-trust-transition {
+  background: linear-gradient(
+    180deg,
+    rgba(22, 13, 8, .72),
+    rgba(32, 19, 11, .50)
+  ) !important;
+  backdrop-filter: blur(8px);
+}
+
+.v15-categories {
+  background: transparent !important;
+}
+
+.v15-categories-bg {
+  display: none !important;
+}
+
+.ig-card,
+.v15-category-card {
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 1023px) {
+  .v15-home-continuity {
+    background-attachment: scroll;
+    background-position: 58% top;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v15-home-continuity {
+    background-attachment: scroll;
+  }
+}

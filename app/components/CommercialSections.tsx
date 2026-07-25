@@ -5,7 +5,7 @@ import { Title } from "./ui";
 export function CommercialSections() {
   return (
     <>
-      <section id="como-trabajamos" className="border-y border-white/10 bg-[#2a1b12] py-24">
+      <section id="como-trabajamos" className="border-y border-white/10 bg-transparent py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Title
             eyebrow="Experiencia personalizada"
@@ -24,7 +24,7 @@ export function CommercialSections() {
 
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="grid gap-8 lg:grid-cols-[1.05fr_.95fr]">
-          <div className="rounded-[3rem] border border-white/10 bg-[#2d1d13] p-10 md:p-14">
+          <div className="rounded-[3rem] border border-white/10 bg-[#2a1a10]/45 p-10 md:p-14">
             <p className="text-sm uppercase tracking-[0.3em] text-[#d6b17a]">Confianza</p>
             <h2 className="mt-4 text-4xl font-black md:text-6xl">Comprá con tranquilidad.</h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -43,7 +43,7 @@ export function CommercialSections() {
             </p>
             <Link
               href="/empresas"
-              className="mt-8 inline-block rounded-2xl bg-[#1d130d] px-8 py-5 font-black text-white"
+              className="mt-8 inline-block rounded-2xl bg-[#1d130d]/45 px-8 py-5 font-black text-white"
             >
               Solicitar cotización
             </Link>
@@ -51,7 +51,7 @@ export function CommercialSections() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#281a11] py-24">
+      <section className="border-y border-white/10 bg-transparent py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Title
             eyebrow="Preguntas frecuentes"
@@ -72,7 +72,7 @@ export function CommercialSections() {
 
 function Step({ n, title, text }: { n: string; title: string; text: string }) {
   return (
-    <div className="rounded-[2rem] border border-white/10 bg-[#1d130d]/40 p-6">
+    <div className="rounded-[2rem] border border-white/10 bg-[#1d130d]/45/40 p-6">
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#b68b52] font-black">
         {n}
       </div>
@@ -84,7 +84,7 @@ function Step({ n, title, text }: { n: string; title: string; text: string }) {
 
 function Trust({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#1d130d]/40 p-5">
+    <div className="rounded-2xl border border-white/10 bg-[#1d130d]/45/40 p-5">
       <p className="font-black text-[#d6b17a]">✓ {title}</p>
       <p className="mt-2 text-sm text-zinc-500">{text}</p>
     </div>
@@ -93,7 +93,7 @@ function Trust({ title, text }: { title: string; text: string }) {
 
 function Faq({ q, a }: { q: string; a: string }) {
   return (
-    <div className="rounded-[2rem] border border-white/10 bg-[#2d1d13] p-6">
+    <div className="rounded-[2rem] border border-white/10 bg-[#2a1a10]/45 p-6">
       <h3 className="text-xl font-black">{q}</h3>
       <p className="mt-3 text-zinc-500">{a}</p>
     </div>

@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v15-2-categorias-premium",
-  "version": "15.2.0",
+  "name": "identidad-grabada-v15-3-fondo-unificado",
+  "version": "15.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

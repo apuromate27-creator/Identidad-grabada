@@ -39,8 +39,8 @@ const categories = [
 export function CategoryShowcase() {
   return (
     <section className="v15-categories relative overflow-hidden">
-      <div className="v15-categories-bg absolute inset-0" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#120b07]/50 via-[#1d120b]/38 to-[#120b07]/72" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#120b07]/18 via-transparent to-[#120b07]/45" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#120b07]/8 via-transparent to-[#120b07]/32" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d6a85f]/70 to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32">

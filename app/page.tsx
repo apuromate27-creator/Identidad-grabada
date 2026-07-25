@@ -7,7 +7,6 @@ import { BrandStory } from "./components/BrandStory";
 import { SocialProof } from "./components/SocialProof";
 import { TrustStrip } from "./components/TrustStrip";
 import { CommercialSections } from "./components/CommercialSections";
-import { BackgroundSection } from "./components/BackgroundSection";
 
 export default function Home() {
   return (
@@ -15,50 +14,25 @@ export default function Home() {
       <Header overlay />
       <PremiumHero />
 
-      <div className="v15-trust-transition">
-        <TrustStrip />
+      <div className="v15-home-continuity">
+        <div className="v15-home-overlay" />
+        <div className="relative z-10">
+          <div className="v15-trust-transition">
+            <TrustStrip />
+          </div>
+          <CategoryShowcase />
+
+          <PremiumHomeSections />
+
+          <BrandStory />
+
+          <SocialProof />
+
+          <CommercialSections />
+
+          <Footer />
+        </div>
       </div>
-      <CategoryShowcase />
-
-      <BackgroundSection
-        image="/backgrounds/productos.jpg"
-        overlay="bg-[#21140d]/48"
-        position="center"
-      >
-        <PremiumHomeSections />
-      </BackgroundSection>
-
-      <BackgroundSection
-        image="/backgrounds/historia.jpg"
-        overlay="bg-[#1d130d]/38"
-        position="center"
-      >
-        <BrandStory />
-      </BackgroundSection>
-
-      <BackgroundSection
-        image="/backgrounds/testimonios.jpg"
-        overlay="bg-[#2a1b12]/44"
-        position="center"
-      >
-        <SocialProof />
-      </BackgroundSection>
-
-      <BackgroundSection
-        image="/backgrounds/laser.jpg"
-        overlay="bg-[#24150d]/42"
-        position="center"
-      >
-        <CommercialSections />
-      </BackgroundSection>
-
-      <BackgroundSection
-        image="/backgrounds/footer.jpg"
-        overlay="bg-[#1d130d]/48"
-        position="center"
-      >
-        <Footer />
-      </BackgroundSection>
 
       <WhatsAppFloat />
     </main>

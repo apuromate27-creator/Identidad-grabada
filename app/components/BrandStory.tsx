@@ -9,7 +9,7 @@ export function BrandStory() {
         <div className="ig-card min-h-[640px] rounded-[3.5rem]">
           <ImageSlot title="Proceso artesanal" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          <div className="absolute bottom-8 left-8 rounded-2xl border border-white/10 bg-[#1d130d]/65 px-5 py-4 backdrop-blur">
+          <div className="absolute bottom-8 left-8 rounded-2xl border border-white/10 bg-[#1d130d]/45/65 px-5 py-4 backdrop-blur">
             <p className="text-xs uppercase tracking-[0.25em] text-[#d6b17a]">
               Identidad Grabada
             </p>

@@ -1,17 +1,24 @@
-# Identidad Grabada V15.2 — Categorías Premium
+# Identidad Grabada V15.3 — Fondo unificado de inicio
 
-Esta etapa conserva el Hero y la navegación de V15.1 y rediseña solamente la sección de categorías.
+Esta versión mantiene Hero, navegación y categorías de V15.2, pero cambia la página de inicio para que todas las secciones posteriores al Hero compartan un único fondo.
 
 ## Cambios
 
-- Sección completa con escenario fotográfico.
-- Texto integrado sobre la imagen, sin bloques planos superpuestos.
-- Cuatro categorías: Imperiales, Camioneros, Torpedos y Rancheros.
-- Tarjetas panorámicas con degradados suaves.
-- Movimiento lento del fondo.
-- Transición más prolija desde el Hero.
-- Botón para acceder al catálogo completo.
-- Adaptación para computadora, tablet y celular.
+- Un solo fondo desde el final del Hero hasta el footer.
+- Nuevo paisaje argentino de alta calidad.
+- Misma paleta cálida, marrón y dorada del Hero.
+- Sin cambios bruscos ni imágenes que se superponen.
+- Textos y tarjetas apoyados sobre el mismo escenario.
+- Separadores muy sutiles entre secciones.
+- Paneles translúcidos en lugar de bloques sólidos.
+- Efecto fijo/parallax en computadora.
+- Adaptación para celular.
+
+## Fondo utilizado
+
+`public/backgrounds/inicio-continuidad-v15.jpg`
+
+Podés reemplazarlo conservando el mismo nombre.
 
 ## Probar localmente
 
