@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v15-5-fondos-individuales",
-  "version": "15.5.0",
+  "name": "identidad-grabada-v15-6-tarjetas-unificadas",
+  "version": "15.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

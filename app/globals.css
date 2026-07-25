@@ -686,3 +686,84 @@ body:has(.ig-route-home) .ig-page-scene {
     background-attachment: scroll;
   }
 }
+
+
+/* =========================================================
+   V15.6 — Tarjetas unificadas
+   Imagen arriba + contenido semitransparente integrado.
+   ========================================================= */
+
+.v15-unified-card {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(58, 35, 21, .72),
+      rgba(35, 21, 13, .68)
+    );
+  backdrop-filter: blur(12px);
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.v15-unified-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(225, 180, 107, .44);
+  box-shadow:
+    0 34px 85px rgba(0,0,0,.44),
+    0 0 0 1px rgba(225,180,107,.08);
+}
+
+.v15-unified-card-media {
+  background: rgba(39, 24, 15, .66);
+}
+
+.v15-unified-card-media > * {
+  transition: transform .65s ease;
+}
+
+.v15-unified-card:hover .v15-unified-card-media > * {
+  transform: scale(1.035);
+}
+
+.v15-unified-card-content {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(61, 37, 22, .82),
+      rgba(37, 22, 13, .76)
+    );
+  backdrop-filter: blur(14px);
+}
+
+.v15-unified-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035),
+    inset 0 0 0 1px rgba(255,255,255,.012);
+}
+
+@media (max-width: 767px) {
+  .v15-unified-card-media {
+    height: 18rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v15-unified-card,
+  .v15-unified-card-media > * {
+    transition: none !important;
+  }
+
+  .v15-unified-card:hover {
+    transform: none;
+  }
+}
