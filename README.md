@@ -1,20 +1,22 @@
-# Identidad Grabada V15.1 — Header y navegación premium
+# Identidad Grabada V15.2 — Categorías Premium
 
-Conserva el Hero aprobado de V15.0 y mejora la navegación.
+Esta etapa conserva el Hero y la navegación de V15.1 y rediseña solamente la sección de categorías.
 
-## Incluye
-- Header transparente sobre el Hero.
-- Fondo tipo vidrio al desplazarse.
-- Menú fijo y compacto.
-- Navegación completa en computadora.
-- Menú lateral en celular y tablet.
-- Carrito y WhatsApp siempre accesibles.
-- Transiciones suaves.
-- Mismo header en páginas internas.
+## Cambios
 
-## Probar
-```bash
+- Sección completa con escenario fotográfico.
+- Texto integrado sobre la imagen, sin bloques planos superpuestos.
+- Cuatro categorías: Imperiales, Camioneros, Torpedos y Rancheros.
+- Tarjetas panorámicas con degradados suaves.
+- Movimiento lento del fondo.
+- Transición más prolija desde el Hero.
+- Botón para acceder al catálogo completo.
+- Adaptación para computadora, tablet y celular.
+
+## Probar localmente
+
 npm install
 npm run dev
-```
-Abrir http://localhost:3000
+
+Abrir:
+http://localhost:3000

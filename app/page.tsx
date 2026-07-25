@@ -15,14 +15,10 @@ export default function Home() {
       <Header overlay />
       <PremiumHero />
 
-      <BackgroundSection
-        image="/backgrounds/categorias.jpg"
-        overlay="bg-[#2b1b11]/34"
-        position="center"
-      >
+      <div className="v15-trust-transition">
         <TrustStrip />
-        <CategoryShowcase />
-      </BackgroundSection>
+      </div>
+      <CategoryShowcase />
 
       <BackgroundSection
         image="/backgrounds/productos.jpg"
