@@ -1,24 +1,26 @@
-# Identidad Grabada V15.3 — Fondo unificado de inicio
+# Identidad Grabada V15.4 — Lago Patagónico
 
-Esta versión mantiene Hero, navegación y categorías de V15.2, pero cambia la página de inicio para que todas las secciones posteriores al Hero compartan un único fondo.
+Esta versión mantiene el formato aprobado de V15.3 y cambia únicamente el fondo continuo de la página de inicio.
 
-## Cambios
+## Fondo elegido
 
-- Un solo fondo desde el final del Hero hasta el footer.
-- Nuevo paisaje argentino de alta calidad.
-- Misma paleta cálida, marrón y dorada del Hero.
-- Sin cambios bruscos ni imágenes que se superponen.
-- Textos y tarjetas apoyados sobre el mismo escenario.
-- Separadores muy sutiles entre secciones.
-- Paneles translúcidos en lugar de bloques sólidos.
-- Efecto fijo/parallax en computadora.
-- Adaptación para celular.
+Opción 2 — Lago Patagónico
 
-## Fondo utilizado
+Características:
 
-`public/backgrounds/inicio-continuidad-v15.jpg`
+- Lago y montañas argentinas.
+- Atardecer cálido.
+- Bandera argentina integrada en el paisaje.
+- Mismo lenguaje visual del Hero.
+- Un solo fondo continuo después del Hero.
+- Paneles translúcidos y transiciones suaves.
+- Adaptación para celular y computadora.
 
-Podés reemplazarlo conservando el mismo nombre.
+## Archivo del fondo
+
+`public/backgrounds/inicio-lago-patagonico-v15.jpg`
+
+Para cambiarlo más adelante, reemplazá ese archivo conservando el mismo nombre.
 
 ## Probar localmente
 

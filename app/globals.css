@@ -456,7 +456,7 @@ html { scroll-padding-top: 92px; }
 .v15-home-continuity {
   position: relative;
   isolation: isolate;
-  background-image: url("/backgrounds/inicio-continuidad-v15.jpg");
+  background-image: url("/backgrounds/inicio-lago-patagonico-v15.jpg");
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
@@ -532,5 +532,28 @@ html { scroll-padding-top: 92px; }
 @media (prefers-reduced-motion: reduce) {
   .v15-home-continuity {
     background-attachment: scroll;
+  }
+}
+
+
+/* V15.4 — Fondo Lago Patagónico */
+.v15-home-continuity {
+  background-position: center top;
+}
+
+.v15-home-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17, 24, 28, .30) 0%,
+      rgba(24, 31, 33, .40) 24%,
+      rgba(34, 24, 15, .50) 58%,
+      rgba(23, 15, 10, .68) 100%
+    );
+}
+
+@media (max-width: 1023px) {
+  .v15-home-continuity {
+    background-position: 67% top;
   }
 }
