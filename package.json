@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v15-6-tarjetas-unificadas",
-  "version": "15.6.0",
+  "name": "identidad-grabada-v16-1-arquitectura-carrusel",
+  "version": "16.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

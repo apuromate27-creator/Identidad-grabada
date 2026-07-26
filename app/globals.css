@@ -767,3 +767,98 @@ body:has(.ig-route-home) .ig-page-scene {
     transform: none;
   }
 }
+
+
+/* =========================================================
+   V16.1 — Arquitectura modular + carrusel de colecciones
+   ========================================================= */
+
+.v16-categories {
+  background: transparent;
+}
+
+.v16-category-track {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(214,168,95,.65) rgba(31,19,11,.45);
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: 1.5rem;
+}
+
+.v16-category-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.v16-category-track::-webkit-scrollbar-track {
+  background: rgba(31,19,11,.45);
+  border-radius: 999px;
+}
+
+.v16-category-track::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #9d6d33, #d6a85f);
+  border-radius: 999px;
+}
+
+.v16-category-card {
+  width: min(82vw, 410px);
+  min-height: 500px;
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.v16-category-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(225,180,107,.46);
+  box-shadow:
+    0 36px 90px rgba(0,0,0,.48),
+    0 0 0 1px rgba(225,180,107,.06);
+}
+
+.v16-carousel-button {
+  display: grid;
+  height: 3.5rem;
+  width: 3.5rem;
+  place-items: center;
+  border: 1px solid rgba(225,180,107,.46);
+  border-radius: 999px;
+  background: rgba(27,16,9,.62);
+  color: #f0d5a8;
+  font-size: 1.35rem;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+  transition:
+    transform .25s ease,
+    background-color .25s ease,
+    color .25s ease;
+}
+
+.v16-carousel-button:hover {
+  transform: translateY(-3px);
+  background: #b98239;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .v16-category-card {
+    width: 390px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .v16-category-card {
+    width: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v16-category-card,
+  .v16-carousel-button {
+    transition: none !important;
+  }
+
+  .v16-category-card:hover,
+  .v16-carousel-button:hover {
+    transform: none;
+  }
+}

@@ -1,28 +1,36 @@
-# Identidad Grabada V15.6 — Tarjetas unificadas
+# Identidad Grabada V16.1
 
-Esta versión parte de la V15.5 y unifica el aspecto de las tarjetas de productos y trabajos.
+Primera etapa de la nueva arquitectura V16.
 
-## Nuevo diseño
+## Incluye
 
-- Imagen en la parte superior.
-- Panel semitransparente integrado debajo de la imagen.
-- Degradado entre fotografía y texto.
-- Bordes y sombras iguales en toda la tienda.
-- Etiquetas para productos personalizables y más vendidos.
-- Precio, disponibilidad y botón claramente visibles.
-- Hover suave en computadora.
-- Adaptación para celular.
+- Carrusel premium de colecciones en el inicio.
+- Imperiales, Camioneros, Torpedos, Rancheros, Algarrobo y Calabaza.
+- Flechas laterales en computadora.
+- Deslizamiento horizontal con el dedo en celular.
+- Tarjetas grandes, fotográficas y enlazadas a cada colección.
+- Datos separados en `app/data/categories.ts`.
+- Nuevas carpetas:
+  - `app/components/Cards`
+  - `app/components/Sections`
 
-## Componentes
+## Agregar una categoría
 
-- `app/components/ProductCard.tsx`
-- `app/components/PremiumMediaCard.tsx`
+Editá:
 
-La galería de Trabajos también utiliza el nuevo componente.
+`app/data/categories.ts`
 
-## Próximos pasos
+Copiá un objeto existente y cambiá:
 
-Cuando cargues fotos reales en los espacios de imagen, todas las tarjetas mantendrán automáticamente este formato.
+- `number`
+- `title`
+- `eyebrow`
+- `description`
+- `href`
+- `image`
+- `position`
+
+La nueva tarjeta aparecerá automáticamente en el carrusel.
 
 ## Probar localmente
 

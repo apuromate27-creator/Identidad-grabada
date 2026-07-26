@@ -1,0 +1,2 @@
+
+export { CategoryCarouselCard } from "./CategoryCarouselCard";
