@@ -17,9 +17,6 @@ export default function Home() {
       <div className="v15-home-continuity">
         <div className="v15-home-overlay" />
         <div className="relative z-10">
-          <div className="v15-trust-transition">
-            <TrustStrip />
-          </div>
           <CategoryShowcase />
 
           <PremiumHomeSections />
@@ -30,6 +27,9 @@ export default function Home() {
 
           <CommercialSections />
 
+          <div className="v15-trust-transition v16-trust-bottom">
+            <TrustStrip />
+          </div>
           <Footer />
         </div>
       </div>

@@ -17,22 +17,18 @@ export default function ProductsPage() {
           <span>Productos</span>
         </nav>
 
-        <div className="mt-6 grid gap-8 xl:grid-cols-[1fr_1.15fr] xl:items-center">
-          <div>
-            <p className="text-sm uppercase tracking-[0.32em] text-[#e2b46d]">
-              Catálogo completo
-            </p>
+        <div className="mt-6 max-w-3xl">
+          <p className="text-sm uppercase tracking-[0.32em] text-[#e2b46d]">
+            Catálogo completo
+          </p>
 
-            <h1 className="mt-4 font-serif text-5xl leading-tight text-white md:text-7xl">
-              Nuestros productos
-            </h1>
+          <h1 className="mt-4 font-serif text-5xl leading-tight text-white md:text-7xl">
+            Nuestros productos
+          </h1>
 
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-stone-200">
-              Explorá mates y regalos personalizados preparados para grabar nombres, frases, fechas o logos con precisión láser.
-            </p>
-          </div>
-
-          <StoreBenefits compact />
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-stone-200">
+            Explorá mates y regalos personalizados preparados para grabar nombres, frases, fechas o logos con precisión láser.
+          </p>
         </div>
 
         <ProductCatalog />

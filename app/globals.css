@@ -1532,3 +1532,180 @@ body:has(.ig-route-home) .ig-page-scene {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* =========================================================
+   V16.7 — Escala general compacta
+   Inspirada en la maqueta aprobada.
+   ========================================================= */
+
+/* Base tipográfica y contenedores */
+@media (min-width: 1024px) {
+  html { font-size: 14px; }
+
+  .mx-auto.max-w-7xl,
+  .mx-auto.max-w-\[1500px\] {
+    max-width: 1320px !important;
+  }
+
+  header {
+    padding-top: .4rem !important;
+    padding-bottom: .4rem !important;
+  }
+
+  header .h-12.w-12 {
+    width: 2.7rem !important;
+    height: 2.7rem !important;
+  }
+
+  header nav a,
+  header button,
+  header a[href*="wa.me"] {
+    padding-top: .68rem !important;
+    padding-bottom: .68rem !important;
+    font-size: .86rem !important;
+  }
+
+  /* Hero todavía más bajo */
+  .v16-hero-carousel {
+    min-height: 64vh !important;
+  }
+
+  .v16-hero-carousel > .relative.z-30 {
+    min-height: 64vh !important;
+    padding-top: 6.4rem !important;
+    padding-bottom: 7.2rem !important;
+  }
+
+  .v16-hero-copy {
+    max-width: 33rem !important;
+  }
+
+  .v16-hero-copy h1 {
+    font-size: clamp(2.75rem, 3.8vw, 3.75rem) !important;
+  }
+
+  .v16-hero-copy > p {
+    font-size: .96rem !important;
+  }
+
+  .v16-hero-copy a {
+    padding: .68rem 1.05rem !important;
+    font-size: .84rem !important;
+  }
+
+  /* Beneficios del Hero más finos */
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 > div > div {
+    padding: .72rem .85rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 p:first-child {
+    font-size: .76rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 p:last-child {
+    font-size: .68rem !important;
+  }
+
+  /* Secciones más densas */
+  .v16-categories > .relative.z-10,
+  .ig-page-background section.mx-auto,
+  .v15-home-continuity section > .mx-auto {
+    padding-top: 3.6rem !important;
+    padding-bottom: 3.6rem !important;
+  }
+
+  .v16-categories h2,
+  .ig-page-productos h1 {
+    font-size: clamp(2.65rem, 3.8vw, 3.9rem) !important;
+  }
+
+  /* Carrusel de categorías */
+  .v16-category-card {
+    width: 300px !important;
+    min-height: 340px !important;
+    border-radius: 1.3rem !important;
+  }
+
+  .v16-category-card .absolute.inset-x-0.bottom-0 {
+    padding: 1.05rem !important;
+  }
+
+  .v16-category-card h3 {
+    font-size: 2rem !important;
+  }
+
+  .v16-category-card p {
+    font-size: .8rem !important;
+  }
+
+  .v16-category-card .mt-7 {
+    margin-top: .7rem !important;
+    font-size: .78rem !important;
+  }
+
+  /* Productos compactos */
+  .v15-unified-card {
+    border-radius: 1.2rem !important;
+  }
+
+  .v15-unified-card-media {
+    height: 12.75rem !important;
+  }
+
+  .v15-unified-card-content {
+    padding: .95rem !important;
+  }
+
+  .v15-unified-card-content h3 {
+    font-size: 1.12rem !important;
+  }
+
+  .v15-unified-card-content p {
+    font-size: .78rem !important;
+  }
+
+  .v15-unified-card-content .text-2xl {
+    font-size: 1.08rem !important;
+  }
+
+  .v15-unified-card-content a {
+    padding: .58rem .78rem !important;
+    font-size: .74rem !important;
+  }
+
+  /* Página de productos */
+  .v16-benefit-item {
+    padding: .72rem .82rem !important;
+  }
+
+  .v16-benefit-item .h-12.w-12 {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+
+  .v16-benefit-item p:first-child {
+    font-size: .78rem !important;
+  }
+
+  .v16-benefit-item p:last-child {
+    font-size: .7rem !important;
+  }
+
+  .v16-catalog-controls {
+    padding: .8rem !important;
+  }
+
+  .v16-catalog-controls input,
+  .v16-catalog-controls select {
+    min-height: 2.6rem;
+    padding-top: .62rem !important;
+    padding-bottom: .62rem !important;
+    font-size: .8rem !important;
+  }
+
+  .v16-catalog-controls a {
+    padding: .55rem .72rem !important;
+    font-size: .72rem !important;
+  }
+}

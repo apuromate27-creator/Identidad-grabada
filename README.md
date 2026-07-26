@@ -1,43 +1,13 @@
-# Identidad Grabada V16.6 — Responsive Premium
+# Identidad Grabada V16.7 — Escala compacta
 
-Esta versión mantiene todas las funciones de V16.5 y rediseña las proporciones para escritorio y celular.
+Cambios:
+- Hero reducido a aproximadamente 64vh en escritorio.
+- Tipografía general ligeramente más pequeña.
+- Header más bajo.
+- Tarjetas de categorías y productos más compactas.
+- Página Productos sin el bloque superior de beneficios.
+- Beneficios conservados únicamente al final de la página Productos.
+- En Inicio, el bloque Pago seguro / Diseño aprobado / Producción / Envíos se mueve al final, antes del footer.
+- Más elementos visibles simultáneamente, siguiendo la maqueta aprobada.
 
-## Escritorio
-
-- Hero reducido a aproximadamente 72vh.
-- Título y botones más compactos.
-- Tarjetas de categorías más bajas.
-- Tarjetas de productos más pequeñas.
-- Filtros y beneficios más densos.
-- Más contenido visible sin tanto scroll.
-
-## Celular
-
-- Hero específico para móvil.
-- Texto dentro de un panel translúcido.
-- Botones en dos columnas.
-- Beneficios reducidos a títulos.
-- Carrusel de categorías estilo Netflix.
-- Tarjetas de producto compactas.
-- Filtros horizontales.
-- Menú y WhatsApp menos invasivos.
-- Ajuste adicional para pantallas de 360px o menos.
-
-## Tamaños recomendados para probar
-
-- 320 × 568
-- 360 × 740
-- 375 × 667
-- 390 × 844
-- 412 × 915
-
-## Probar localmente
-
-```bash
-npm install
-npm run dev
-```
-
-Abrir:
-
-`http://localhost:3000`
+Se conserva el diseño responsive móvil de V16.6.
