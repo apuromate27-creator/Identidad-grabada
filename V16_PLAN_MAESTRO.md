@@ -66,3 +66,23 @@ Mantener todas las funciones estables y reemplazar progresivamente la presentaci
 - Compatibilidad con reducción de movimiento.
 - Banners editables desde `public/banners`.
 - Textos y enlaces configurables desde `app/data/heroSlides.ts`.
+
+
+## Implementado en V16.4
+
+- Seguimiento privado por número de compra y email.
+- Eliminación de pedidos visibles públicamente.
+- Vista individual del pedido.
+- Línea de estados: recibido, diseño, producción, despacho, en camino y entregado.
+- Transportista y código de seguimiento.
+- Botón externo para Andreani o Correo Argentino.
+- Datos demo separados del componente.
+- Arquitectura preparada para reemplazar datos demo por base de datos o API.
+
+## Pendiente para producción real
+
+- Base de datos de pedidos.
+- Autenticación o token seguro.
+- Panel de administración.
+- Integración oficial con transportistas.
+- Envío automático de emails.

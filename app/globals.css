@@ -920,3 +920,134 @@ body:has(.ig-route-home) .ig-page-scene {
     transition: none !important;
   }
 }
+
+
+/* =========================================================
+   V16.3 — Hero con carrusel automático de promociones
+   ========================================================= */
+
+.v16-hero-slide-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: v16HeroSlowZoom 12s ease-in-out both;
+  will-change: transform;
+}
+
+.v16-hero-copy {
+  animation: v16HeroCopyIn .85s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.v16-hero-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  display: grid;
+  height: 3.5rem;
+  width: 3.5rem;
+  transform: translateY(-50%);
+  place-items: center;
+  border: 1px solid rgba(232,197,143,.45);
+  border-radius: 999px;
+  background: rgba(19,13,9,.46);
+  color: #f0d4a6;
+  font-size: 1.35rem;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+  transition:
+    transform .25s ease,
+    background-color .25s ease,
+    border-color .25s ease;
+}
+
+.v16-hero-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+  border-color: rgba(232,197,143,.82);
+  background: rgba(197,141,63,.88);
+  color: white;
+}
+
+.v16-hero-progress {
+  width: 0;
+  animation: v16HeroProgress 7s linear forwards;
+}
+
+.v16-hero-progress.paused {
+  animation-play-state: paused;
+}
+
+@keyframes v16HeroProgress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes v16HeroSlowZoom {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.075); }
+}
+
+@keyframes v16HeroCopyIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .v16-hero-arrow {
+    top: auto;
+    bottom: 8.3rem;
+    height: 2.9rem;
+    width: 2.9rem;
+  }
+
+  .v16-hero-carousel {
+    min-height: 100svh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v16-hero-slide-image,
+  .v16-hero-copy,
+  .v16-hero-progress {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   V16.4 — Seguimiento privado de pedidos
+   ========================================================= */
+
+.v16-private-tracking,
+.v16-tracking-result {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(55, 33, 20, .70),
+      rgba(29, 18, 11, .62)
+    );
+  box-shadow:
+    0 28px 78px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(255,255,255,.025);
+  backdrop-filter: blur(14px);
+}
+
+.v16-tracking-result {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(50, 30, 18, .72),
+      rgba(26, 16, 10, .66)
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v16-private-tracking button,
+  .v16-tracking-result a {
+    transition: none !important;
+  }
+}

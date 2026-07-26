@@ -1,43 +1,38 @@
-# Identidad Grabada V16.3 — Hero Promocional
+# Identidad Grabada V16.4 — Seguimiento privado
 
-Esta versión parte de V16.2 y convierte el Hero en un carrusel automático de promociones.
+Esta versión parte de V16.3 y reemplaza la página de seguimiento pública por una consulta privada.
 
 ## Incluye
 
-- Cuatro diapositivas editables.
-- Avance automático cada siete segundos.
-- Flechas laterales.
-- Indicadores inferiores.
-- Barra de progreso.
-- Pausa automática al apoyar el mouse.
-- Botón de pausa y reproducción.
-- Deslizamiento con el dedo en celular.
-- Altura estable para evitar saltos.
-- Primera diapositiva con el Hero aprobado.
-- Beneficios inferiores conservados.
+- Número de compra + email.
+- Cada cliente ve únicamente su pedido.
+- Estado actual.
+- Línea de avance completa.
+- Fecha estimada de entrega.
+- Transportista.
+- Código de seguimiento.
+- Botón externo para Andreani o Correo Argentino.
+- Diseño transparente y consistente con la V16.
 
-## Cambiar imágenes
+## Datos de prueba
 
-Reemplazá los archivos dentro de:
+- Pedido: `IG-1032`
+- Email: `cliente@ejemplo.com`
 
-`public/banners/`
+## Importante
 
-- `hero-principal.png`
-- `oferta-01.png`
-- `oferta-02.png`
-- `empresas.png`
+Esta versión implementa la interfaz y el flujo de prueba. Para usar pedidos reales todavía hace falta:
 
-Conservá exactamente el nombre y la extensión.
+- base de datos;
+- panel administrativo;
+- autenticación o token seguro;
+- integración oficial con los transportistas.
 
-## Cambiar textos, botones o enlaces
+## Archivos principales
 
-Editá:
-
-`app/data/heroSlides.ts`
-
-## Próxima etapa prevista
-
-V16.4: seguimiento privado de pedidos y preparación para transportistas.
+- `app/seguimiento/page.tsx`
+- `app/components/Sections/PrivateOrderTracking.tsx`
+- `app/data/orderTracking.ts`
 
 ## Probar localmente
 
@@ -48,4 +43,4 @@ npm run dev
 
 Abrir:
 
-`http://localhost:3000`
+`http://localhost:3000/seguimiento`

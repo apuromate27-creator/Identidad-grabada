@@ -1,6 +1,6 @@
 
 import { Header, Footer, WhatsAppFloat } from "./components/ui";
-import { PremiumHero } from "./components/PremiumHero";
+import { HeroCarousel } from "./components/Sections/HeroCarousel";
 import { PremiumHomeSections } from "./components/PremiumSections";
 import { CategoryShowcase } from "./components/CategoryShowcase";
 import { BrandStory } from "./components/BrandStory";
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#21150e] text-white">
       <Header overlay />
-      <PremiumHero />
+      <HeroCarousel />
 
       <div className="v15-home-continuity">
         <div className="v15-home-overlay" />
