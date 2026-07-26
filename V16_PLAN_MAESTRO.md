@@ -51,3 +51,18 @@ Mantener todas las funciones estables y reemplazar progresivamente la presentaci
 - Grilla adaptable de hasta cuatro columnas.
 - Franja inferior de confianza.
 - Estados vacíos y controles adaptados a celular.
+
+
+## Implementado en V16.3
+
+- Hero con carrusel automático.
+- Cuatro diapositivas configurables.
+- Avance automático cada siete segundos.
+- Flechas laterales.
+- Indicadores inferiores y barra de progreso.
+- Botón para pausar y reanudar.
+- Pausa al apoyar el mouse o enfocar controles.
+- Deslizamiento táctil en celular.
+- Compatibilidad con reducción de movimiento.
+- Banners editables desde `public/banners`.
+- Textos y enlaces configurables desde `app/data/heroSlides.ts`.

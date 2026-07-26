@@ -1,29 +1,43 @@
-# Identidad Grabada V16.2 — Productos Premium
+# Identidad Grabada V16.3 — Hero Promocional
 
-Esta versión parte de V16.1 y rediseña la página Productos.
+Esta versión parte de V16.2 y convierte el Hero en un carrusel automático de promociones.
 
 ## Incluye
 
-- Encabezado con título, descripción y migas de pan.
-- Beneficios superiores.
-- Buscador.
-- Filtros por categoría.
-- Ordenamiento por destacados, más vendidos, nuevos y nombre.
-- Contador de resultados.
-- Grilla adaptable.
-- Franja inferior de confianza.
-- Paneles translúcidos para conservar visible el fondo.
-- Adaptación para computadora, tablet y celular.
+- Cuatro diapositivas editables.
+- Avance automático cada siete segundos.
+- Flechas laterales.
+- Indicadores inferiores.
+- Barra de progreso.
+- Pausa automática al apoyar el mouse.
+- Botón de pausa y reproducción.
+- Deslizamiento con el dedo en celular.
+- Altura estable para evitar saltos.
+- Primera diapositiva con el Hero aprobado.
+- Beneficios inferiores conservados.
 
-## Archivos principales
+## Cambiar imágenes
 
-- `app/productos/page.tsx`
-- `app/components/ProductCatalog.tsx`
-- `app/components/Sections/StoreBenefits.tsx`
+Reemplazá los archivos dentro de:
+
+`public/banners/`
+
+- `hero-principal.png`
+- `oferta-01.png`
+- `oferta-02.png`
+- `empresas.png`
+
+Conservá exactamente el nombre y la extensión.
+
+## Cambiar textos, botones o enlaces
+
+Editá:
+
+`app/data/heroSlides.ts`
 
 ## Próxima etapa prevista
 
-V16.3: Hero con carrusel automático de promociones y banners editables.
+V16.4: seguimiento privado de pedidos y preparación para transportistas.
 
 ## Probar localmente
 
@@ -34,4 +48,4 @@ npm run dev
 
 Abrir:
 
-`http://localhost:3000/productos`
+`http://localhost:3000`

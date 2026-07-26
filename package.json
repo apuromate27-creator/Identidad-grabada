@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v16-2-productos-premium",
-  "version": "16.2.0",
+  "name": "identidad-grabada-v16-3-hero-promociones",
+  "version": "16.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

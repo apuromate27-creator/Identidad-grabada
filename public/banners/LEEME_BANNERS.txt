@@ -1,0 +1,23 @@
+IDENTIDAD GRABADA V16.3 — BANNERS DEL HERO
+
+Archivos actuales:
+- hero-principal.png
+- oferta-01.png
+- oferta-02.png
+- empresas.png
+
+Para reemplazar una imagen:
+1. Prepará una imagen horizontal de alta calidad.
+2. Usá el mismo nombre y extensión.
+3. Reemplazá el archivo dentro de public/banners.
+4. Subí los cambios a GitHub.
+5. Vercel actualizará la página.
+
+Recomendaciones:
+- Formato horizontal 16:9.
+- Resolución mínima 1920 × 1080.
+- Ideal 2560 × 1440.
+- Dejá espacio libre del lado izquierdo para el texto.
+
+Para modificar títulos, botones y enlaces:
+app/data/heroSlides.ts
