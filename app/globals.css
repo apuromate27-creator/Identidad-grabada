@@ -1051,3 +1051,46 @@ body:has(.ig-route-home) .ig-page-scene {
     transition: none !important;
   }
 }
+
+
+/* V16.5 — proporciones compactas y responsive */
+.v16-hero-carousel{min-height:84vh!important}
+.v16-hero-carousel>.relative.z-30{min-height:84vh!important;padding-top:8.5rem!important;padding-bottom:9.5rem!important}
+.v16-hero-copy h1{font-size:clamp(3.4rem,5.3vw,4.9rem)!important}
+.v16-hero-copy a{padding:.9rem 1.45rem!important}
+.v16-hero-carousel .absolute.inset-x-0.bottom-5{bottom:1rem!important}
+.v16-hero-carousel .absolute.inset-x-0.bottom-32{bottom:7.4rem!important}
+
+.v16-categories>.relative.z-10{padding-top:5.2rem!important;padding-bottom:5.2rem!important}
+.v16-category-card{width:min(78vw,370px)!important;min-height:430px!important}
+.v16-category-card .absolute.inset-x-0.bottom-0{padding:1.55rem!important}
+.v16-category-card h3{font-size:clamp(2.2rem,3.2vw,3rem)!important}
+
+.v15-unified-card-media{height:16.5rem!important}
+.v15-unified-card-content{padding:1.35rem!important}
+.v15-unified-card-content h3{font-size:1.5rem!important}
+.v15-unified-card-content .my-5{margin-top:1rem!important;margin-bottom:1rem!important}
+.v15-unified-card-content a{padding:.75rem 1rem!important;font-size:.9rem}
+
+@media(max-width:767px){
+  .v16-hero-carousel{min-height:78svh!important}
+  .v16-hero-carousel>.relative.z-30{min-height:78svh!important;padding-top:7rem!important;padding-bottom:10.5rem!important;align-items:flex-start!important}
+  .v16-hero-copy h1{font-size:clamp(2.6rem,12vw,3.5rem)!important;line-height:.98!important}
+  .v16-hero-copy>p{font-size:1rem!important;line-height:1.55!important}
+  .v16-hero-copy a{width:100%;padding:.9rem 1rem!important;font-size:.95rem!important}
+  .v16-hero-arrow{bottom:7.5rem!important}
+  .v16-hero-carousel .absolute.inset-x-0.bottom-32{bottom:6.9rem!important}
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5{bottom:.55rem!important}
+  .v16-categories>.relative.z-10{padding-top:4rem!important;padding-bottom:4rem!important}
+  .v16-categories h2{font-size:clamp(2.55rem,12vw,3.7rem)!important}
+  .v16-category-card{width:82vw!important;min-height:370px!important}
+  .v15-unified-card-media{height:15rem!important}
+  .v15-unified-card-content{padding:1.15rem!important}
+  .v15-unified-card-content h3{font-size:1.35rem!important}
+}
+@media(min-width:768px) and (max-width:1199px){
+  .v16-hero-carousel{min-height:82vh!important}
+  .v16-hero-carousel>.relative.z-30{min-height:82vh!important}
+  .v16-category-card{width:350px!important;min-height:410px!important}
+  .v15-unified-card-media{height:16rem!important}
+}

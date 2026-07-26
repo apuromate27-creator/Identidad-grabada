@@ -1,46 +1,15 @@
-# Identidad Grabada V16.4 — Seguimiento privado
+# Identidad Grabada V16.5 — Proporciones y Responsive
 
-Esta versión parte de V16.3 y reemplaza la página de seguimiento pública por una consulta privada.
+- Hero reducido a aproximadamente 84vh en escritorio.
+- Hero adaptado a 78svh en celular.
+- Tarjetas de categorías 10–15% más bajas.
+- Tarjetas de productos más compactas.
+- Botones y textos ligeramente reducidos.
+- Ajustes específicos para celular y tablet.
+- Página auxiliar: `/prueba-responsive`.
 
-## Incluye
-
-- Número de compra + email.
-- Cada cliente ve únicamente su pedido.
-- Estado actual.
-- Línea de avance completa.
-- Fecha estimada de entrega.
-- Transportista.
-- Código de seguimiento.
-- Botón externo para Andreani o Correo Argentino.
-- Diseño transparente y consistente con la V16.
-
-## Datos de prueba
-
-- Pedido: `IG-1032`
-- Email: `cliente@ejemplo.com`
-
-## Importante
-
-Esta versión implementa la interfaz y el flujo de prueba. Para usar pedidos reales todavía hace falta:
-
-- base de datos;
-- panel administrativo;
-- autenticación o token seguro;
-- integración oficial con los transportistas.
-
-## Archivos principales
-
-- `app/seguimiento/page.tsx`
-- `app/components/Sections/PrivateOrderTracking.tsx`
-- `app/data/orderTracking.ts`
-
-## Probar localmente
-
-```bash
-npm install
-npm run dev
-```
-
-Abrir:
-
-`http://localhost:3000/seguimiento`
+Para probar en Chrome o Edge:
+1. Abrí la página.
+2. Presioná F12.
+3. Activá el icono de celular/tablet.
+4. Probá 375×667, 390×844 y 768×1024.
