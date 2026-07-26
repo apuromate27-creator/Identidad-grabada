@@ -1,13 +1,22 @@
-# Identidad Grabada V16.7 — Escala compacta
+# Identidad Grabada V16.8 — Botón Volver Arriba
 
-Cambios:
-- Hero reducido a aproximadamente 64vh en escritorio.
-- Tipografía general ligeramente más pequeña.
-- Header más bajo.
-- Tarjetas de categorías y productos más compactas.
-- Página Productos sin el bloque superior de beneficios.
-- Beneficios conservados únicamente al final de la página Productos.
-- En Inicio, el bloque Pago seguro / Diseño aprobado / Producción / Envíos se mueve al final, antes del footer.
-- Más elementos visibles simultáneamente, siguiendo la maqueta aprobada.
+Esta versión parte de V16.7 y agrega un botón flotante global para volver al comienzo de cualquier página.
 
-Se conserva el diseño responsive móvil de V16.6.
+## Funcionamiento
+
+- Aparece después de bajar aproximadamente 480 px.
+- Funciona en Inicio, Productos, Trabajos, Empresas, Nosotros, Seguimiento, Contacto y demás páginas.
+- Desplazamiento suave.
+- Compatible con celular y computadora.
+- Respeta la preferencia del usuario de reducir animaciones.
+- Se ubica por encima del contenido sin tapar el botón de WhatsApp.
+
+## Archivo principal
+
+`app/components/BackToTopButton.tsx`
+
+## Estilos
+
+Agregados al final de:
+
+`app/globals.css`

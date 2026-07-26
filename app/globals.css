@@ -1709,3 +1709,91 @@ body:has(.ig-route-home) .ig-page-scene {
     font-size: .72rem !important;
   }
 }
+
+
+/* =========================================================
+   V16.8 — Botón flotante "Volver arriba"
+   ========================================================= */
+
+.ig-back-to-top {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 6.2rem;
+  z-index: 90;
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 1px solid rgba(225, 180, 107, .46);
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(54, 33, 20, .90),
+      rgba(27, 17, 11, .88)
+    );
+  color: #f0d4a6;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(255,255,255,.04);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px) scale(.92);
+  transition:
+    opacity .28s ease,
+    visibility .28s ease,
+    transform .28s ease,
+    background-color .25s ease,
+    border-color .25s ease;
+}
+
+.ig-back-to-top-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.ig-back-to-top:hover {
+  border-color: rgba(238, 202, 145, .78);
+  background: #b98239;
+  color: white;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.ig-back-to-top:focus-visible {
+  outline: 3px solid rgba(225, 180, 107, .30);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .ig-back-to-top {
+    right: .9rem;
+    bottom: 5.4rem;
+    width: 2.85rem;
+    height: 2.85rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .ig-back-to-top {
+    right: .7rem;
+    bottom: 5rem;
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ig-back-to-top {
+    transition: opacity .15s linear, visibility .15s linear;
+  }
+
+  .ig-back-to-top:hover {
+    transform: none;
+  }
+}
