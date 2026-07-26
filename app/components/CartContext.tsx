@@ -1,8 +1,160 @@
 
 "use client";
-import React,{createContext,useContext,useEffect,useMemo,useState}from"react";
-export type CartItem={id:string;slug:string;name:string;price:string;priceValue:number;quantity:number;personalization:string};
-type Ctx={items:CartItem[];addItem:(item:Omit<CartItem,"id"|"quantity">)=>void;removeItem:(id:string)=>void;updateQuantity:(id:string,q:number)=>void;clearCart:()=>void;totalItems:number;totalValue:number};
-const CartContext=createContext<Ctx|null>(null);
-export function CartProvider({children}:{children:React.ReactNode}){const[items,setItems]=useState<CartItem[]>([]);useEffect(()=>{try{const s=localStorage.getItem("identidad-grabada-cart");if(s)setItems(JSON.parse(s))}catch{}},[]);useEffect(()=>{localStorage.setItem("identidad-grabada-cart",JSON.stringify(items))},[items]);function addItem(item:Omit<CartItem,"id"|"quantity">){setItems(c=>[...c,{...item,id:`${item.slug}-${Date.now()}`,quantity:1}])}function removeItem(id:string){setItems(c=>c.filter(i=>i.id!==id))}function updateQuantity(id:string,q:number){setItems(c=>q<=0?c.filter(i=>i.id!==id):c.map(i=>i.id===id?{...i,quantity:q}:i))}function clearCart(){setItems([])}const totalItems=items.reduce((s,i)=>s+i.quantity,0);const totalValue=items.reduce((s,i)=>s+i.priceValue*i.quantity,0);const value=useMemo(()=>({items,addItem,removeItem,updateQuantity,clearCart,totalItems,totalValue}),[items,totalItems,totalValue]);return <CartContext.Provider value={value}>{children}</CartContext.Provider>}
-export function useCart(){const ctx=useContext(CartContext);if(!ctx)throw new Error("useCart debe usarse dentro de CartProvider");return ctx}
+
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+
+export type CartItem = {
+  id: string;
+  slug: string;
+  name: string;
+  price: string;
+  priceValue: number;
+  quantity: number;
+  personalization: string;
+};
+
+type CartInput = Omit<CartItem, "id" | "quantity">;
+
+type CartContextValue = {
+  items: CartItem[];
+  addItem: (item: CartInput) => void;
+  removeItem: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
+  clearCart: () => void;
+  totalItems: number;
+  totalValue: number;
+  hasQuotedItems: boolean;
+};
+
+const STORAGE_KEY = "identidad-grabada-cart-v17";
+
+const CartContext = createContext<CartContextValue | null>(null);
+
+export function CartProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [items, setItems] = useState<CartItem[]>([]);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    try {
+      const stored =
+        localStorage.getItem(STORAGE_KEY) ||
+        localStorage.getItem("identidad-grabada-cart");
+
+      if (stored) {
+        const parsed = JSON.parse(stored) as CartItem[];
+        if (Array.isArray(parsed)) setItems(parsed);
+      }
+    } catch {
+      setItems([]);
+    } finally {
+      setHydrated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {}
+  }, [items, hydrated]);
+
+  function addItem(item: CartInput) {
+    setItems((current) => {
+      const existing = current.find(
+        (entry) =>
+          entry.slug === item.slug &&
+          entry.personalization === item.personalization
+      );
+
+      if (existing) {
+        return current.map((entry) =>
+          entry.id === existing.id
+            ? { ...entry, quantity: entry.quantity + 1 }
+            : entry
+        );
+      }
+
+      return [
+        ...current,
+        {
+          ...item,
+          id: `${item.slug}-${Date.now()}`,
+          quantity: 1,
+        },
+      ];
+    });
+  }
+
+  function removeItem(id: string) {
+    setItems((current) => current.filter((item) => item.id !== id));
+  }
+
+  function updateQuantity(id: string, quantity: number) {
+    setItems((current) =>
+      quantity <= 0
+        ? current.filter((item) => item.id !== id)
+        : current.map((item) =>
+            item.id === id
+              ? { ...item, quantity: Math.min(quantity, 20) }
+              : item
+          )
+    );
+  }
+
+  function clearCart() {
+    setItems([]);
+  }
+
+  const totalItems = items.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
+
+  const totalValue = items.reduce(
+    (sum, item) => sum + item.priceValue * item.quantity,
+    0
+  );
+
+  const hasQuotedItems = items.some((item) => item.priceValue <= 0);
+
+  const value = useMemo(
+    () => ({
+      items,
+      addItem,
+      removeItem,
+      updateQuantity,
+      clearCart,
+      totalItems,
+      totalValue,
+      hasQuotedItems,
+    }),
+    [items, totalItems, totalValue, hasQuotedItems]
+  );
+
+  return (
+    <CartContext.Provider value={value}>
+      {children}
+    </CartContext.Provider>
+  );
+}
+
+export function useCart() {
+  const context = useContext(CartContext);
+
+  if (!context) {
+    throw new Error("useCart debe usarse dentro de CartProvider");
+  }
+
+  return context;
+}
