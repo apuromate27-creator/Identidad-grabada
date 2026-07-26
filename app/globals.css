@@ -1797,3 +1797,153 @@ body:has(.ig-route-home) .ig-page-scene {
     transform: none;
   }
 }
+
+
+/* =========================================================
+   V17.0 — Sistema visual global
+   Fondos desktop/mobile + paneles de vidrio en toda la tienda
+   ========================================================= */
+
+.ig-page-scene {
+  background-image: var(--ig-bg-desktop) !important;
+  background-position: var(--ig-bg-position-desktop) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.ig-page-scene-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 19, 20, .24) 0%,
+      rgba(28, 22, 16, .34) 44%,
+      rgba(28, 17, 10, .48) 100%
+    ) !important;
+}
+
+.ig-page-scene-light {
+  background:
+    radial-gradient(circle at 74% 16%, rgba(232, 177, 86, .13), transparent 32%),
+    linear-gradient(90deg, rgba(17, 11, 7, .22), transparent 60%) !important;
+}
+
+/* Evitar fondos sólidos en páginas internas */
+body:has(.ig-route-internal),
+body:has(.ig-route-internal) main,
+body:has(.ig-route-internal) main > section,
+body:has(.ig-route-internal) footer {
+  background-color: transparent !important;
+}
+
+/* Sistema de vidrio reutilizable */
+.ig-card,
+.v15-unified-card,
+.v16-category-card,
+.v16-benefits-grid,
+.v16-catalog-controls,
+.v16-private-tracking,
+.v16-tracking-result,
+.v16-empty-state {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(56, 35, 22, .54),
+      rgba(28, 18, 12, .46)
+    ) !important;
+  border-color: rgba(225, 180, 107, .22) !important;
+  backdrop-filter: blur(13px) saturate(1.04) !important;
+  -webkit-backdrop-filter: blur(13px) saturate(1.04) !important;
+  box-shadow:
+    0 24px 65px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.035) !important;
+}
+
+.v15-unified-card-content {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(55, 34, 21, .60),
+      rgba(30, 19, 12, .54)
+    ) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+body:has(.ig-route-internal) [class*="bg-[#0"],
+body:has(.ig-route-internal) [class*="bg-[#1"],
+body:has(.ig-route-internal) [class*="bg-[#2"],
+body:has(.ig-route-internal) [class*="bg-[#3"] {
+  background-color: rgba(38, 24, 15, .46) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Mobile: usar imagen vertical y hacer visible el paisaje */
+@media (max-width: 767px) {
+  .ig-page-scene {
+    background-image: var(--ig-bg-mobile) !important;
+    background-position: var(--ig-bg-position-mobile) !important;
+    background-attachment: scroll !important;
+  }
+
+  .ig-page-scene-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(12, 16, 17, .18) 0%,
+        rgba(27, 21, 15, .25) 44%,
+        rgba(28, 17, 10, .38) 100%
+      ) !important;
+  }
+
+  .ig-page-scene-light {
+    background:
+      radial-gradient(circle at 70% 12%, rgba(234, 181, 91, .12), transparent 34%),
+      linear-gradient(90deg, rgba(14, 9, 6, .16), transparent 72%) !important;
+  }
+
+  .ig-card,
+  .v15-unified-card,
+  .v16-category-card,
+  .v16-benefits-grid,
+  .v16-catalog-controls,
+  .v16-private-tracking,
+  .v16-tracking-result,
+  .v16-empty-state {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(55, 34, 21, .40),
+        rgba(27, 17, 11, .34)
+      ) !important;
+    backdrop-filter: blur(9px) saturate(1.03) !important;
+    -webkit-backdrop-filter: blur(9px) saturate(1.03) !important;
+  }
+
+  .v15-unified-card-content {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(51, 31, 19, .48),
+        rgba(28, 17, 11, .42)
+      ) !important;
+  }
+
+  /* Hero móvil sin bloque opaco */
+  .v16-hero-copy {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(23, 14, 9, .08),
+        rgba(23, 14, 9, .35)
+      ) !important;
+    border-color: rgba(225,180,107,.14) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  /* Formularios: un poco más opacos para legibilidad */
+  input,
+  select,
+  textarea {
+    background-color: rgba(29, 19, 13, .58) !important;
+    backdrop-filter: blur(10px);
+  }
+}

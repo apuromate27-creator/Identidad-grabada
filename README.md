@@ -1,22 +1,32 @@
-# Identidad Grabada V16.8 — Botón Volver Arriba
+# Identidad Grabada V17.0 — Sistema visual global
 
-Esta versión parte de V16.7 y agrega un botón flotante global para volver al comienzo de cualquier página.
+Primera etapa de la V17.
 
-## Funcionamiento
+## Cambios principales
 
-- Aparece después de bajar aproximadamente 480 px.
-- Funciona en Inicio, Productos, Trabajos, Empresas, Nosotros, Seguimiento, Contacto y demás páginas.
-- Desplazamiento suave.
-- Compatible con celular y computadora.
-- Respeta la preferencia del usuario de reducir animaciones.
-- Se ubica por encima del contenido sin tapar el botón de WhatsApp.
+- Fondo independiente para cada página.
+- Versión horizontal para computadora.
+- Versión vertical para celular.
+- La web selecciona automáticamente el fondo adecuado.
+- Paneles y tarjetas transparentes en todas las páginas.
+- Menos bloques sólidos.
+- El paisaje se mantiene visible detrás del contenido.
+- Hero móvil más transparente.
+- Formularios con contraste suficiente para completar datos.
 
-## Archivo principal
+## Cambiar fondos
 
-`app/components/BackToTopButton.tsx`
+Carpeta:
 
-## Estilos
+`public/backgrounds/`
 
-Agregados al final de:
+Ejemplo:
 
-`app/globals.css`
+- Computadora: `productos.jpg`
+- Celular: `productos-mobile.jpg`
+
+Reemplazá el archivo conservando exactamente su nombre.
+
+## Próxima etapa sugerida
+
+V17.1: unificación final de tarjetas, botones, formularios y transiciones.

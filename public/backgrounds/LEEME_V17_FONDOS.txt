@@ -1,0 +1,33 @@
+IDENTIDAD GRABADA V17.0 — FONDOS POR DISPOSITIVO
+
+Cada página tiene dos imágenes:
+
+ESCRITORIO
+- inicio.jpg
+- productos.jpg
+- producto-detalle.jpg
+- trabajos.jpg
+- empresas.jpg
+- nosotros.jpg
+- seguimiento.jpg
+- contacto.jpg
+- checkout.jpg
+- pago.jpg
+
+CELULAR
+- inicio-mobile.jpg
+- productos-mobile.jpg
+- producto-detalle-mobile.jpg
+- trabajos-mobile.jpg
+- empresas-mobile.jpg
+- nosotros-mobile.jpg
+- seguimiento-mobile.jpg
+- contacto-mobile.jpg
+- checkout-mobile.jpg
+- pago-mobile.jpg
+
+Recomendaciones:
+- Escritorio: 2560 × 1440 px, horizontal 16:9.
+- Celular: 1440 × 1920 px o 1080 × 1920 px, vertical.
+- Conservá exactamente el nombre del archivo.
+- Dejá espacio libre donde aparecerán títulos y tarjetas.

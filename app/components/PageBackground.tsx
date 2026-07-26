@@ -2,103 +2,82 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import type { CSSProperties } from "react";
 
 type BackgroundConfig = {
-  file: string;
+  desktop: string;
+  mobile: string;
   routeClass: string;
-  position?: string;
+  desktopPosition?: string;
+  mobilePosition?: string;
 };
+
+function config(
+  name: string,
+  routeClass: string,
+  desktopPosition = "center",
+  mobilePosition = "center"
+): BackgroundConfig {
+  return {
+    desktop: `/backgrounds/${name}.jpg`,
+    mobile: `/backgrounds/${name}-mobile.jpg`,
+    routeClass,
+    desktopPosition,
+    mobilePosition,
+  };
+}
 
 function getBackground(pathname: string): BackgroundConfig {
   if (pathname === "/") {
-    return {
-      file: "/backgrounds/inicio.jpg",
-      routeClass: "ig-route-home",
-      position: "center top",
-    };
+    return config("inicio", "ig-route-home", "center top", "62% top");
   }
-
   if (pathname === "/productos") {
-    return {
-      file: "/backgrounds/productos.jpg",
-      routeClass: "ig-route-internal ig-route-productos",
-    };
+    return config("productos", "ig-route-internal ig-route-productos", "center", "58% center");
   }
-
   if (pathname.startsWith("/productos/")) {
-    return {
-      file: "/backgrounds/producto-detalle.jpg",
-      routeClass: "ig-route-internal ig-route-producto",
-    };
+    return config("producto-detalle", "ig-route-internal ig-route-producto", "center", "58% center");
   }
-
   if (pathname.startsWith("/trabajos")) {
-    return {
-      file: "/backgrounds/trabajos.jpg",
-      routeClass: "ig-route-internal ig-route-trabajos",
-    };
+    return config("trabajos", "ig-route-internal ig-route-trabajos", "center", "56% center");
   }
-
   if (pathname.startsWith("/empresas")) {
-    return {
-      file: "/backgrounds/empresas.jpg",
-      routeClass: "ig-route-internal ig-route-empresas",
-    };
+    return config("empresas", "ig-route-internal ig-route-empresas", "center", "60% center");
   }
-
   if (pathname.startsWith("/nosotros")) {
-    return {
-      file: "/backgrounds/nosotros.jpg",
-      routeClass: "ig-route-internal ig-route-nosotros",
-    };
+    return config("nosotros", "ig-route-internal ig-route-nosotros", "center", "55% center");
   }
-
   if (pathname.startsWith("/seguimiento")) {
-    return {
-      file: "/backgrounds/seguimiento.jpg",
-      routeClass: "ig-route-internal ig-route-seguimiento",
-    };
+    return config("seguimiento", "ig-route-internal ig-route-seguimiento", "center", "58% center");
   }
-
   if (pathname.startsWith("/contacto")) {
-    return {
-      file: "/backgrounds/contacto.jpg",
-      routeClass: "ig-route-internal ig-route-contacto",
-    };
+    return config("contacto", "ig-route-internal ig-route-contacto", "center", "60% center");
   }
-
   if (pathname.startsWith("/checkout")) {
-    return {
-      file: "/backgrounds/checkout.jpg",
-      routeClass: "ig-route-internal ig-route-checkout",
-    };
+    return config("checkout", "ig-route-internal ig-route-checkout", "center", "55% center");
   }
-
   if (pathname.startsWith("/pago/")) {
-    return {
-      file: "/backgrounds/pago.jpg",
-      routeClass: "ig-route-internal ig-route-pago",
-    };
+    return config("pago", "ig-route-internal ig-route-pago", "center", "55% center");
   }
 
-  return {
-    file: "/backgrounds/inicio.jpg",
-    routeClass: "ig-route-internal",
-  };
+  return config("inicio", "ig-route-internal", "center", "60% center");
 }
 
 export function PageBackground() {
   const pathname = usePathname();
-  const config = getBackground(pathname);
+  const background = getBackground(pathname);
+
+  const style = {
+    "--ig-bg-desktop": `url("${background.desktop}")`,
+    "--ig-bg-mobile": `url("${background.mobile}")`,
+    "--ig-bg-position-desktop": background.desktopPosition || "center",
+    "--ig-bg-position-mobile": background.mobilePosition || "center",
+  } as CSSProperties;
 
   return (
     <div
       aria-hidden="true"
-      className={`ig-page-scene ${config.routeClass}`}
-      style={{
-        backgroundImage: `url("${config.file}")`,
-        backgroundPosition: config.position || "center",
-      }}
+      className={`ig-page-scene ${background.routeClass}`}
+      style={style}
     >
       <div className="ig-page-scene-overlay" />
       <div className="ig-page-scene-light" />
