@@ -1,36 +1,29 @@
-# Identidad Grabada V16.1
+# Identidad Grabada V16.2 — Productos Premium
 
-Primera etapa de la nueva arquitectura V16.
+Esta versión parte de V16.1 y rediseña la página Productos.
 
 ## Incluye
 
-- Carrusel premium de colecciones en el inicio.
-- Imperiales, Camioneros, Torpedos, Rancheros, Algarrobo y Calabaza.
-- Flechas laterales en computadora.
-- Deslizamiento horizontal con el dedo en celular.
-- Tarjetas grandes, fotográficas y enlazadas a cada colección.
-- Datos separados en `app/data/categories.ts`.
-- Nuevas carpetas:
-  - `app/components/Cards`
-  - `app/components/Sections`
+- Encabezado con título, descripción y migas de pan.
+- Beneficios superiores.
+- Buscador.
+- Filtros por categoría.
+- Ordenamiento por destacados, más vendidos, nuevos y nombre.
+- Contador de resultados.
+- Grilla adaptable.
+- Franja inferior de confianza.
+- Paneles translúcidos para conservar visible el fondo.
+- Adaptación para computadora, tablet y celular.
 
-## Agregar una categoría
+## Archivos principales
 
-Editá:
+- `app/productos/page.tsx`
+- `app/components/ProductCatalog.tsx`
+- `app/components/Sections/StoreBenefits.tsx`
 
-`app/data/categories.ts`
+## Próxima etapa prevista
 
-Copiá un objeto existente y cambiá:
-
-- `number`
-- `title`
-- `eyebrow`
-- `description`
-- `href`
-- `image`
-- `position`
-
-La nueva tarjeta aparecerá automáticamente en el carrusel.
+V16.3: Hero con carrusel automático de promociones y banners editables.
 
 ## Probar localmente
 
@@ -41,4 +34,4 @@ npm run dev
 
 Abrir:
 
-`http://localhost:3000`
+`http://localhost:3000/productos`

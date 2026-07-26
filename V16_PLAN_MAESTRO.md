@@ -38,3 +38,16 @@
 ## Principio de la V16
 
 Mantener todas las funciones estables y reemplazar progresivamente la presentación por componentes reutilizables, sin rehacer la tienda completa en cada fase.
+
+
+## Implementado en V16.2
+
+- Encabezado premium en la página Productos.
+- Beneficios superiores.
+- Buscador de productos.
+- Filtros por categoría.
+- Ordenamiento.
+- Contador de resultados.
+- Grilla adaptable de hasta cuatro columnas.
+- Franja inferior de confianza.
+- Estados vacíos y controles adaptados a celular.

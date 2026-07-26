@@ -862,3 +862,61 @@ body:has(.ig-route-home) .ig-page-scene {
     transform: none;
   }
 }
+
+
+/* =========================================================
+   V16.2 — Página Productos premium
+   ========================================================= */
+
+.v16-benefits-grid,
+.v16-catalog-controls,
+.v16-empty-state {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(49, 30, 18, .70),
+      rgba(28, 17, 10, .62)
+    );
+  box-shadow:
+    0 24px 65px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.025);
+  backdrop-filter: blur(14px);
+}
+
+.v16-benefit-item {
+  background: rgba(34, 21, 13, .26);
+  transition:
+    background-color .25s ease,
+    transform .25s ease;
+}
+
+.v16-benefit-item + .v16-benefit-item {
+  border-left: 1px solid rgba(216,170,98,.15);
+}
+
+.v16-benefit-item:hover {
+  background: rgba(76, 46, 26, .34);
+}
+
+.v16-catalog-controls {
+  box-shadow:
+    0 26px 70px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+.v16-empty-state {
+  background: rgba(38, 23, 14, .58);
+}
+
+@media (max-width: 767px) {
+  .v16-benefit-item + .v16-benefit-item {
+    border-left: 0;
+    border-top: 1px solid rgba(216,170,98,.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v16-benefit-item {
+    transition: none !important;
+  }
+}
