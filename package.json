@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v16-5-proporciones-responsive",
-  "version": "16.5.0",
+  "name": "identidad-grabada-v16-6-responsive-premium",
+  "version": "16.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

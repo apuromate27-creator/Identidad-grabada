@@ -1094,3 +1094,441 @@ body:has(.ig-route-home) .ig-page-scene {
   .v16-category-card{width:350px!important;min-height:410px!important}
   .v15-unified-card-media{height:16rem!important}
 }
+
+
+/* =========================================================
+   V16.6 — Responsive Premium
+   Escritorio más compacto + experiencia móvil específica
+   ========================================================= */
+
+/* ---------- Escritorio ---------- */
+@media (min-width: 1200px) {
+  .v16-hero-carousel {
+    min-height: 72vh !important;
+  }
+
+  .v16-hero-carousel > .relative.z-30 {
+    min-height: 72vh !important;
+    padding-top: 7.2rem !important;
+    padding-bottom: 8.2rem !important;
+  }
+
+  .v16-hero-copy {
+    max-width: 37rem !important;
+  }
+
+  .v16-hero-copy h1 {
+    font-size: clamp(3rem, 4.2vw, 4.15rem) !important;
+    line-height: 1 !important;
+  }
+
+  .v16-hero-copy > p {
+    font-size: 1.05rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .v16-hero-copy .mt-8 {
+    margin-top: 1.25rem !important;
+  }
+
+  .v16-hero-copy a {
+    padding: .78rem 1.25rem !important;
+    font-size: .93rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 > div > div {
+    padding: 1rem 1.1rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 p {
+    font-size: .8rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-32 {
+    bottom: 6.6rem !important;
+  }
+
+  .v16-categories > .relative.z-10 {
+    padding-top: 4.4rem !important;
+    padding-bottom: 4.4rem !important;
+  }
+
+  .v16-categories h2 {
+    font-size: clamp(3rem, 4.5vw, 4.6rem) !important;
+  }
+
+  .v16-category-card {
+    width: 340px !important;
+    min-height: 390px !important;
+  }
+
+  .v16-category-card .absolute.inset-x-0.bottom-0 {
+    padding: 1.35rem !important;
+  }
+
+  .v16-category-card h3 {
+    font-size: 2.35rem !important;
+  }
+
+  .v15-unified-card-media {
+    height: 14.5rem !important;
+  }
+
+  .v15-unified-card-content {
+    padding: 1.15rem !important;
+  }
+
+  .v15-unified-card-content h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .v15-unified-card-content p {
+    font-size: .88rem !important;
+  }
+
+  .v15-unified-card-content a {
+    padding: .65rem .9rem !important;
+    font-size: .82rem !important;
+  }
+
+  .v16-benefit-item {
+    padding: 1rem 1.1rem !important;
+  }
+
+  .v16-benefit-item p {
+    font-size: .85rem !important;
+  }
+
+  .v16-catalog-controls {
+    padding: 1rem 1.1rem !important;
+  }
+
+  .v16-catalog-controls input,
+  .v16-catalog-controls select {
+    padding-top: .8rem !important;
+    padding-bottom: .8rem !important;
+  }
+
+  .v16-catalog-controls a {
+    padding: .65rem .9rem !important;
+    font-size: .82rem !important;
+  }
+}
+
+/* ---------- Celular: navegación y Hero dedicados ---------- */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    padding-top: .55rem !important;
+    padding-bottom: .55rem !important;
+  }
+
+  header .mx-auto {
+    padding-left: .85rem !important;
+    padding-right: .85rem !important;
+  }
+
+  header .h-12.w-12 {
+    width: 2.65rem !important;
+    height: 2.65rem !important;
+  }
+
+  header p.text-lg,
+  header p.md\:text-xl {
+    font-size: 1rem !important;
+  }
+
+  header p.text-\[10px\] {
+    font-size: .52rem !important;
+    letter-spacing: .24em !important;
+  }
+
+  .v16-hero-carousel {
+    min-height: 86svh !important;
+  }
+
+  .v16-hero-carousel > .relative.z-30 {
+    min-height: 86svh !important;
+    align-items: flex-end !important;
+    padding: 5.7rem 1rem 12.2rem !important;
+  }
+
+  .v16-hero-copy {
+    width: 100%;
+    max-width: 100% !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(226,180,109,.18);
+    border-radius: 1.35rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(22,13,8,.18),
+        rgba(22,13,8,.68)
+      );
+    backdrop-filter: blur(8px);
+  }
+
+  .v16-hero-copy > p:first-child {
+    margin-bottom: .65rem !important;
+    font-size: .68rem !important;
+    letter-spacing: .22em !important;
+  }
+
+  .v16-hero-copy h1 {
+    font-size: clamp(2rem, 10vw, 2.65rem) !important;
+    line-height: .98 !important;
+  }
+
+  .v16-hero-copy .my-6 {
+    margin-top: .8rem !important;
+    margin-bottom: .8rem !important;
+  }
+
+  .v16-hero-copy > p {
+    font-size: .92rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .v16-hero-copy p.italic {
+    display: none !important;
+  }
+
+  .v16-hero-copy .mt-8 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: .65rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .v16-hero-copy a {
+    width: 100% !important;
+    min-height: 2.8rem;
+    padding: .72rem .75rem !important;
+    font-size: .78rem !important;
+    text-align: center;
+  }
+
+  .v16-hero-arrow {
+    top: auto !important;
+    bottom: 7.4rem !important;
+    width: 2.55rem !important;
+    height: 2.55rem !important;
+    font-size: 1rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-32 {
+    bottom: 7.2rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 {
+    bottom: .45rem !important;
+    padding-left: .75rem !important;
+    padding-right: .75rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    border-radius: 1rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 > div > div {
+    min-height: 3.2rem;
+    padding: .55rem .65rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 p:first-child {
+    font-size: .66rem !important;
+  }
+
+  .v16-hero-carousel .absolute.inset-x-0.bottom-5 p:last-child {
+    display: none !important;
+  }
+
+  /* Colecciones tipo carrusel visual */
+  .v16-categories > .relative.z-10 {
+    padding: 3.2rem 0 3.2rem !important;
+  }
+
+  .v16-categories .max-w-3xl,
+  .v16-categories .flex.flex-col,
+  .v16-categories .mt-3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .v16-categories h2 {
+    font-size: 2.35rem !important;
+    line-height: 1.02 !important;
+  }
+
+  .v16-categories p.text-lg,
+  .v16-categories p.md\:text-xl {
+    font-size: .92rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .v16-category-track {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: .85rem !important;
+  }
+
+  .v16-category-card {
+    width: 74vw !important;
+    min-height: 300px !important;
+    border-radius: 1.35rem !important;
+  }
+
+  .v16-category-card .absolute.left-6.top-6 {
+    left: .85rem !important;
+    top: .85rem !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    font-size: .8rem !important;
+  }
+
+  .v16-category-card .absolute.inset-x-0.bottom-0 {
+    padding: 1rem !important;
+  }
+
+  .v16-category-card h3 {
+    font-size: 1.85rem !important;
+  }
+
+  .v16-category-card p {
+    display: none !important;
+  }
+
+  .v16-category-card .mt-7 {
+    margin-top: .75rem !important;
+    font-size: .82rem !important;
+  }
+
+  /* Página Productos compacta */
+  .ig-page-productos section.mx-auto {
+    padding-left: .9rem !important;
+    padding-right: .9rem !important;
+    padding-top: 3.25rem !important;
+  }
+
+  .ig-page-productos h1 {
+    font-size: 2.7rem !important;
+    line-height: 1 !important;
+  }
+
+  .ig-page-productos p.text-lg {
+    font-size: .95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .v16-benefits-grid {
+    grid-template-columns: 1fr 1fr !important;
+    border-radius: 1.15rem !important;
+  }
+
+  .v16-benefit-item {
+    padding: .8rem !important;
+    gap: .6rem !important;
+  }
+
+  .v16-benefit-item .h-12.w-12 {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: .8rem !important;
+  }
+
+  .v16-benefit-item p:first-child {
+    font-size: .76rem !important;
+  }
+
+  .v16-benefit-item p:last-child {
+    display: none !important;
+  }
+
+  .v16-catalog-controls {
+    padding: .9rem !important;
+    border-radius: 1.15rem !important;
+  }
+
+  .v16-catalog-controls input,
+  .v16-catalog-controls select {
+    min-height: 2.8rem;
+    padding-top: .7rem !important;
+    padding-bottom: .7rem !important;
+    font-size: .88rem !important;
+  }
+
+  .v16-catalog-controls a {
+    padding: .65rem .8rem !important;
+    font-size: .76rem !important;
+  }
+
+  .v15-unified-card {
+    border-radius: 1.25rem !important;
+  }
+
+  .v15-unified-card-media {
+    height: 12.5rem !important;
+  }
+
+  .v15-unified-card-content {
+    padding: .95rem !important;
+  }
+
+  .v15-unified-card-content h3 {
+    font-size: 1.15rem !important;
+    line-height: 1.18 !important;
+  }
+
+  .v15-unified-card-content p {
+    font-size: .82rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .v15-unified-card-content p.min-h-\[3\.5rem\] {
+    min-height: auto !important;
+  }
+
+  .v15-unified-card-content .my-5 {
+    margin-top: .7rem !important;
+    margin-bottom: .7rem !important;
+  }
+
+  .v15-unified-card-content .text-2xl {
+    font-size: 1.1rem !important;
+  }
+
+  .v15-unified-card-content a {
+    padding: .62rem .8rem !important;
+    font-size: .75rem !important;
+  }
+
+  /* WhatsApp menos invasivo */
+  a[href*="wa.me"].fixed,
+  .fixed:has(> a[href*="wa.me"]) {
+    transform: scale(.88);
+    transform-origin: bottom right;
+  }
+}
+
+/* Celulares angostos */
+@media (max-width: 360px) {
+  .v16-hero-copy h1 {
+    font-size: 1.92rem !important;
+  }
+
+  .v16-hero-copy .mt-8 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .v16-category-card {
+    width: 80vw !important;
+  }
+
+  .v16-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

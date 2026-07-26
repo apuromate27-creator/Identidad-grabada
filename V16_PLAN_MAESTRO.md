@@ -86,3 +86,13 @@ Mantener todas las funciones estables y reemplazar progresivamente la presentaci
 - Panel de administración.
 - Integración oficial con transportistas.
 - Envío automático de emails.
+
+
+## Implementado en V16.6
+
+- Reducción general de escala en escritorio.
+- Hero específico para celular.
+- Carrusel de categorías móvil más visual.
+- Productos y filtros compactos.
+- Beneficios simplificados en celular.
+- Ajustes para pantallas pequeñas.

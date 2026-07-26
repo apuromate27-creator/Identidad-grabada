@@ -1,15 +1,43 @@
-# Identidad Grabada V16.5 — Proporciones y Responsive
+# Identidad Grabada V16.6 — Responsive Premium
 
-- Hero reducido a aproximadamente 84vh en escritorio.
-- Hero adaptado a 78svh en celular.
-- Tarjetas de categorías 10–15% más bajas.
-- Tarjetas de productos más compactas.
-- Botones y textos ligeramente reducidos.
-- Ajustes específicos para celular y tablet.
-- Página auxiliar: `/prueba-responsive`.
+Esta versión mantiene todas las funciones de V16.5 y rediseña las proporciones para escritorio y celular.
 
-Para probar en Chrome o Edge:
-1. Abrí la página.
-2. Presioná F12.
-3. Activá el icono de celular/tablet.
-4. Probá 375×667, 390×844 y 768×1024.
+## Escritorio
+
+- Hero reducido a aproximadamente 72vh.
+- Título y botones más compactos.
+- Tarjetas de categorías más bajas.
+- Tarjetas de productos más pequeñas.
+- Filtros y beneficios más densos.
+- Más contenido visible sin tanto scroll.
+
+## Celular
+
+- Hero específico para móvil.
+- Texto dentro de un panel translúcido.
+- Botones en dos columnas.
+- Beneficios reducidos a títulos.
+- Carrusel de categorías estilo Netflix.
+- Tarjetas de producto compactas.
+- Filtros horizontales.
+- Menú y WhatsApp menos invasivos.
+- Ajuste adicional para pantallas de 360px o menos.
+
+## Tamaños recomendados para probar
+
+- 320 × 568
+- 360 × 740
+- 375 × 667
+- 390 × 844
+- 412 × 915
+
+## Probar localmente
+
+```bash
+npm install
+npm run dev
+```
+
+Abrir:
+
+`http://localhost:3000`
