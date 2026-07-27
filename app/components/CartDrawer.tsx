@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -14,34 +13,25 @@ export function CartButton() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="relative rounded-xl border border-white/10 bg-[#1d130d]/40 px-4 py-3 font-bold transition hover:border-[#b68b52]"
+        className="v173-cart-trigger"
         aria-label={`Abrir carrito. ${totalItems} productos`}
       >
-        🛒 Carrito
-        {totalItems > 0 && (
-          <span className="ml-2 rounded-full bg-[#b68b52] px-2 py-1 text-xs text-white">
-            {totalItems}
-          </span>
-        )}
+        <span aria-hidden="true">🛒</span>
+        <span className="v173-cart-label">Carrito</span>
+        {totalItems > 0 && <b>{totalItems}</b>}
       </button>
-
       {open && <CartDrawer onClose={() => setOpen(false)} />}
     </>
   );
 }
 
-function CartDrawer({
-  onClose,
-}: {
-  onClose: () => void;
-}) {
+function CartDrawer({ onClose }: { onClose: () => void }) {
   const { totalItems } = useCart();
 
   useEffect(() => {
+    const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = previous; };
   }, []);
 
   return (
@@ -49,39 +39,28 @@ function CartDrawer({
       <button
         type="button"
         aria-label="Cerrar carrito"
-        className="absolute inset-0 bg-black/64 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/65 backdrop-blur-sm"
         onClick={onClose}
       />
-
-      <aside className="v17-cart-drawer absolute right-0 top-0 flex h-full w-full max-w-xl flex-col border-l border-[#d8aa62]/20">
-        <div className="flex shrink-0 items-center justify-between border-b border-[#d8aa62]/14 p-5 md:p-6">
+      <aside className="v17-cart-drawer v173-cart-drawer absolute right-0 top-0 flex h-[100dvh] w-full max-w-[420px] flex-col border-l border-[#d8aa62]/20">
+        <header className="flex items-center justify-between border-b border-[#d8aa62]/14 px-5 py-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.26em] text-[#e2b46d]">
-              Tu selección
-            </p>
-            <h2 className="mt-2 text-3xl font-black text-white">
-              Carrito
-            </h2>
-            <p className="mt-1 text-sm text-stone-400">
+            <p className="text-[10px] uppercase tracking-[.26em] text-[#e2b46d]">Tu selección</p>
+            <h2 className="mt-1 text-2xl font-black text-white">Tu carrito</h2>
+            <p className="mt-1 text-xs text-stone-500">
               {totalItems} {totalItems === 1 ? "producto" : "productos"}
             </p>
           </div>
-
           <button
             type="button"
             onClick={onClose}
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-xl text-stone-200 transition hover:border-[#d8aa62]/55"
+            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-lg text-white"
             aria-label="Cerrar carrito"
-          >
-            ×
-          </button>
-        </div>
+          >×</button>
+        </header>
 
-        <div className="min-h-0 flex-1 overflow-y-auto p-5 md:p-6">
-          <CartContent
-            onCheckout={onClose}
-            onContinue={onClose}
-          />
+        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
+          <CartContent onCheckout={onClose} onContinue={onClose} />
         </div>
       </aside>
     </div>
@@ -95,29 +74,15 @@ export function CartContent({
   onCheckout?: () => void;
   onContinue?: () => void;
 }) {
-  const {
-    items,
-    removeItem,
-    updateQuantity,
-    totalValue,
-    hasQuotedItems,
-  } = useCart();
+  const { items, removeItem, updateQuantity, totalValue, hasQuotedItems } = useCart();
 
-  if (items.length === 0) {
+  if (!items.length) {
     return (
-      <div className="rounded-[2rem] border border-dashed border-[#d8aa62]/24 p-8 text-center">
-        <p className="text-5xl">🛒</p>
-        <h3 className="mt-4 text-2xl font-black text-white">
-          Tu carrito está vacío
-        </h3>
-        <p className="mt-2 text-stone-400">
-          Agregá un producto personalizado para comenzar.
-        </p>
-        <Link
-          href="/productos"
-          onClick={onContinue}
-          className="mt-6 inline-flex rounded-xl bg-[#b68b52] px-6 py-4 font-black text-white"
-        >
+      <div className="rounded-[1.4rem] border border-dashed border-[#d8aa62]/24 p-8 text-center">
+        <p className="text-4xl">🛒</p>
+        <h3 className="mt-4 text-xl font-black text-white">Tu carrito está vacío</h3>
+        <Link href="/productos" onClick={onContinue}
+          className="mt-5 inline-flex rounded-xl bg-[#b98239] px-5 py-3 font-black text-white">
           Ver productos
         </Link>
       </div>
@@ -125,132 +90,67 @@ export function CartContent({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {items.map((item) => (
-        <article
-          key={item.id}
-          className="v17-cart-item rounded-[1.5rem] border border-white/8 p-4"
-        >
-          <div className="grid grid-cols-[72px_1fr] gap-4">
-            <div className="grid h-[72px] place-items-center rounded-xl border border-[#d8aa62]/15 bg-[#21140d]/36 font-black text-[#e2b46d]">
-              IG
-            </div>
-
+        <article key={item.id} className="v17-cart-item rounded-[1.2rem] border border-white/8 p-3.5">
+          <div className="grid grid-cols-[64px_1fr] gap-3">
+            <div className="grid h-16 place-items-center rounded-xl border border-[#d8aa62]/15 bg-[#21140d]/36 font-black text-[#e2b46d]">IG</div>
             <div>
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <h3 className="font-black leading-tight text-white">
-                    {item.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-[#e8c58f]">
-                    {item.price}
-                  </p>
+                  <h3 className="text-sm font-black leading-tight text-white">{item.name}</h3>
+                  <p className="mt-1 text-sm font-black text-[#e8c58f]">{item.price}</p>
                 </div>
-
-                <button
-                  type="button"
-                  onClick={() => removeItem(item.id)}
-                  className="text-xs font-bold text-red-300 transition hover:text-red-200"
-                >
-                  Quitar
-                </button>
+                <button type="button" onClick={() => removeItem(item.id)} className="text-xs text-red-300">🗑</button>
               </div>
-
               {item.personalization && (
-                <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-bold text-stone-400">
-                    Ver personalización
-                  </summary>
-                  <p className="mt-2 rounded-xl bg-[#1d130d]/34 p-3 text-xs leading-relaxed text-stone-300">
-                    {item.personalization}
-                  </p>
-                </details>
+                <p className="mt-2 line-clamp-2 text-[11px] leading-relaxed text-stone-400">
+                  {item.personalization}
+                </p>
               )}
             </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-between border-t border-white/8 pt-4">
+          <div className="mt-3 flex items-center justify-between border-t border-white/8 pt-3">
             <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() =>
-                  updateQuantity(item.id, item.quantity - 1)
-                }
-                className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-[#1d130d]/40 text-white"
-                aria-label="Reducir cantidad"
-              >
-                −
-              </button>
-
-              <span className="w-8 text-center font-black text-white">
-                {item.quantity}
-              </span>
-
-              <button
-                type="button"
-                onClick={() =>
-                  updateQuantity(item.id, item.quantity + 1)
-                }
-                className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-[#1d130d]/40 text-white"
-                aria-label="Aumentar cantidad"
-              >
-                +
-              </button>
+              <button type="button" onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                className="grid h-8 w-8 place-items-center rounded-lg border border-white/10">−</button>
+              <span className="w-5 text-center text-sm font-black">{item.quantity}</span>
+              <button type="button" onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                className="grid h-8 w-8 place-items-center rounded-lg border border-white/10">+</button>
             </div>
-
-            <div className="text-right">
-              <p className="text-xs text-stone-500">Subtotal</p>
-              <p className="font-black text-[#e8c58f]">
-                {item.priceValue > 0
-                  ? `$${(
-                      item.priceValue * item.quantity
-                    ).toLocaleString("es-AR")}`
-                  : "A coordinar"}
-              </p>
-            </div>
+            <p className="text-sm font-black text-[#e8c58f]">
+              {item.priceValue > 0
+                ? `$${(item.priceValue * item.quantity).toLocaleString("es-AR")}`
+                : "A coordinar"}
+            </p>
           </div>
         </article>
       ))}
 
-      <div className="v17-cart-total rounded-[1.5rem] border border-[#d8aa62]/22 p-5">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-sm text-stone-400">Subtotal</p>
-            <p className="mt-1 text-2xl font-black text-white">
-              {totalValue > 0
-                ? `$${totalValue.toLocaleString("es-AR")}`
-                : "A coordinar"}
-            </p>
-          </div>
-          <p className="text-right text-xs leading-relaxed text-stone-500">
-            Envío y descuentos se calculan en el checkout.
+      <div className="rounded-[1.2rem] border border-[#d8aa62]/18 bg-[#21140d]/24 p-4">
+        <div className="flex items-end justify-between">
+          <p className="text-lg font-black text-white">Total</p>
+          <p className="text-2xl font-black text-[#e3a94e]">
+            {totalValue > 0 ? `$${totalValue.toLocaleString("es-AR")}` : "A coordinar"}
           </p>
         </div>
-
         {hasQuotedItems && (
-          <p className="mt-4 rounded-xl border border-[#d8aa62]/14 bg-[#21140d]/28 p-3 text-xs leading-relaxed text-stone-300">
-            Algunos productos requieren cotización antes del pago final.
+          <p className="mt-3 text-[11px] text-stone-400">
+            Algunos productos requieren cotización antes del pago.
           </p>
         )}
       </div>
 
-      <div className="grid gap-3 pb-2">
-        <Link
-          href="/checkout"
-          onClick={onCheckout}
-          className="block rounded-xl bg-[#b68b52] py-4 text-center font-black text-white transition hover:bg-[#c99958]"
-        >
-          Finalizar compra
-        </Link>
-
-        <Link
-          href="/productos"
-          onClick={onContinue}
-          className="block rounded-xl border border-white/10 py-4 text-center font-bold text-white transition hover:border-[#d8aa62]/55"
-        >
-          Seguir comprando
-        </Link>
-      </div>
+      <Link href="/checkout" onClick={onCheckout}
+        className="block rounded-xl bg-[#b98239] py-3.5 text-center font-black text-white">
+        Finalizar compra
+      </Link>
+      <Link href="/checkout" onClick={onCheckout}
+        className="block rounded-xl border border-[#d8aa62]/35 py-3.5 text-center font-black text-[#e8c58f]">
+        Ver carrito completo
+      </Link>
+      <p className="pb-2 text-center text-[11px] text-stone-500">🔒 Compra 100% segura</p>
     </div>
   );
 }
