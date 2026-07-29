@@ -1,0 +1,15 @@
+{
+  "version": "17.5.1",
+  "tipo": "version_completa",
+  "base": "17.5.0",
+  "cambio_principal": "Vidrio premium y bordes dorados en tarjetas y contenedores",
+  "archivo_principal_modificado": "app/globals.css",
+  "funciones_conservadas": [
+    "tarjetas de producto completamente clickeables",
+    "galería premium",
+    "responsive V17.4",
+    "checkout",
+    "seguimiento",
+    "carrito"
+  ]
+}

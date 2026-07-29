@@ -2407,3 +2407,232 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
     scroll-snap-align: start;
   }
 }
+
+
+/* =========================================================
+   V17.5.1 — VIDRIO PREMIUM + BORDES DORADOS
+   Unifica tarjetas y contenedores de texto con el estilo
+   transparente aprobado para Identidad Grabada.
+   ========================================================= */
+
+:root {
+  --ig-1751-panel-bg:
+    linear-gradient(145deg, rgba(255,255,255,.075), transparent 38%),
+    linear-gradient(180deg, rgba(48,29,17,.42), rgba(18,11,7,.54));
+  --ig-1751-panel-bg-hover:
+    linear-gradient(145deg, rgba(255,255,255,.10), transparent 40%),
+    linear-gradient(180deg, rgba(57,34,19,.48), rgba(20,12,7,.59));
+  --ig-1751-gold: rgba(223, 169, 82, .78);
+  --ig-1751-gold-soft: rgba(223, 169, 82, .30);
+  --ig-1751-gold-bright: rgba(244, 194, 112, .95);
+  --ig-1751-shadow:
+    0 24px 70px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+/* Componente base y tarjetas principales */
+.ig-glass-card,
+.ig-card,
+.v15-unified-card,
+.v16-category-card,
+.v16-benefits-grid,
+.v16-benefits-grid > div,
+.v16-catalog-controls,
+.v16-private-tracking,
+.v16-tracking-result,
+.v16-tracking-result > div,
+.v17-checkout-panel,
+.v17-checkout-panel > div,
+.v17-product-summary,
+.v17-product-tabs,
+.v17-product-tabs > div,
+.v175-gallery-shell,
+.v175-gallery-thumb {
+  background: var(--ig-1751-panel-bg) !important;
+  border: 1px solid var(--ig-1751-gold) !important;
+  box-shadow: var(--ig-1751-shadow) !important;
+  -webkit-backdrop-filter: blur(17px) saturate(1.12);
+  backdrop-filter: blur(17px) saturate(1.12);
+}
+
+/* Reflejo fino y profundidad */
+.ig-glass-card,
+.ig-card,
+.v15-unified-card,
+.v16-category-card,
+.v17-product-summary,
+.v17-product-tabs,
+.v17-checkout-panel,
+.v175-gallery-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.ig-glass-card::before,
+.ig-card::before,
+.v15-unified-card::before,
+.v16-category-card::before,
+.v17-product-summary::before,
+.v17-product-tabs::before,
+.v17-checkout-panel::before,
+.v175-gallery-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.08), transparent 24% 78%, rgba(223,169,82,.045));
+}
+
+/* Tarjetas de producto: conservan clic completo */
+.v174-clickable-product-card {
+  background: var(--ig-1751-panel-bg) !important;
+  border-color: var(--ig-1751-gold) !important;
+}
+
+.v174-clickable-product-card .v15-unified-card-content {
+  background:
+    linear-gradient(180deg, rgba(35,21,12,.18), rgba(17,10,6,.48)) !important;
+  border-top: 1px solid rgba(223,169,82,.18);
+  -webkit-backdrop-filter: blur(13px) saturate(1.08);
+  backdrop-filter: blur(13px) saturate(1.08);
+}
+
+/* Contenedores de texto de páginas y secciones */
+.ig-page-background article,
+.ig-page-background aside,
+.ig-page-producto article,
+.ig-page-producto aside,
+.ig-page-checkout article,
+.ig-page-checkout aside,
+.ig-page-seguimiento article,
+.ig-page-contacto article,
+.ig-page-nosotros article,
+.ig-page-empresas article,
+.ig-page-trabajos article {
+  border-color: var(--ig-1751-gold-soft);
+}
+
+/* Los contenedores redondeados con fondos oscuros pasan a vidrio */
+.ig-page-background [class*="rounded-"][class*="bg-[#"],
+.ig-page-productos [class*="rounded-"][class*="bg-[#"],
+.ig-page-producto [class*="rounded-"][class*="bg-[#"],
+.ig-page-checkout [class*="rounded-"][class*="bg-[#"],
+.ig-page-seguimiento [class*="rounded-"][class*="bg-[#"],
+.ig-page-contacto [class*="rounded-"][class*="bg-[#"],
+.ig-page-nosotros [class*="rounded-"][class*="bg-[#"],
+.ig-page-empresas [class*="rounded-"][class*="bg-[#"],
+.ig-page-trabajos [class*="rounded-"][class*="bg-[#"] {
+  background: var(--ig-1751-panel-bg) !important;
+  border-color: var(--ig-1751-gold-soft) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(1.10);
+  backdrop-filter: blur(15px) saturate(1.10);
+}
+
+/* Hover premium únicamente en tarjetas interactivas */
+.v174-clickable-product-card:hover,
+.v16-category-card:hover,
+.ig-hover-lift:hover {
+  background: var(--ig-1751-panel-bg-hover) !important;
+  border-color: var(--ig-1751-gold-bright) !important;
+  box-shadow:
+    0 30px 84px rgba(0,0,0,.42),
+    0 0 0 1px rgba(223,169,82,.16),
+    inset 0 1px 0 rgba(255,255,255,.09) !important;
+}
+
+/* Barras y contenedores horizontales */
+.v16-benefits-grid,
+.v16-catalog-controls {
+  border-radius: 1.6rem;
+}
+
+/* Inputs y select mantienen contraste sin verse sólidos */
+.ig-page-background input,
+.ig-page-background select,
+.ig-page-background textarea,
+.ig-page-productos input,
+.ig-page-productos select,
+.ig-page-producto input,
+.ig-page-producto select,
+.ig-page-producto textarea,
+.ig-page-checkout input,
+.ig-page-checkout select,
+.ig-page-checkout textarea,
+.ig-page-seguimiento input,
+.ig-page-contacto input,
+.ig-page-contacto textarea {
+  background:
+    linear-gradient(180deg, rgba(20,12,7,.42), rgba(12,8,5,.52)) !important;
+  border-color: rgba(223,169,82,.34) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.ig-page-background input:focus,
+.ig-page-background select:focus,
+.ig-page-background textarea:focus,
+.ig-page-productos input:focus,
+.ig-page-productos select:focus,
+.ig-page-producto input:focus,
+.ig-page-producto select:focus,
+.ig-page-producto textarea:focus,
+.ig-page-checkout input:focus,
+.ig-page-checkout select:focus,
+.ig-page-checkout textarea:focus,
+.ig-page-seguimiento input:focus,
+.ig-page-contacto input:focus,
+.ig-page-contacto textarea:focus {
+  border-color: var(--ig-1751-gold-bright) !important;
+  box-shadow: 0 0 0 3px rgba(223,169,82,.13) !important;
+  outline: none;
+}
+
+/* Dorado más visible en divisores */
+.ig-page-background hr,
+.ig-page-productos hr,
+.ig-page-producto hr,
+.ig-page-checkout hr {
+  border-color: rgba(223,169,82,.24) !important;
+}
+
+/* Ajustes móviles */
+@media (max-width: 767px) {
+  :root {
+    --ig-1751-panel-bg:
+      linear-gradient(145deg, rgba(255,255,255,.065), transparent 38%),
+      linear-gradient(180deg, rgba(47,28,16,.36), rgba(17,10,6,.49));
+    --ig-1751-gold: rgba(223,169,82,.70);
+    --ig-1751-shadow:
+      0 18px 48px rgba(0,0,0,.31),
+      inset 0 1px 0 rgba(255,255,255,.055);
+  }
+
+  .ig-glass-card,
+  .ig-card,
+  .v15-unified-card,
+  .v16-category-card,
+  .v16-benefits-grid,
+  .v17-checkout-panel,
+  .v17-product-summary,
+  .v17-product-tabs,
+  .v175-gallery-shell {
+    -webkit-backdrop-filter: blur(11px) saturate(1.06);
+    backdrop-filter: blur(11px) saturate(1.06);
+  }
+
+  .v174-clickable-product-card:hover,
+  .v16-category-card:hover,
+  .ig-hover-lift:hover {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v174-clickable-product-card,
+  .v16-category-card,
+  .ig-hover-lift {
+    transition: none !important;
+  }
+}

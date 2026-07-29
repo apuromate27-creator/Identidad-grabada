@@ -1,0 +1,38 @@
+IDENTIDAD GRABADA — V17.5.1
+VIDRIO PREMIUM + BORDES DORADOS
+
+ESTA ES UNA VERSIÓN COMPLETA
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí este ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en el repositorio de Identidad Grabada.
+4. Elegí Repository > Show in Explorer.
+5. Conservá una copia de seguridad del proyecto actual.
+6. Copiá todo el contenido de esta carpeta descomprimida.
+7. Pegalo dentro de la carpeta del repositorio y reemplazá los archivos.
+8. Volvé a GitHub Desktop.
+9. En Summary escribí:
+   V17.5.1 - Vidrio premium y bordes dorados
+10. Presioná Commit to main.
+11. Presioná Push origin.
+12. Esperá el nuevo despliegue de Vercel.
+
+CAMBIOS PRINCIPALES
+
+- Tarjetas de productos transparentes con efecto vidrio.
+- Bordes dorados más visibles y uniformes.
+- Contenedores de texto con el mismo lenguaje visual.
+- Categorías, beneficios, seguimiento, checkout y producto unificados.
+- Efecto de reflejo superior sutil.
+- Mejor profundidad mediante desenfoque y sombra.
+- Hover premium en computadora.
+- Ajustes de rendimiento y legibilidad para celular.
+- Se conservan las tarjetas completamente clickeables de V17.4.
+- Se conserva la galería premium de V17.5.
+
+IMPORTANTE
+
+Esta versión modifica principalmente app/globals.css y mantiene
+la estructura y funciones existentes de V17.5.
