@@ -2073,3 +2073,189 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
   .v17-product-main-image{height:390px!important;min-height:300px!important}
   .v17-product-summary h1{font-size:1.8rem!important}
 }
+
+/* =========================================================
+   V17.4 — Responsive Premium + tarjetas completamente clickeables
+   COPIAR ESTE BLOQUE AL FINAL DE app/globals.css
+   ========================================================= */
+
+/* Tarjetas de producto: toda la superficie abre el producto */
+.v174-clickable-product-card {
+  isolation: isolate;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(216, 170, 98, .16);
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
+}
+
+.v174-clickable-product-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(216, 170, 98, .42) !important;
+  box-shadow:
+    0 30px 78px rgba(0,0,0,.40),
+    0 0 0 1px rgba(216,170,98,.10) !important;
+}
+
+.v174-clickable-product-card:focus-visible {
+  border-color: rgba(232,197,143,.75) !important;
+  box-shadow:
+    0 0 0 3px rgba(216,170,98,.18),
+    0 28px 72px rgba(0,0,0,.34) !important;
+}
+
+.v174-clickable-product-card:active {
+  transform: translateY(-1px) scale(.995);
+}
+
+.v174-clickable-product-card .v15-unified-card-media > * {
+  pointer-events: none;
+}
+
+.v174-product-card-button {
+  position: relative;
+  z-index: 3;
+}
+
+/* Ajuste general mobile para páginas internas */
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip !important;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  header .mx-auto {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: .75rem !important;
+    padding-right: .75rem !important;
+  }
+
+  header {
+    min-height: 4.6rem !important;
+  }
+
+  header .h-12.w-12 {
+    width: 2.45rem !important;
+    height: 2.45rem !important;
+  }
+
+  header p.text-lg,
+  header p.md\:text-xl {
+    font-size: .94rem !important;
+  }
+
+  header p.text-\[10px\] {
+    font-size: .48rem !important;
+    letter-spacing: .19em !important;
+  }
+
+  .ig-page-background section.mx-auto,
+  .ig-page-productos section.mx-auto,
+  .ig-page-producto section.mx-auto,
+  .ig-page-trabajos section.mx-auto,
+  .ig-page-empresas section.mx-auto,
+  .ig-page-nosotros section.mx-auto,
+  .ig-page-seguimiento section.mx-auto,
+  .ig-page-contacto section.mx-auto,
+  .ig-page-checkout section.mx-auto {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: .75rem !important;
+    padding-right: .75rem !important;
+  }
+
+  .v174-clickable-product-card {
+    border-radius: 1.2rem !important;
+  }
+
+  .v174-clickable-product-card:hover {
+    transform: none;
+  }
+
+  .v174-clickable-product-card .v15-unified-card-media {
+    height: clamp(12rem, 52vw, 14rem) !important;
+  }
+
+  .v174-clickable-product-card .v15-unified-card-content {
+    padding: .95rem !important;
+  }
+
+  .v174-clickable-product-card h3 {
+    font-size: 1.2rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .v174-clickable-product-card p {
+    min-height: 0 !important;
+  }
+
+  .v174-clickable-product-card .v174-product-card-button {
+    padding: .68rem .82rem !important;
+    font-size: .75rem !important;
+    white-space: nowrap;
+  }
+
+  .v174-clickable-product-card .text-2xl {
+    font-size: 1.12rem !important;
+  }
+
+  .v16-benefits-grid,
+  .v16-catalog-controls,
+  .v16-private-tracking,
+  .v16-tracking-result,
+  .v17-checkout-panel,
+  .v17-product-summary,
+  .v17-product-tabs {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  input,
+  select,
+  textarea,
+  button,
+  a {
+    max-width: 100%;
+  }
+}
+
+/* Celulares angostos */
+@media (max-width: 360px) {
+  .ig-page-background section.mx-auto,
+  .ig-page-productos section.mx-auto,
+  .ig-page-producto section.mx-auto,
+  .ig-page-checkout section.mx-auto {
+    padding-left: .6rem !important;
+    padding-right: .6rem !important;
+  }
+
+  .v174-clickable-product-card .v15-unified-card-content {
+    padding: .8rem !important;
+  }
+
+  .v174-clickable-product-card h3 {
+    font-size: 1.08rem !important;
+  }
+
+  .v174-clickable-product-card .v174-product-card-button {
+    padding: .6rem .7rem !important;
+    font-size: .7rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v174-clickable-product-card,
+  .v174-product-card-button {
+    transition: none !important;
+  }
+}
+
