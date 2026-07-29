@@ -2259,3 +2259,151 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
   }
 }
 
+/* =========================================================
+   V17.5 — Transparencia Premium Unificada
+   ========================================================= */
+:root {
+  --ig-glass-bg: rgba(31, 19, 12, .34);
+  --ig-glass-bg-strong: rgba(31, 19, 12, .47);
+  --ig-glass-border: rgba(224, 180, 107, .24);
+  --ig-glass-highlight: rgba(255, 255, 255, .06);
+  --ig-glass-shadow: 0 26px 70px rgba(0, 0, 0, .27);
+  --ig-glass-blur: 16px;
+}
+
+.ig-glass-card,
+.ig-card,
+.v15-unified-card,
+.v16-catalog-controls,
+.v16-private-tracking,
+.v16-tracking-result,
+.v16-empty-state,
+.v17-product-summary,
+.v17-personalizer,
+.v17-product-tabs,
+.v17-checkout-panel,
+.v17-cart-item,
+.v17-product-main-image,
+.v17-engraving-preview {
+  background:
+    linear-gradient(145deg, var(--ig-glass-highlight), transparent 46%),
+    var(--ig-glass-bg) !important;
+  border-color: var(--ig-glass-border) !important;
+  box-shadow: var(--ig-glass-shadow) !important;
+  -webkit-backdrop-filter: blur(var(--ig-glass-blur)) saturate(1.08);
+  backdrop-filter: blur(var(--ig-glass-blur)) saturate(1.08);
+}
+
+/* Producto: el paisaje se ve también detrás del contenido */
+.v174-clickable-product-card {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.055), transparent 44%),
+    rgba(30, 18, 11, .30) !important;
+}
+
+.v174-clickable-product-card .v15-unified-card-content {
+  background:
+    linear-gradient(180deg, rgba(32,19,12,.24), rgba(25,15,9,.40)) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.v174-clickable-product-card .v15-unified-card-content > .absolute {
+  opacity: .68;
+}
+
+.v174-clickable-product-card:hover {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.075), transparent 44%),
+    rgba(39, 23, 13, .38) !important;
+}
+
+/* Secciones y tarjetas secundarias */
+.v16-benefits-grid,
+.v16-benefits-grid > div,
+.v17-product-tabs > div,
+.v17-checkout-panel > div,
+.v16-tracking-result > div {
+  background-color: rgba(29, 18, 11, .28) !important;
+}
+
+/* Campos: legibles sin volver a fondos sólidos */
+.ig-page-background input,
+.ig-page-background select,
+.ig-page-background textarea,
+.ig-page-productos input,
+.ig-page-productos select,
+.ig-page-producto input,
+.ig-page-producto select,
+.ig-page-producto textarea,
+.ig-page-checkout input,
+.ig-page-checkout select,
+.ig-page-checkout textarea {
+  background-color: rgba(22, 14, 9, .46) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Galería premium */
+.v175-gallery-shell {
+  position: relative;
+}
+
+.v175-gallery-counter {
+  position: absolute;
+  left: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 4;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 999px;
+  background: rgba(24,14,8,.46);
+  padding: .55rem .8rem;
+  color: rgba(255,255,255,.9);
+  font-size: .75rem;
+  font-weight: 800;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.v175-gallery-thumb {
+  background: rgba(30,18,11,.28) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ig-glass-bg: rgba(31, 19, 12, .27);
+    --ig-glass-bg-strong: rgba(31, 19, 12, .39);
+    --ig-glass-blur: 11px;
+  }
+
+  .v174-clickable-product-card {
+    background: rgba(31,19,12,.25) !important;
+  }
+
+  .v17-product-main-image {
+    height: clamp(19rem, 92vw, 27rem) !important;
+    border-radius: 1.25rem !important;
+  }
+
+  .v175-gallery-thumbnails {
+    display: flex !important;
+    gap: .65rem !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: .2rem;
+  }
+
+  .v175-gallery-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+
+  .v175-gallery-thumb {
+    width: 5.25rem;
+    min-width: 5.25rem;
+    height: 4.8rem !important;
+    scroll-snap-align: start;
+  }
+}

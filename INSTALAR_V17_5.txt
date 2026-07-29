@@ -1,0 +1,21 @@
+IDENTIDAD GRABADA — V17.5 COMPLETA
+
+Esta entrega es una versión completa, no un parche.
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop y elegí Repository > Show in Explorer.
+3. Conservá una copia de seguridad de tu proyecto actual.
+4. Copiá el contenido de la carpeta identidad-grabada-v17-5-transparencia-premium dentro del repositorio.
+5. Reemplazá los archivos cuando Windows lo pregunte.
+6. En GitHub Desktop escribí:
+   V17.5 - Transparencia premium unificada
+7. Hacé Commit to main.
+8. Hacé Push origin.
+
+IMPORTANTE
+
+- No copies la carpeta node_modules ni .next si existieran.
+- Las tarjetas continúan siendo completamente clickeables.
+- El nuevo componente GlassCard queda preparado para futuras secciones.

@@ -1,6 +1,6 @@
 {
   "name": "identidad-grabada-v17-0-sistema-visual-global",
-  "version": "17.0.0",
+  "version": "17.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

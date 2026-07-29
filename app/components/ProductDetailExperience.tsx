@@ -384,7 +384,7 @@ function ProductGallery({
       <button
         type="button"
         onClick={() => setZoomed(true)}
-        className="v17-product-main-image group relative h-[520px] w-full overflow-hidden rounded-[2rem] border border-[#d8aa62]/20 md:h-[650px]"
+        className="v17-product-main-image v175-gallery-shell group relative h-[520px] w-full overflow-hidden rounded-[2rem] border border-[#d8aa62]/20 md:h-[650px]"
         aria-label="Ampliar imagen del producto"
       >
         <div className="h-full transition duration-700 group-hover:scale-[1.035]">
@@ -393,19 +393,23 @@ function ProductGallery({
           />
         </div>
 
-        <span className="absolute bottom-5 right-5 rounded-full border border-white/12 bg-[#21140d]/58 px-4 py-2 text-xs font-bold text-white backdrop-blur">
+        <span className="v175-gallery-counter">
+          {Math.max(1, product.gallery.indexOf(selectedImage) + 1)} / {product.gallery.length}
+        </span>
+
+        <span className="absolute bottom-5 right-5 rounded-full border border-white/12 bg-[#21140d]/48 px-4 py-2 text-xs font-bold text-white backdrop-blur">
           Ampliar
         </span>
       </button>
 
-      <div className="grid grid-cols-4 gap-3">
+      <div className="v175-gallery-thumbnails grid grid-cols-4 gap-3">
         {product.gallery.map((image) => (
           <button
             key={image}
             type="button"
             onClick={() => onSelectImage(image)}
             className={[
-              "h-24 overflow-hidden rounded-xl border transition md:h-28",
+              "v175-gallery-thumb h-24 overflow-hidden rounded-xl border transition md:h-28",
               selectedImage === image
                 ? "border-[#d8aa62] shadow-[0_0_0_2px_rgba(216,170,98,.12)]"
                 : "border-white/9 hover:border-[#d8aa62]/50",
