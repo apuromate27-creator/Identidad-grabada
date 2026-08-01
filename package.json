@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v17-5-1-vidrio-premium",
-  "version": "17.5.1",
+  "name": "identidad-grabada-v17-6-nuevo-hero-premium",
+  "version": "17.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

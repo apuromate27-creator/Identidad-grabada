@@ -1,0 +1,33 @@
+IDENTIDAD GRABADA — V17.6
+NUEVO HERO PREMIUM MODULAR
+
+ESTA ES UNA VERSIÓN COMPLETA
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí este ZIP.
+2. Abrí GitHub Desktop.
+3. Elegí tu repositorio Identidad Grabada.
+4. Entrá en Repository > Show in Explorer.
+5. Guardá una copia de seguridad del proyecto actual.
+6. Copiá todo el contenido de esta versión.
+7. Pegalo dentro de la carpeta del repositorio.
+8. Elegí reemplazar los archivos existentes.
+9. Volvé a GitHub Desktop.
+10. En Summary escribí:
+    V17.6 - Nuevo Hero Premium
+11. Hacé clic en Commit to main.
+12. Hacé clic en Push origin.
+13. Vercel actualizará la tienda automáticamente.
+
+NUEVO HERO
+
+- Usa el mismo fondo principal de la tienda.
+- Panel de presentación transparente con borde dorado.
+- Carrusel de promociones dentro del Hero.
+- Cuatro beneficios principales.
+- Tarjetas laterales de envío, producción, seguridad y atención.
+- Categorías destacadas integradas.
+- Franja inferior de medios de pago y beneficios.
+- Diseño adaptado a computadora, tablet y celular.
+- Conserva las páginas, carrito, checkout, productos y seguimiento.
