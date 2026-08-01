@@ -1,0 +1,39 @@
+IDENTIDAD GRABADA — V18.1.1
+FONDO ÚNICO + HOME MÁS COMPACTO
+
+ESTA ES UNA VERSIÓN COMPLETA.
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Seleccioná el repositorio Identidad Grabada.
+4. Elegí Repository > Show in Explorer.
+5. Guardá una copia de seguridad del proyecto actual.
+6. Copiá todo el contenido de esta versión.
+7. Pegalo dentro de la carpeta del repositorio.
+8. Elegí reemplazar los archivos existentes.
+9. Volvé a GitHub Desktop.
+10. En Summary escribí:
+    V18.1.1 - Fondo unificado
+11. Hacé clic en Commit to main.
+12. Hacé clic en Push origin.
+13. Vercel actualizará la página automáticamente.
+
+CAMBIOS
+
+- Una sola imagen de fondo para Hero, Home y Footer.
+- Se eliminan las transiciones entre fondos.
+- Se eliminan las costuras visuales entre secciones.
+- Home entre 10% y 15% más compacto.
+- Categorías más bajas.
+- Productos destacados más bajos.
+- Barra de beneficios más fina.
+- Menos espacio vertical.
+- Paneles más transparentes.
+- Menos color marrón.
+- Mayor protagonismo del paisaje.
+- Ajustes para computadora, tablet y celular.
+
+El Hero conserva todavía su estructura general.
+La siguiente etapa prevista es V18.2: Hero Premium definitivo.

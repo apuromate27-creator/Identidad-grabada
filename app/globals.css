@@ -4087,3 +4087,326 @@ footer {
     gap: 14px;
   }
 }
+
+
+/* =========================================================
+   V18.1.1 — FONDO ÚNICO + HOME MÁS COMPACTO
+   ========================================================= */
+
+.v1811-home-page {
+  position: relative;
+  isolation: isolate;
+  background: #080706;
+}
+
+.v1811-global-background,
+.v1811-global-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.v1811-global-background {
+  z-index: -3;
+  background:
+    url("/backgrounds/inicio.jpg") center top / cover no-repeat;
+}
+
+.v1811-global-overlay {
+  z-index: -2;
+  background:
+    radial-gradient(circle at 52% 8%, rgba(225, 157, 55, .07), transparent 31%),
+    linear-gradient(180deg, rgba(4, 4, 4, .12), rgba(4, 4, 4, .20));
+}
+
+/* Ninguna sección de Inicio vuelve a cargar otra imagen */
+.v1811-home-page .v176-hero-background,
+.v1811-home-page .v181-home-bg {
+  background: transparent !important;
+}
+
+.v1811-home-page .v176-hero-shade,
+.v1811-home-page .v181-home-overlay {
+  background:
+    linear-gradient(180deg, rgba(4,4,4,.04), rgba(4,4,4,.10)) !important;
+}
+
+.v1811-home-page .v176-hero,
+.v1811-home-page .v181-home,
+.v1811-home-page footer {
+  background: transparent !important;
+}
+
+/* Eliminar costuras visuales entre Hero, Home y Footer */
+.v1811-home-page .v176-hero {
+  min-height: auto;
+}
+
+.v1811-home-page .v181-home {
+  margin-top: 0;
+  padding-top: 28px;
+}
+
+.v1811-home-page footer {
+  border-top-color: rgba(231, 177, 74, .14) !important;
+}
+
+/* Home aproximadamente 12–15% más compacto */
+.v1811-home-page .v181-shell {
+  width: min(1380px, calc(100% - 44px));
+}
+
+.v1811-home-page .v181-section-heading {
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.v1811-home-page .v181-section-heading p {
+  margin-bottom: 2px;
+  font-size: 10px;
+}
+
+.v1811-home-page .v181-section-heading h2 {
+  font-size: clamp(30px, 2.6vw, 43px);
+}
+
+.v1811-home-page .v181-category-grid,
+.v1811-home-page .v181-products-grid {
+  gap: 15px;
+}
+
+.v1811-home-page .v181-category-card {
+  min-height: 188px;
+  border-radius: 19px;
+}
+
+.v1811-home-page .v181-category-copy {
+  min-height: 188px;
+  padding: 21px 20px;
+}
+
+.v1811-home-page .v181-category-copy h3 {
+  font-size: 29px;
+}
+
+.v1811-home-page .v181-category-copy p {
+  margin-top: 7px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.v1811-home-page .v181-category-icon {
+  top: 17px;
+  left: 17px;
+  width: 50px;
+  height: 50px;
+  font-size: 21px;
+}
+
+.v1811-home-page .v181-category-cta {
+  margin-top: 13px;
+  padding: 8px 12px;
+  font-size: 11px;
+}
+
+.v1811-home-page .v181-benefit-strip {
+  margin-top: 14px;
+  border-radius: 18px;
+}
+
+.v1811-home-page .v181-benefit-item {
+  min-height: 62px;
+  grid-template-columns: 44px 1fr;
+  padding: 10px 15px;
+}
+
+.v1811-home-page .v181-benefit-item > span {
+  font-size: 23px;
+}
+
+.v1811-home-page .v181-benefit-item strong {
+  font-size: 11px;
+}
+
+.v1811-home-page .v181-benefit-item small {
+  margin-top: 2px;
+  font-size: 9px;
+}
+
+.v1811-home-page .v181-products-heading {
+  margin-top: 40px;
+}
+
+.v1811-home-page .v181-product-card {
+  min-height: 420px;
+  border-radius: 20px;
+}
+
+.v1811-home-page .v181-product-copy {
+  padding: 24px 21px 20px;
+}
+
+.v1811-home-page .v181-product-copy h3 {
+  font-size: 29px;
+}
+
+.v1811-home-page .v181-product-copy small {
+  margin-top: 7px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.v1811-home-page .v181-product-copy > div {
+  margin-top: 15px;
+  padding-top: 14px;
+}
+
+.v1811-home-page .v181-product-copy strong {
+  font-size: 19px;
+}
+
+.v1811-home-page .v181-product-copy > div span {
+  padding: 8px 11px;
+  font-size: 11px;
+}
+
+.v1811-home-page .v181-story-panel {
+  margin-top: 26px;
+  gap: 22px;
+  border-radius: 20px;
+  padding: 27px;
+}
+
+.v1811-home-page .v181-story-panel h2 {
+  font-size: clamp(30px, 3vw, 44px);
+}
+
+.v1811-home-page .v181-story-panel p:not(.v181-kicker) {
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+.v1811-home-page .v181-story-actions a {
+  min-height: 46px;
+}
+
+/* Más transparencia: se ve el paisaje, no un bloque marrón */
+.v1811-home-page .v176-glass,
+.v1811-home-page .v181-category-card,
+.v1811-home-page .v181-product-card,
+.v1811-home-page .v181-benefit-strip,
+.v1811-home-page .v181-story-panel {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.035), transparent 38%),
+    rgba(7, 7, 7, .12) !important;
+  border-color: rgba(234, 179, 77, .62) !important;
+  box-shadow:
+    0 20px 54px rgba(0,0,0,.26),
+    inset 0 1px 0 rgba(255,255,255,.045) !important;
+  -webkit-backdrop-filter: blur(13px) saturate(1.08) !important;
+  backdrop-filter: blur(13px) saturate(1.08) !important;
+}
+
+/* El Hero también queda integrado con el fondo único */
+.v1811-home-page .v176-copy-panel,
+.v1811-home-page .v176-media-panel,
+.v1811-home-page .v176-side-card {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.035), transparent 36%),
+    rgba(7,7,7,.13) !important;
+}
+
+/* Desktop: Hero levemente más compacto sin rediseñarlo todavía */
+@media (min-width: 1181px) {
+  .v1811-home-page .v176-copy-panel,
+  .v1811-home-page .v176-media-panel {
+    min-height: 420px;
+  }
+
+  .v1811-home-page .v176-copy-panel {
+    padding: clamp(22px, 2.4vw, 34px);
+  }
+
+  .v1811-home-page .v176-copy-panel h1 {
+    font-size: clamp(40px, 4.1vw, 64px);
+  }
+
+  .v1811-home-page .v176-main-benefits {
+    margin-top: 21px;
+  }
+
+  .v1811-home-page .v176-mini-benefit {
+    padding: 15px 8px;
+  }
+
+  .v1811-home-page .v176-actions {
+    margin-top: 18px;
+  }
+
+  .v1811-home-page .v176-side-card {
+    min-height: 94px;
+  }
+}
+
+@media (max-width: 767px) {
+  .v1811-global-background {
+    background:
+      url("/backgrounds/inicio-mobile.jpg") center top / cover no-repeat;
+  }
+
+  .v1811-home-page .v181-home {
+    padding: 20px 0 36px;
+  }
+
+  .v1811-home-page .v181-shell {
+    width: min(100% - 20px, 680px);
+  }
+
+  .v1811-home-page .v181-section-heading {
+    margin-bottom: 12px;
+  }
+
+  .v1811-home-page .v181-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .v1811-home-page .v181-category-card {
+    min-height: 172px;
+  }
+
+  .v1811-home-page .v181-category-copy {
+    min-height: 172px;
+    padding: 19px 15px;
+  }
+
+  .v1811-home-page .v181-category-copy h3 {
+    font-size: 26px;
+  }
+
+  .v1811-home-page .v181-product-card {
+    min-height: 380px;
+  }
+
+  .v1811-home-page .v181-products-heading {
+    margin-top: 32px;
+  }
+
+  .v1811-home-page .v181-story-panel {
+    margin-top: 20px;
+    padding: 20px 15px;
+  }
+
+  .v1811-home-page .v181-story-panel h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 390px) {
+  .v1811-home-page .v181-shell {
+    width: calc(100% - 14px);
+  }
+
+  .v1811-home-page .v181-product-card {
+    min-height: 355px;
+  }
+}

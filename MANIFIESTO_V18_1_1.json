@@ -1,0 +1,17 @@
+{
+  "version": "18.1.1",
+  "tipo": "version_completa",
+  "base": "18.1.0",
+  "cambios_principales": [
+    "fondo único fijo para toda la página de inicio",
+    "eliminación de transiciones entre imágenes",
+    "reducción general del Home",
+    "mayor transparencia de paneles",
+    "optimización responsive"
+  ],
+  "archivos_principales_modificados": [
+    "app/page.tsx",
+    "app/globals.css",
+    "package.json"
+  ]
+}

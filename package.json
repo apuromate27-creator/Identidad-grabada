@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-1-home-premium",
-  "version": "18.1.0",
+  "name": "identidad-grabada-v18-1-1-fondo-unificado",
+  "version": "18.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",

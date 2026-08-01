@@ -5,11 +5,17 @@ import { HomeV181 } from "./components/HomeV181";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#080706] text-white">
-      <Header overlay />
-      <HeroV176 />
-      <HomeV181 />
-      <Footer />
+    <main className="v1811-home-page min-h-screen overflow-hidden text-white">
+      <div className="v1811-global-background" aria-hidden="true" />
+      <div className="v1811-global-overlay" aria-hidden="true" />
+
+      <div className="relative z-10">
+        <Header overlay />
+        <HeroV176 />
+        <HomeV181 />
+        <Footer />
+      </div>
+
       <WhatsAppFloat />
     </main>
   );
