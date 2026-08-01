@@ -1,0 +1,10 @@
+{
+  "version": "18.0.0",
+  "tipo": "version_completa",
+  "base": "17.6.0",
+  "cambio_principal": "Nuevo lenguaje visual global Glass Premium",
+  "archivos_principales_modificados": [
+    "app/globals.css",
+    "package.json"
+  ]
+}

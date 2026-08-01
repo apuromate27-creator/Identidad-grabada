@@ -3283,3 +3283,257 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
     width: 52%;
   }
 }
+
+
+/* =========================================================
+   V18.0 — NUEVO LENGUAJE VISUAL GLOBAL / GLASS PREMIUM
+   Base visual para las etapas V18.1 a V18.6
+   ========================================================= */
+
+:root {
+  --ig-v18-bg: #080706;
+  --ig-v18-glass: rgba(8, 8, 8, .16);
+  --ig-v18-glass-soft: rgba(12, 10, 8, .10);
+  --ig-v18-gold: #d9a448;
+  --ig-v18-gold-light: #f2c978;
+  --ig-v18-gold-border: rgba(231, 177, 74, .62);
+  --ig-v18-text: rgba(255, 255, 255, .96);
+  --ig-v18-muted: rgba(255, 255, 255, .68);
+  --ig-v18-blur: 18px;
+  --ig-v18-shadow:
+    0 24px 68px rgba(0, 0, 0, .34),
+    inset 0 1px 0 rgba(255, 255, 255, .065);
+}
+
+.ig-page-scene-overlay,
+.v15-home-overlay,
+.v176-hero-shade {
+  background:
+    radial-gradient(circle at 72% 14%, rgba(235, 170, 62, .08), transparent 30%),
+    linear-gradient(180deg, rgba(4, 5, 5, .14), rgba(5, 5, 5, .24)) !important;
+}
+
+body,
+main {
+  background-color: var(--ig-v18-bg);
+}
+
+header,
+.ig-header,
+.v15-header {
+  background:
+    linear-gradient(180deg, rgba(7, 7, 7, .46), rgba(7, 7, 7, .20)) !important;
+  border-bottom: 1px solid rgba(231, 177, 74, .22) !important;
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, .22),
+    inset 0 -1px 0 rgba(255, 255, 255, .025) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.12) !important;
+  backdrop-filter: blur(20px) saturate(1.12) !important;
+}
+
+.ig-card,
+.ig-glass-card,
+.v15-unified-card,
+.v16-category-card,
+.v16-benefits-grid,
+.v16-catalog-controls,
+.v16-private-tracking,
+.v16-tracking-result,
+.v17-product-summary,
+.v17-product-tabs,
+.v17-checkout-panel,
+.v17-cart-drawer,
+.v17-cart-item,
+.v175-gallery-shell,
+.v176-glass {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.045), transparent 38%),
+    linear-gradient(180deg, var(--ig-v18-glass-soft), var(--ig-v18-glass)) !important;
+  border: 1px solid var(--ig-v18-gold-border) !important;
+  box-shadow: var(--ig-v18-shadow) !important;
+  -webkit-backdrop-filter: blur(var(--ig-v18-blur)) saturate(1.12) !important;
+  backdrop-filter: blur(var(--ig-v18-blur)) saturate(1.12) !important;
+}
+
+.v16-benefits-grid > div,
+.v17-checkout-panel > div,
+.v16-tracking-result > div,
+.v176-side-card,
+.v176-bottom-item,
+.v176-mini-benefit {
+  background: transparent !important;
+}
+
+.v174-clickable-product-card {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.035), transparent 36%),
+    linear-gradient(180deg, rgba(9,8,7,.08), rgba(9,8,7,.20)) !important;
+  border-color: var(--ig-v18-gold-border) !important;
+  box-shadow:
+    0 22px 58px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.055) !important;
+}
+
+.v174-clickable-product-card .v15-unified-card-content {
+  background:
+    linear-gradient(180deg, rgba(5,5,5,.08), rgba(5,5,5,.24)) !important;
+  border-top: 1px solid rgba(231, 177, 74, .20);
+  -webkit-backdrop-filter: blur(12px) saturate(1.08) !important;
+  backdrop-filter: blur(12px) saturate(1.08) !important;
+}
+
+.v174-clickable-product-card,
+.v16-category-card,
+.v176-category-card,
+.v176-primary-button,
+.v176-secondary-button,
+button,
+a {
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease,
+    background-color .28s ease,
+    color .28s ease;
+}
+
+.v174-clickable-product-card:hover,
+.v16-category-card:hover,
+.v176-category-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(247, 197, 105, .92) !important;
+  box-shadow:
+    0 30px 84px rgba(0,0,0,.38),
+    0 0 22px rgba(221, 164, 72, .12),
+    inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+
+.v176-primary-button,
+.v174-product-card-button,
+.v17-product-summary button[type="button"],
+.v17-checkout-panel button[type="submit"] {
+  background:
+    linear-gradient(135deg, #d7a34f, #ad7126) !important;
+  border: 1px solid rgba(255, 218, 151, .42) !important;
+  box-shadow:
+    0 12px 30px rgba(181, 120, 37, .22),
+    inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+
+.v176-secondary-button,
+.ig-secondary-button {
+  background: rgba(7, 7, 7, .14) !important;
+  border-color: var(--ig-v18-gold-border) !important;
+  color: var(--ig-v18-gold-light) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.ig-page-background h1,
+.ig-page-background h2,
+.ig-page-background h3,
+.v176-hero h1,
+.v176-hero h2,
+.v176-hero h3 {
+  color: var(--ig-v18-text);
+}
+
+.ig-page-background p,
+.ig-page-background li,
+.ig-page-background dd,
+.v176-hero p,
+.v176-hero small {
+  color: var(--ig-v18-muted);
+}
+
+.v176-eyebrow,
+[class*="tracking-"][class*="text-[#e2b46d]"],
+[class*="text-[#dfb36d]"],
+[class*="text-[#e4b76f]"] {
+  color: var(--ig-v18-gold-light) !important;
+}
+
+input,
+select,
+textarea {
+  background:
+    linear-gradient(180deg, rgba(5,5,5,.15), rgba(5,5,5,.25)) !important;
+  border-color: rgba(231, 177, 74, .30) !important;
+  color: white !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(247, 197, 105, .86) !important;
+  box-shadow: 0 0 0 3px rgba(221, 164, 72, .13) !important;
+  outline: none;
+}
+
+footer {
+  background:
+    linear-gradient(180deg, rgba(7, 7, 7, .16), rgba(7, 7, 7, .30)) !important;
+  border-top: 1px solid rgba(231, 177, 74, .20) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ig-v18-glass: rgba(8, 8, 8, .14);
+    --ig-v18-glass-soft: rgba(8, 8, 8, .08);
+    --ig-v18-blur: 12px;
+    --ig-v18-shadow:
+      0 16px 42px rgba(0,0,0,.28),
+      inset 0 1px 0 rgba(255,255,255,.045);
+  }
+
+  header,
+  .ig-header,
+  .v15-header {
+    background:
+      linear-gradient(180deg, rgba(7,7,7,.40), rgba(7,7,7,.18)) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(1.08) !important;
+    backdrop-filter: blur(16px) saturate(1.08) !important;
+  }
+
+  .ig-card,
+  .ig-glass-card,
+  .v15-unified-card,
+  .v16-category-card,
+  .v16-benefits-grid,
+  .v16-catalog-controls,
+  .v16-private-tracking,
+  .v16-tracking-result,
+  .v17-product-summary,
+  .v17-product-tabs,
+  .v17-checkout-panel,
+  .v175-gallery-shell,
+  .v176-glass {
+    border-color: rgba(231,177,74,.52) !important;
+  }
+
+  .v174-clickable-product-card:hover,
+  .v16-category-card:hover,
+  .v176-category-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v174-clickable-product-card,
+  .v16-category-card,
+  .v176-category-card,
+  button,
+  a {
+    transition: none !important;
+  }
+}
