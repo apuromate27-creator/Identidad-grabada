@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-0-glass-premium",
-  "version": "18.0.0",
+  "name": "identidad-grabada-v18-1-home-premium",
+  "version": "18.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

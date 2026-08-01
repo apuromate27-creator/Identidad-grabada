@@ -1,28 +1,15 @@
 
 import { Header, Footer, WhatsAppFloat } from "./components/ui";
 import { HeroV176 } from "./components/Sections/HeroV176";
-import { PremiumHomeSections } from "./components/PremiumSections";
-import { BrandStory } from "./components/BrandStory";
-import { SocialProof } from "./components/SocialProof";
-import { CommercialSections } from "./components/CommercialSections";
+import { HomeV181 } from "./components/HomeV181";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#100b08] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#080706] text-white">
       <Header overlay />
       <HeroV176 />
-
-      <div className="v15-home-continuity">
-        <div className="v15-home-overlay" />
-        <div className="relative z-10">
-          <PremiumHomeSections />
-          <BrandStory />
-          <SocialProof />
-          <CommercialSections />
-          <Footer />
-        </div>
-      </div>
-
+      <HomeV181 />
+      <Footer />
       <WhatsAppFloat />
     </main>
   );

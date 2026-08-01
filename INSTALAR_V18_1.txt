@@ -1,0 +1,35 @@
+IDENTIDAD GRABADA — V18.1
+HOME PREMIUM (SIN MODIFICAR TODAVÍA EL HERO)
+
+ESTA ES UNA VERSIÓN COMPLETA.
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Seleccioná tu repositorio.
+4. Entrá en Repository > Show in Explorer.
+5. Hacé una copia de seguridad.
+6. Copiá todo el contenido de esta versión.
+7. Pegalo dentro del repositorio y reemplazá los archivos.
+8. Volvé a GitHub Desktop.
+9. En Summary escribí:
+   V18.1 - Home Premium
+10. Commit to main.
+11. Push origin.
+12. Esperá el despliegue de Vercel.
+
+CAMBIOS DE ESTA VERSIÓN
+
+- Rediseño de la página de inicio debajo del Hero.
+- Categorías con imagen completa y texto superpuesto.
+- Barra de beneficios continua y más baja.
+- Productos destacados con imagen protagonista.
+- Menos bloques marrones.
+- Mayor transparencia y visibilidad del fondo.
+- Bordes dorados finos.
+- Sección final institucional compacta.
+- Responsive para computadora, tablet y celular.
+
+EL HERO SE MANTIENE COMO EN V17.6/V18.0.
+La próxima etapa será V18.2: Hero Premium definitivo.
