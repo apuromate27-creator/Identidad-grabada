@@ -2263,11 +2263,11 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
    V17.5 — Transparencia Premium Unificada
    ========================================================= */
 :root {
-  --ig-glass-bg: rgba(31, 19, 12, .34);
-  --ig-glass-bg-strong: rgba(31, 19, 12, .47);
-  --ig-glass-border: rgba(224, 180, 107, .24);
+  --ig-glass-bg: rgba(31, 19, 12, .10);
+  --ig-glass-bg-strong: rgba(31, 19, 12, .10);
+  --ig-glass-border: rgba(224, 180, 107, .10);
   --ig-glass-highlight: rgba(255, 255, 255, .06);
-  --ig-glass-shadow: 0 26px 70px rgba(0, 0, 0, .27);
+  --ig-glass-shadow: 0 26px 70px rgba(0, 0, 0, .10);
   --ig-glass-blur: 16px;
 }
 
@@ -2286,7 +2286,7 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
 .v17-product-main-image,
 .v17-engraving-preview {
   background:
-    linear-gradient(145deg, var(--ig-glass-highlight), transparent 46%),
+    linear-gradient(145deg, var(--ig-glass-highlight), transparent 10%),
     var(--ig-glass-bg) !important;
   border-color: var(--ig-glass-border) !important;
   box-shadow: var(--ig-glass-shadow) !important;
@@ -2309,13 +2309,13 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
 }
 
 .v174-clickable-product-card .v15-unified-card-content > .absolute {
-  opacity: .68;
+  opacity: .10;
 }
 
 .v174-clickable-product-card:hover {
   background:
     linear-gradient(145deg, rgba(255,255,255,.075), transparent 44%),
-    rgba(39, 23, 13, .38) !important;
+    rgba(39, 23, 13, .10) !important;
 }
 
 /* Secciones y tarjetas secundarias */
@@ -2324,7 +2324,7 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
 .v17-product-tabs > div,
 .v17-checkout-panel > div,
 .v16-tracking-result > div {
-  background-color: rgba(29, 18, 11, .28) !important;
+  background-color: rgba(29, 18, 11, .10) !important;
 }
 
 /* Campos: legibles sin volver a fondos sólidos */
@@ -2417,10 +2417,10 @@ body:has(.ig-route-internal) [class*="bg-[#3"] {
 
 :root {
   --ig-1751-panel-bg:
-    linear-gradient(145deg, rgba(255,255,255,.075), transparent 38%),
+    linear-gradient(145deg, rgba(255,255,255,.075), transparent 10%),
     linear-gradient(180deg, rgba(48,29,17,.42), rgba(18,11,7,.54));
   --ig-1751-panel-bg-hover:
-    linear-gradient(145deg, rgba(255,255,255,.10), transparent 40%),
+    linear-gradient(145deg, rgba(255,255,255,.10), transparent 10%),
     linear-gradient(180deg, rgba(57,34,19,.48), rgba(20,12,7,.59));
   --ig-1751-gold: rgba(223, 169, 82, .78);
   --ig-1751-gold-soft: rgba(223, 169, 82, .30);
