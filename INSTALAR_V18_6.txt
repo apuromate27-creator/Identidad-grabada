@@ -1,0 +1,44 @@
+IDENTIDAD GRABADA — V18.6
+TRANSPARENCIA CRISTALINA
+
+ESTA ES UNA VERSIÓN COMPLETA.
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Seleccioná tu repositorio Identidad Grabada.
+4. Elegí Repository > Show in Explorer.
+5. Guardá una copia de seguridad.
+6. Copiá todo el contenido de esta versión.
+7. Pegalo dentro de la carpeta del repositorio.
+8. Elegí reemplazar los archivos existentes.
+9. Volvé a GitHub Desktop.
+10. En Summary escribí:
+    V18.6 - Transparencia cristalina
+11. Hacé clic en Commit to main.
+12. Hacé clic en Push origin.
+13. Esperá el despliegue de Vercel.
+
+CAMBIOS
+
+- Paneles mucho más transparentes.
+- Paisaje más visible detrás.
+- Menos negro y menos marrón sólido.
+- Bordes dorados más finos.
+- Sombras más suaves.
+- Header y footer cristalinos.
+- Buscadores, filtros y formularios transparentes.
+- Tarjetas de productos con degradado local para lectura.
+- Barra de beneficios similar a la referencia.
+- Carrito menos opaco.
+- Mejor contraste de textos sin oscurecer toda la tarjeta.
+- Ajustes para celular.
+
+SE CONSERVAN
+
+- Estructura V18.5.
+- Hero compacto V18.2.
+- Páginas internas V18.4.
+- Carrito, checkout y seguimiento.
+- Fondo unificado.

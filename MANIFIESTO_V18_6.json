@@ -1,0 +1,7 @@
+{
+  "version": "18.6.0",
+  "tipo": "version_completa",
+  "base": "18.5.0",
+  "cambio_principal": "Transparencia cristalina global",
+  "archivo_principal_modificado": "app/globals.css"
+}

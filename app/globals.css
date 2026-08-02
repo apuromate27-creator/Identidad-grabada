@@ -5249,3 +5249,281 @@ footer {
     backdrop-filter: blur(16px) saturate(1.30) !important;
   }
 }
+
+
+/* =========================================================
+   V18.6 — TRANSPARENCIA CRISTALINA
+   Más parecida a la referencia aprobada.
+   ========================================================= */
+
+:root {
+  --ig-v186-glass:
+    linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.018) 44%),
+    rgba(2,4,6,.028);
+  --ig-v186-glass-soft:
+    linear-gradient(145deg, rgba(255,255,255,.060), rgba(255,255,255,.012) 44%),
+    rgba(2,4,6,.018);
+  --ig-v186-border: rgba(234,190,103,.70);
+  --ig-v186-border-soft: rgba(234,190,103,.42);
+  --ig-v186-shadow:
+    0 18px 42px rgba(0,0,0,.18),
+    0 0 0 1px rgba(255,225,167,.07),
+    inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+/* Base de todas las páginas */
+.v1811-home-page,
+.v184-internal-page,
+.ig-page-background,
+.ig-page-productos,
+.ig-page-producto,
+.ig-page-trabajos,
+.ig-page-empresas,
+.ig-page-nosotros,
+.ig-page-seguimiento,
+.ig-page-contacto,
+.ig-page-checkout {
+  background-color: transparent !important;
+}
+
+/* Paneles y tarjetas principales */
+.v182-panel,
+.v181-category-card,
+.v181-product-card,
+.v181-benefit-strip,
+.v181-story-panel,
+.v184-page-hero-copy,
+.v184-page-hero-info,
+.v184-info-grid > div,
+.v184-cta-panel,
+.v184-story-grid > article,
+.v184-contact-panel,
+.v184-tracking-wrap .v16-private-tracking,
+.v184-tracking-wrap .v16-tracking-result,
+.ig-page-productos .v16-catalog-controls,
+.ig-page-productos .v174-clickable-product-card,
+.ig-page-producto .v17-product-summary,
+.ig-page-producto .v17-product-tabs,
+.ig-page-producto .v175-gallery-shell,
+.ig-page-checkout .v17-checkout-panel,
+.v17-cart-drawer,
+.v17-cart-item {
+  background: var(--ig-v186-glass) !important;
+  border-color: var(--ig-v186-border) !important;
+  box-shadow: var(--ig-v186-shadow) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.45) !important;
+  backdrop-filter: blur(22px) saturate(1.45) !important;
+}
+
+/* Tarjetas secundarias */
+.v184-work-grid .v15-unified-card,
+.v176-side-card,
+.v176-bottom-item,
+.v176-mini-benefit,
+.v182-benefit,
+.v184-info-grid > div,
+.ig-page-productos .v174-clickable-product-card {
+  background: var(--ig-v186-glass-soft) !important;
+  border-color: var(--ig-v186-border-soft) !important;
+}
+
+/* Reflejo tenue sin oscurecer */
+.v182-panel::before,
+.v181-category-card::before,
+.v181-product-card::before,
+.v181-benefit-strip::before,
+.v181-story-panel::before,
+.v184-page-hero-copy::before,
+.v184-page-hero-info::before,
+.v184-info-grid > div::before,
+.v184-cta-panel::before,
+.v184-story-grid > article::before,
+.v184-contact-panel::before,
+.ig-page-productos .v16-catalog-controls::before,
+.ig-page-productos .v174-clickable-product-card::before,
+.ig-page-producto .v17-product-summary::before,
+.ig-page-producto .v17-product-tabs::before,
+.ig-page-producto .v175-gallery-shell::before,
+.ig-page-checkout .v17-checkout-panel::before {
+  background:
+    radial-gradient(circle at 50% -20%, rgba(255,236,195,.10), transparent 48%),
+    linear-gradient(120deg, rgba(255,255,255,.035), transparent 34% 76%, rgba(229,173,78,.020)) !important;
+}
+
+/* Contenido de tarjetas: sin bloque marrón */
+.v174-clickable-product-card .v15-unified-card-content,
+.v184-work-grid .v15-unified-card-content,
+.v181-product-copy,
+.v181-category-copy {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.01), rgba(0,0,0,.08)) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(1.20) !important;
+  backdrop-filter: blur(10px) saturate(1.20) !important;
+}
+
+/* Header cristalino */
+header,
+.ig-header,
+.v15-header,
+.v184-internal-page header,
+.ig-page-productos header,
+.ig-page-producto header,
+.ig-page-checkout header {
+  background:
+    linear-gradient(180deg, rgba(3,5,7,.22), rgba(3,5,7,.065)) !important;
+  border-bottom-color: rgba(234,190,103,.22) !important;
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.16),
+    inset 0 -1px 0 rgba(255,255,255,.03) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.35) !important;
+  backdrop-filter: blur(22px) saturate(1.35) !important;
+}
+
+/* Footer cristalino */
+footer,
+.v184-internal-page footer,
+.ig-page-productos footer,
+.ig-page-producto footer,
+.ig-page-checkout footer {
+  background:
+    linear-gradient(180deg, rgba(3,5,7,.035), rgba(3,5,7,.10)) !important;
+  border-top-color: rgba(234,190,103,.16) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.30) !important;
+  backdrop-filter: blur(20px) saturate(1.30) !important;
+}
+
+/* Filtros y buscador más transparentes */
+.ig-page-productos input,
+.ig-page-productos select,
+.v16-catalog-controls input,
+.v16-catalog-controls select,
+.v184-internal-page input,
+.v184-internal-page select,
+.v184-internal-page textarea,
+.ig-page-producto input,
+.ig-page-producto select,
+.ig-page-producto textarea,
+.ig-page-checkout input,
+.ig-page-checkout select,
+.ig-page-checkout textarea {
+  background:
+    linear-gradient(180deg, rgba(2,4,6,.035), rgba(2,4,6,.08)) !important;
+  border-color: rgba(234,190,103,.34) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.25) !important;
+  backdrop-filter: blur(14px) saturate(1.25) !important;
+}
+
+/* Mejor legibilidad sin oscurecer el panel entero */
+.v182-copy h1,
+.v184-page-hero-copy h1,
+.v181-section-heading h2,
+.v181-product-copy h3,
+.v181-category-copy h3,
+.v184-internal-page h1,
+.v184-internal-page h2,
+.v184-internal-page h3 {
+  color: #fffaf2 !important;
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.30),
+    0 0 12px rgba(255,226,174,.08) !important;
+}
+
+.v182-lead,
+.v184-page-hero-copy > span,
+.v181-product-copy small,
+.v181-category-copy p,
+.v184-internal-page p,
+.v184-internal-page span,
+.v184-internal-page small {
+  color: rgba(255,255,255,.76) !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,.24);
+}
+
+/* Botones: menos pesados y más luminosos */
+.v182-primary,
+.v176-primary-button,
+.v174-product-card-button,
+.v184-cta-panel > a,
+.v184-contact-action > a,
+.v17-product-summary button[type="button"],
+.v17-checkout-panel button[type="submit"] {
+  background:
+    linear-gradient(135deg, rgba(224,174,85,.95), rgba(174,112,40,.95)) !important;
+  box-shadow:
+    0 8px 22px rgba(174,112,40,.18),
+    0 0 16px rgba(230,181,90,.10),
+    inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+
+/* Hover delicado */
+.v174-clickable-product-card:hover,
+.v181-category-card:hover,
+.v181-product-card:hover,
+.v184-work-grid .v15-unified-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(250,205,120,.92) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.02) 44%),
+    rgba(2,4,6,.035) !important;
+  box-shadow:
+    0 24px 56px rgba(0,0,0,.22),
+    0 0 22px rgba(226,170,70,.12),
+    inset 0 1px 0 rgba(255,255,255,.12) !important;
+}
+
+/* Barra de beneficios similar a la referencia */
+.v181-benefit-strip,
+.v176-bottom-strip {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.055), transparent 42%),
+    rgba(2,4,6,.026) !important;
+}
+
+/* Carrito menos opaco pero legible */
+.v17-cart-drawer {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.055), transparent 38%),
+    rgba(3,5,7,.72) !important;
+}
+
+/* Móvil */
+@media (max-width: 767px) {
+  :root {
+    --ig-v186-glass:
+      linear-gradient(145deg, rgba(255,255,255,.070), rgba(255,255,255,.015) 44%),
+      rgba(2,4,6,.045);
+    --ig-v186-glass-soft:
+      linear-gradient(145deg, rgba(255,255,255,.050), rgba(255,255,255,.010) 44%),
+      rgba(2,4,6,.032);
+  }
+
+  .v182-panel,
+  .v181-category-card,
+  .v181-product-card,
+  .v181-benefit-strip,
+  .v181-story-panel,
+  .v184-page-hero-copy,
+  .v184-page-hero-info,
+  .v184-info-grid > div,
+  .v184-cta-panel,
+  .v184-story-grid > article,
+  .v184-contact-panel,
+  .v184-tracking-wrap .v16-private-tracking,
+  .v184-tracking-wrap .v16-tracking-result,
+  .ig-page-productos .v16-catalog-controls,
+  .ig-page-productos .v174-clickable-product-card,
+  .ig-page-producto .v17-product-summary,
+  .ig-page-producto .v17-product-tabs,
+  .ig-page-producto .v175-gallery-shell,
+  .ig-page-checkout .v17-checkout-panel {
+    -webkit-backdrop-filter: blur(14px) saturate(1.22) !important;
+    backdrop-filter: blur(14px) saturate(1.22) !important;
+  }
+
+  .v174-clickable-product-card:hover,
+  .v181-category-card:hover,
+  .v181-product-card:hover,
+  .v184-work-grid .v15-unified-card:hover {
+    transform: none;
+  }
+}
