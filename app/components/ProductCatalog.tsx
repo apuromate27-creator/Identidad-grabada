@@ -58,7 +58,7 @@ export function ProductCatalog({
 
   return (
     <>
-      <div className="v16-catalog-controls mt-10 rounded-[2rem] border border-[#d8aa62]/22 p-5 md:p-6">
+      <div className="v16-catalog-controls v188-sticky-filters mt-10 rounded-[2rem] border border-[#d8aa62]/22 p-5 md:p-6">
         <div className="grid gap-4 lg:grid-cols-[1fr_auto]">
           <label className="relative block">
             <span className="sr-only">Buscar productos</span>

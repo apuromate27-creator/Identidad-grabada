@@ -1,0 +1,30 @@
+IDENTIDAD GRABADA — V18.8
+MOBILE COMMERCE
+
+VERSIÓN COMPLETA
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá los archivos.
+7. En GitHub Desktop escribí:
+   V18.8 - Mobile Commerce
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
+
+CAMBIOS PARA CELULAR
+- Carrusel horizontal en Categorías destacadas.
+- Carrusel horizontal en Productos destacados.
+- Swipe táctil y controles anterior/siguiente.
+- Página Productos con 2 tarjetas por fila.
+- Tarjetas compactas estilo marketplace.
+- Imágenes con altura uniforme.
+- Descripciones limitadas a 2 líneas.
+- Filtros fijos al hacer scroll.
+- WhatsApp ligeramente más pequeño.
+
+ESCRITORIO
+- Conserva el diseño de V18.7.

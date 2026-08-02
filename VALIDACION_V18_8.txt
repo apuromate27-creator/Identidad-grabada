@@ -1,0 +1,7 @@
+COMPILACIÓN NO CONFIRMADA
+
+
+> identidad-grabada-v18-8-mobile-commerce@18.8.0 build
+> next build
+
+sh: 1: next: Permission denied
