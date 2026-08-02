@@ -1,3 +1,47 @@
-import {Header,Footer,WhatsAppFloat,Title,InfoBox}from"../components/ui";
-import {contact,whatsappLink}from"../data/contact";
-export default function ContactPage(){return <main className="min-h-screen text-white ig-page-background ig-page-contacto"><Header/><section className="max-w-7xl mx-auto px-6 py-20"><Title eyebrow="Contacto" title="Hablemos de tu diseño" text="Podés escribirnos por WhatsApp o seguirnos en Instagram."/><div className="grid lg:grid-cols-2 gap-8 mt-12"><div className="bg-[#2d1d13] border border-white/10 rounded-[3rem] p-8 space-y-5"><InfoBox title="Ubicación" text={contact.city}/><InfoBox title="WhatsApp" text={contact.whatsappLabel}/><InfoBox title="Instagram" text={`@${contact.instagram}`}/></div><div className="bg-[#342217] border border-white/10 rounded-[3rem] p-8 flex flex-col justify-center"><h2 className="text-4xl font-black mb-5">Consulta rápida</h2><a href={whatsappLink("Hola, vi la página web y quiero consultar por un grabado personalizado.")} className="bg-green-700 text-white py-5 rounded-2xl font-black text-center hover:bg-green-600 transition">Consultar por WhatsApp</a></div></div></section><Footer/><WhatsAppFloat/></main>}
+
+import { Header, Footer, WhatsAppFloat, InfoBox } from "../components/ui";
+import { InternalPageHero } from "../components/InternalPageHero";
+import { contact, whatsappLink } from "../data/contact";
+
+export default function ContactPage() {
+  return (
+    <main className="min-h-screen text-white ig-page-background ig-page-contacto v184-internal-page">
+      <Header />
+
+      <section className="v184-page-shell">
+        <InternalPageHero
+          eyebrow="Contacto"
+          title="Hablemos de tu diseño"
+          text="Escribinos por WhatsApp o seguinos en Instagram para comenzar tu próximo producto personalizado."
+        />
+
+        <div className="v184-contact-grid">
+          <div className="v184-contact-panel">
+            <InfoBox title="Ubicación" text={contact.city} />
+            <InfoBox title="WhatsApp" text={contact.whatsappLabel} />
+            <InfoBox title="Instagram" text={`@${contact.instagram}`} />
+          </div>
+
+          <div className="v184-contact-panel v184-contact-action">
+            <p>Consulta rápida</p>
+            <h2>Contanos qué querés grabar.</h2>
+            <span>
+              Podemos ayudarte a elegir producto, tamaño, ubicación y estilo del diseño.
+            </span>
+
+            <a
+              href={whatsappLink(
+                "Hola, vi la página web y quiero consultar por un grabado personalizado."
+              )}
+            >
+              Consultar por WhatsApp →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppFloat />
+    </main>
+  );
+}

@@ -4732,3 +4732,331 @@ footer {
     transition: none !important;
   }
 }
+
+
+/* =========================================================
+   V18.4 — PÁGINAS INTERNAS PREMIUM
+   Hace que Productos, Trabajos, Empresas, Nosotros,
+   Seguimiento y Contacto se parezcan a la Home.
+   ========================================================= */
+
+.v184-internal-page {
+  background: transparent !important;
+}
+
+.v184-page-shell {
+  width: min(1380px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 42px 0 64px;
+}
+
+.v184-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(420px, .85fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.v184-page-hero-copy,
+.v184-page-hero-info,
+.v184-info-grid > div,
+.v184-cta-panel,
+.v184-story-grid > article,
+.v184-contact-panel {
+  border: 1px solid rgba(235,180,78,.62);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.032), transparent 38%),
+    rgba(5,5,5,.10);
+  box-shadow:
+    0 22px 62px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.04);
+  -webkit-backdrop-filter: blur(17px) saturate(1.10);
+  backdrop-filter: blur(17px) saturate(1.10);
+}
+
+.v184-page-hero-copy {
+  border-radius: 20px;
+  padding: 30px 32px;
+}
+
+.v184-page-hero-copy > p {
+  color: #efbd68;
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.v184-page-hero-copy h1 {
+  margin-top: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4vw, 66px);
+  font-weight: 400;
+  line-height: .98;
+  text-wrap: balance;
+}
+
+.v184-page-hero-copy > span {
+  display: block;
+  margin-top: 16px;
+  max-width: 760px;
+  color: rgba(255,255,255,.70);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.v184-page-hero-action {
+  display: inline-flex;
+  margin-top: 20px;
+  min-height: 42px;
+  align-items: center;
+  border: 1px solid rgba(235,180,78,.60);
+  border-radius: 10px;
+  padding: 0 16px;
+  color: #efc16f;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.v184-page-hero-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.v184-page-hero-info > div {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.v184-page-hero-info > div + div {
+  border-left: 1px solid rgba(235,180,78,.16);
+}
+
+.v184-page-hero-info strong,
+.v184-page-hero-info small {
+  display: block;
+}
+
+.v184-page-hero-info strong {
+  color: #e9b45d;
+  font-size: 12px;
+}
+
+.v184-page-hero-info small {
+  margin-top: 6px;
+  color: rgba(255,255,255,.58);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.v184-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.v184-work-grid .v15-unified-card {
+  border-radius: 20px !important;
+}
+
+.v184-work-grid .v15-unified-card-media {
+  height: 250px !important;
+}
+
+.v184-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.v184-info-grid > div {
+  border-radius: 16px !important;
+  padding: 20px !important;
+}
+
+.v184-cta-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 28px;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 28px 32px;
+}
+
+.v184-cta-panel p,
+.v184-story-grid article > p,
+.v184-contact-action > p {
+  color: #efbd68;
+  font-size: 10px;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+}
+
+.v184-cta-panel h2,
+.v184-story-grid h2,
+.v184-contact-action h2 {
+  margin-top: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.v184-cta-panel span,
+.v184-story-grid span,
+.v184-contact-action span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255,255,255,.64);
+  line-height: 1.55;
+}
+
+.v184-cta-panel > a,
+.v184-contact-action > a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,218,151,.36);
+  border-radius: 11px;
+  background: linear-gradient(135deg,#d6a14c,#ad7127);
+  padding: 0 20px;
+  color: white;
+  font-weight: 800;
+}
+
+.v184-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.v184-story-grid > article {
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.v184-tracking-wrap .v16-private-tracking,
+.v184-tracking-wrap .v16-tracking-result {
+  border-radius: 20px !important;
+}
+
+.v184-contact-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 18px;
+}
+
+.v184-contact-panel {
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.v184-contact-panel > div + div {
+  margin-top: 12px;
+}
+
+.v184-contact-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px;
+}
+
+.v184-contact-action > a {
+  margin-top: 22px;
+  width: fit-content;
+}
+
+.v184-benefits-section {
+  padding-top: 0;
+}
+
+@media (max-width: 1050px) {
+  .v184-page-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .v184-page-hero-info {
+    min-height: 108px;
+  }
+
+  .v184-work-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .v184-page-shell {
+    width: calc(100% - 18px);
+    padding: 24px 0 42px;
+  }
+
+  .v184-page-hero {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .v184-page-hero-copy {
+    border-radius: 17px;
+    padding: 21px 17px;
+  }
+
+  .v184-page-hero-copy h1 {
+    font-size: 38px;
+  }
+
+  .v184-page-hero-copy > span {
+    font-size: 13px;
+  }
+
+  .v184-page-hero-info {
+    grid-template-columns: 1fr;
+    border-radius: 17px;
+  }
+
+  .v184-page-hero-info > div {
+    min-height: 68px;
+    padding: 12px 15px;
+  }
+
+  .v184-page-hero-info > div + div {
+    border-left: none;
+    border-top: 1px solid rgba(235,180,78,.16);
+  }
+
+  .v184-work-grid,
+  .v184-info-grid,
+  .v184-story-grid,
+  .v184-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .v184-work-grid .v15-unified-card-media {
+    height: 220px !important;
+  }
+
+  .v184-cta-panel {
+    grid-template-columns: 1fr;
+    padding: 22px 17px;
+  }
+
+  .v184-cta-panel > a,
+  .v184-contact-action > a {
+    width: 100%;
+  }
+
+  .v184-story-grid > article,
+  .v184-contact-panel {
+    border-radius: 17px;
+    padding: 20px 17px;
+  }
+}

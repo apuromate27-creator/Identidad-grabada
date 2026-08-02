@@ -1,0 +1,45 @@
+IDENTIDAD GRABADA — V18.4
+PÁGINAS INTERNAS PREMIUM
+
+ESTA ES UNA VERSIÓN COMPLETA.
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Seleccioná tu repositorio Identidad Grabada.
+4. Elegí Repository > Show in Explorer.
+5. Hacé una copia de seguridad.
+6. Copiá todo el contenido de esta versión.
+7. Pegalo dentro de la carpeta del repositorio.
+8. Elegí reemplazar los archivos existentes.
+9. Volvé a GitHub Desktop.
+10. En Summary escribí:
+    V18.4 - Páginas internas premium
+11. Commit to main.
+12. Push origin.
+13. Esperá el despliegue de Vercel.
+
+CAMBIOS
+
+- Productos, Trabajos, Empresas, Nosotros, Seguimiento y Contacto
+  ahora usan un encabezado visual parecido a la Home.
+- Se agrega un componente reutilizable InternalPageHero.
+- Paneles más compactos y transparentes.
+- Bordes dorados uniformes.
+- Información lateral integrada.
+- Menos espacios vacíos.
+- Mejor jerarquía de títulos.
+- Empresas y Contacto con llamados a la acción premium.
+- Nosotros con paneles institucionales.
+- Trabajos con una grilla más compacta.
+- Responsive específico para celular.
+
+SE CONSERVAN
+
+- Hero compacto V18.2.
+- Premium Glass UI V18.3.
+- Fondo unificado.
+- Carrito y checkout.
+- Tarjetas clickeables.
+- Seguimiento privado.

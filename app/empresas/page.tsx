@@ -1,3 +1,41 @@
-import Link from"next/link";
-import {Header,Footer,WhatsAppFloat,Title,InfoBox}from"../components/ui";
-export default function EmpresasPage(){return <main className="min-h-screen text-white ig-page-background ig-page-empresas"><Header/><section className="max-w-7xl mx-auto px-6 py-20"><Title eyebrow="Empresas" title="Regalos empresariales personalizados" text="Una página especial para pedidos por cantidad, regalos corporativos, souvenirs y productos con logo."/><div className="grid md:grid-cols-3 gap-6 mt-12"><InfoBox title="Logos empresariales" text="Grabado de marca en mates y regalos."/><InfoBox title="Pedidos por cantidad" text="Cotización personalizada según volumen."/><InfoBox title="Presentación premium" text="Ideal para clientes, equipos y eventos."/></div><div className="mt-12 bg-[#b68b52] rounded-[3rem] p-10 md:p-16 text-black flex flex-col md:flex-row justify-between gap-8 items-center"><div><h2 className="text-5xl font-black">¿Querés cotizar para tu empresa?</h2><p className="mt-4 text-black/70">Enviá tu idea, logo y cantidad aproximada.</p></div><Link href="/contacto" className="bg-[#1d130d] text-white px-8 py-5 rounded-2xl font-black">Solicitar cotización</Link></div></section><Footer/><WhatsAppFloat/></main>}
+
+import Link from "next/link";
+import { Header, Footer, WhatsAppFloat, InfoBox } from "../components/ui";
+import { InternalPageHero } from "../components/InternalPageHero";
+
+export default function EmpresasPage() {
+  return (
+    <main className="min-h-screen text-white ig-page-background ig-page-empresas v184-internal-page">
+      <Header />
+
+      <section className="v184-page-shell">
+        <InternalPageHero
+          eyebrow="Empresas"
+          title="Regalos empresariales personalizados"
+          text="Soluciones para pedidos por cantidad, regalos corporativos, souvenirs y productos con logo."
+          actionHref="/contacto"
+          actionLabel="Solicitar cotización"
+        />
+
+        <div className="v184-info-grid">
+          <InfoBox title="Logos empresariales" text="Grabado de marca en mates y regalos." />
+          <InfoBox title="Pedidos por cantidad" text="Cotización personalizada según volumen." />
+          <InfoBox title="Presentación premium" text="Ideal para clientes, equipos y eventos." />
+        </div>
+
+        <div className="v184-cta-panel">
+          <div>
+            <p>Propuestas corporativas</p>
+            <h2>¿Querés cotizar para tu empresa?</h2>
+            <span>Enviá tu idea, logo y cantidad aproximada.</span>
+          </div>
+
+          <Link href="/contacto">Solicitar cotización →</Link>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppFloat />
+    </main>
+  );
+}
