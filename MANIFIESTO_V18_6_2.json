@@ -1,0 +1,9 @@
+{
+  "version": "18.6.2",
+  "tipo": "version_completa",
+  "base": "18.6.1",
+  "cambio_principal": "Reemplazo de globals.css por una versión limpia",
+  "lineas_css_anterior": 5758,
+  "lineas_css_nuevo": 3640,
+  "backup": "app/globals.v18.6.1.backup.css"
+}

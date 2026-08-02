@@ -1,0 +1,33 @@
+IDENTIDAD GRABADA — V18.6.2
+GLOBALS.CSS LIMPIO
+
+VERSIÓN COMPLETA
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en Repository > Show in Explorer.
+4. Hacé una copia de seguridad del repositorio actual.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá los archivos.
+7. En GitHub Desktop escribí:
+   V18.6.2 - Globals limpio
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
+
+QUÉ CAMBIA
+
+- Se eliminan todos los parches visuales acumulados desde V18.0.
+- Se conserva la base estructural estable hasta V17.6.
+- Se crea un único sistema Glass limpio.
+- Se reduce el blur de 20–28 px a 2–3 px.
+- Se eliminan overlays y dobles fondos marrones.
+- Se conserva el dorado únicamente en bordes, botones y detalles.
+- El paisaje se ve con mucho más detalle detrás de los paneles.
+- Se incluye una copia del CSS anterior:
+  app/globals.v18.6.1.backup.css
+
+IMPORTANTE
+
+Esta versión produce un cambio visual más evidente porque no agrega otro parche:
+reemplaza la pila de reglas V18 por una sola definición limpia.
