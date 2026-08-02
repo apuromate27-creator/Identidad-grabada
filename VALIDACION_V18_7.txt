@@ -1,0 +1,7 @@
+REVISAR COMPILACIÓN
+
+
+> identidad-grabada-v18-7-refinado-final@18.7.0 build
+> next build
+
+sh: 1: next: Permission denied

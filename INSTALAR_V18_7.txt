@@ -1,0 +1,38 @@
+IDENTIDAD GRABADA — V18.7
+REFINADO FINAL VISUAL
+
+VERSIÓN COMPLETA
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá los archivos.
+7. En GitHub Desktop escribí:
+   V18.7 - Refinado final visual
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
+
+CAMBIOS PRINCIPALES
+
+- Header que se reduce realmente al hacer scroll.
+- Hero más equilibrado y con mejor jerarquía.
+- Botones unificados.
+- Hover premium en tarjetas.
+- Categorías y productos con mejor padding.
+- Tipografía y subtítulos ajustados.
+- Páginas internas con el mismo ritmo visual.
+- Footer refinado.
+- Ajustes específicos para celular.
+- Se conserva el sistema Glass limpio de V18.6.3.
+
+NO SE CAMBIAN FUNCIONES
+
+- Carrito.
+- Checkout.
+- Seguimiento.
+- Productos.
+- Navegación.
+- Integración con WhatsApp.
