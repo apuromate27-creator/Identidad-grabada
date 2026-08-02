@@ -1,0 +1,36 @@
+IDENTIDAD GRABADA — V18.6.3
+ESTRUCTURA RESTAURADA + GLASS LIMPIO
+
+VERSIÓN COMPLETA
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en Repository > Show in Explorer.
+4. Hacé una copia de seguridad del repositorio actual.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá los archivos.
+7. En GitHub Desktop escribí:
+   V18.6.3 - Estructura restaurada
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
+
+QUÉ SE CORRIGE
+
+- Se restauran las grillas, espacios, tamaños y alineaciones del Home.
+- Se restaura el Hero compacto V18.2.
+- Se restauran las páginas internas V18.4.
+- Se recuperan columnas, tarjetas, títulos, paneles y responsive.
+- Se mantiene el nuevo sistema Glass limpio.
+- No se vuelven a agregar los fondos marrones de V18.3, V18.5 o V18.6.
+- El sistema visual limpio queda al final del archivo y tiene prioridad.
+
+CAUSA DEL PROBLEMA
+
+Al limpiar globals.css se eliminaron también reglas estructurales introducidas
+en V18.1, V18.2 y V18.4. Por eso la transparencia mejoró, pero los componentes
+perdieron sus grillas, paddings, alturas y tamaños.
+
+Esta versión separa:
+1. estructura necesaria;
+2. apariencia Glass limpia.

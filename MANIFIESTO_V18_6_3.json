@@ -1,0 +1,13 @@
+{
+  "version": "18.6.3",
+  "base": "18.6.2",
+  "correccion": "Restauración de reglas estructurales eliminadas",
+  "secciones_recuperadas": [
+    "V18.1 Home Premium",
+    "V18.1.1 Fondo unificado",
+    "V18.2 Hero Compact Premium",
+    "V18.4 Páginas internas premium"
+  ],
+  "apariencia_activa": "V18.6.2 Glass limpio",
+  "lineas_css": 4845
+}
