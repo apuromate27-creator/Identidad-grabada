@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-6-transparencia-cristalina",
-  "version": "18.6.0",
+  "name": "identidad-grabada-v18-6-1-glass-v2",
+  "version": "18.6.1",
   "private": true,
   "scripts": {
     "dev": "next dev",

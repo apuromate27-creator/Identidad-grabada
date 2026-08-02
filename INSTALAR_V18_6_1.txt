@@ -1,0 +1,30 @@
+IDENTIDAD GRABADA — V18.6.1
+GLASS V2 REAL
+
+VERSIÓN COMPLETA
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá los archivos.
+7. En GitHub Desktop escribí:
+   V18.6.1 - Glass V2 real
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
+
+CAMBIOS
+- Se eliminan los fondos marrones acumulados.
+- Se usa una sola capa real de vidrio.
+- El paisaje queda mucho más visible.
+- Header y footer más flotantes.
+- Contenedores internos sin doble fondo.
+- Formularios y filtros transparentes.
+- Bordes dorados más finos.
+- Tarjetas con degradado solo donde hace falta leer.
+- Carrito translúcido.
+- Ajustes móviles.
+
+Esta versión es una prueba visual más profunda que V18.6.

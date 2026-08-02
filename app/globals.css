@@ -5527,3 +5527,232 @@ footer,
     transform: none;
   }
 }
+
+
+/* =========================================================
+   V18.6.1 — GLASS V2 REAL
+   Elimina los fondos marrones acumulados.
+   ========================================================= */
+
+:root {
+  --ig-glass-v2: rgba(255,255,255,.028);
+  --ig-glass-v2-soft: rgba(255,255,255,.018);
+  --ig-glass-v2-strong: rgba(255,255,255,.045);
+  --ig-glass-v2-border: rgba(245,203,124,.54);
+  --ig-glass-v2-border-soft: rgba(245,203,124,.34);
+  --ig-glass-v2-shadow:
+    0 18px 52px rgba(0,0,0,.20),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* Paneles principales: una sola capa de vidrio, sin marrón */
+.v182-panel,
+.v181-category-card,
+.v181-product-card,
+.v181-benefit-strip,
+.v181-story-panel,
+.v184-page-hero-copy,
+.v184-page-hero-info,
+.v184-info-grid > div,
+.v184-cta-panel,
+.v184-story-grid > article,
+.v184-contact-panel,
+.v184-tracking-wrap .v16-private-tracking,
+.v184-tracking-wrap .v16-tracking-result,
+.ig-page-productos .v16-catalog-controls,
+.ig-page-productos .v174-clickable-product-card,
+.ig-page-producto .v17-product-summary,
+.ig-page-producto .v17-product-tabs,
+.ig-page-producto .v175-gallery-shell,
+.ig-page-checkout .v17-checkout-panel,
+.v17-cart-item,
+.v184-work-grid .v15-unified-card {
+  background: var(--ig-glass-v2) !important;
+  border: 1px solid var(--ig-glass-v2-border) !important;
+  box-shadow: var(--ig-glass-v2-shadow) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.65) !important;
+  backdrop-filter: blur(20px) saturate(1.65) !important;
+}
+
+/* Elimina capas marrones internas */
+.v174-clickable-product-card .v15-unified-card-content,
+.v184-work-grid .v15-unified-card-content,
+.v181-product-copy,
+.v181-category-copy,
+.v17-product-summary > div,
+.v17-product-tabs > div,
+.v16-catalog-controls > div,
+.v184-page-hero-info > div,
+.v182-benefit,
+.v176-side-card,
+.v176-bottom-item,
+.v176-mini-benefit,
+.v17-cart-item > div {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Contenedores secundarios */
+.v176-side-card,
+.v176-bottom-item,
+.v176-mini-benefit,
+.v182-benefit,
+.v184-page-hero-info > div,
+.v184-info-grid > div {
+  background: var(--ig-glass-v2-soft) !important;
+  border-color: var(--ig-glass-v2-border-soft) !important;
+}
+
+/* Reflejo superior sutil */
+.v182-panel::before,
+.v181-category-card::before,
+.v181-product-card::before,
+.v181-benefit-strip::before,
+.v181-story-panel::before,
+.v184-page-hero-copy::before,
+.v184-page-hero-info::before,
+.v184-info-grid > div::before,
+.v184-cta-panel::before,
+.v184-story-grid > article::before,
+.v184-contact-panel::before,
+.v184-tracking-wrap .v16-private-tracking::before,
+.v184-tracking-wrap .v16-tracking-result::before,
+.ig-page-productos .v16-catalog-controls::before,
+.ig-page-productos .v174-clickable-product-card::before,
+.ig-page-producto .v17-product-summary::before,
+.ig-page-producto .v17-product-tabs::before,
+.ig-page-producto .v175-gallery-shell::before,
+.ig-page-checkout .v17-checkout-panel::before,
+.v184-work-grid .v15-unified-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.085),
+      rgba(255,255,255,.015) 24%,
+      transparent 48%
+    ) !important;
+}
+
+/* Header verdaderamente flotante */
+header,
+.ig-header,
+.v15-header,
+.v184-internal-page header,
+.ig-page-productos header,
+.ig-page-producto header,
+.ig-page-checkout header {
+  background: rgba(3,5,7,.16) !important;
+  border-bottom-color: rgba(245,203,124,.20) !important;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.16),
+    inset 0 -1px 0 rgba(255,255,255,.025) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.55) !important;
+  backdrop-filter: blur(18px) saturate(1.55) !important;
+}
+
+/* Footer sin bloque sólido */
+footer,
+.v184-internal-page footer,
+.ig-page-productos footer,
+.ig-page-producto footer,
+.ig-page-checkout footer {
+  background: rgba(3,5,7,.055) !important;
+  border-top-color: rgba(245,203,124,.14) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.45) !important;
+  backdrop-filter: blur(18px) saturate(1.45) !important;
+}
+
+/* Filtros, formularios y selects */
+input,
+select,
+textarea,
+.v16-catalog-controls input,
+.v16-catalog-controls select {
+  background: rgba(255,255,255,.018) !important;
+  border-color: rgba(245,203,124,.30) !important;
+  color: #fff !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.35) !important;
+  backdrop-filter: blur(12px) saturate(1.35) !important;
+}
+
+/* Evita el marrón en botones secundarios */
+.v182-secondary,
+.v176-secondary-button,
+.ig-button-secondary,
+.v184-page-hero-action,
+.v174-product-card-button[class*="border"] {
+  background: rgba(255,255,255,.018) !important;
+  border-color: rgba(245,203,124,.44) !important;
+}
+
+/* Tarjetas: mejor lectura sin tapar el fondo */
+.v181-product-shade,
+.v181-category-shade,
+.v182-media-shade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.02) 0%,
+      rgba(0,0,0,.05) 48%,
+      rgba(0,0,0,.40) 100%
+    ) !important;
+}
+
+/* Carrito: más translúcido, pero funcional */
+.v17-cart-drawer {
+  background: rgba(3,5,7,.72) !important;
+  border-left: 1px solid rgba(245,203,124,.34) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.50) !important;
+  backdrop-filter: blur(22px) saturate(1.50) !important;
+}
+
+/* Hover */
+.v174-clickable-product-card:hover,
+.v181-category-card:hover,
+.v181-product-card:hover,
+.v184-work-grid .v15-unified-card:hover {
+  background: var(--ig-glass-v2-strong) !important;
+  border-color: rgba(252,215,145,.88) !important;
+  box-shadow:
+    0 24px 64px rgba(0,0,0,.24),
+    0 0 22px rgba(226,170,70,.10),
+    inset 0 1px 0 rgba(255,255,255,.11) !important;
+}
+
+/* Móvil: menos blur y sin doble capa */
+@media (max-width: 767px) {
+  :root {
+    --ig-glass-v2: rgba(255,255,255,.034);
+    --ig-glass-v2-soft: rgba(255,255,255,.022);
+  }
+
+  .v182-panel,
+  .v181-category-card,
+  .v181-product-card,
+  .v181-benefit-strip,
+  .v181-story-panel,
+  .v184-page-hero-copy,
+  .v184-page-hero-info,
+  .v184-info-grid > div,
+  .v184-cta-panel,
+  .v184-story-grid > article,
+  .v184-contact-panel,
+  .v184-tracking-wrap .v16-private-tracking,
+  .v184-tracking-wrap .v16-tracking-result,
+  .ig-page-productos .v16-catalog-controls,
+  .ig-page-productos .v174-clickable-product-card,
+  .ig-page-producto .v17-product-summary,
+  .ig-page-producto .v17-product-tabs,
+  .ig-page-producto .v175-gallery-shell,
+  .ig-page-checkout .v17-checkout-panel,
+  .v184-work-grid .v15-unified-card {
+    -webkit-backdrop-filter: blur(12px) saturate(1.35) !important;
+    backdrop-filter: blur(12px) saturate(1.35) !important;
+  }
+}
