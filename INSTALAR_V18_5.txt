@@ -1,0 +1,27 @@
+IDENTIDAD GRABADA — V18.5
+GLASS BRILLANTE Y TRANSPARENTE
+
+VERSIÓN COMPLETA
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá los archivos.
+7. En GitHub Desktop escribí:
+   V18.5 - Glass brillante y transparente
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
+
+CAMBIOS
+- Más transparencia en páginas internas.
+- Menos tono marrón.
+- Mayor brillo dorado.
+- Blur y saturación más altos.
+- Títulos más luminosos.
+- Header y footer más transparentes.
+- Formularios integrados al estilo glass.
+- Botones con brillo dorado.
+- Ajustes para celular.

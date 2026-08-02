@@ -5060,3 +5060,192 @@ footer {
     padding: 20px 17px;
   }
 }
+
+
+/* =========================================================
+   V18.5 — GLASS BRILLANTE Y TRANSPARENTE
+   ========================================================= */
+
+:root {
+  --ig-v185-glass:
+    linear-gradient(145deg, rgba(255,255,255,.070), rgba(255,255,255,.012) 42%),
+    rgba(0,0,0,.055);
+  --ig-v185-glass-soft:
+    linear-gradient(145deg, rgba(255,255,255,.050), rgba(255,255,255,.008) 42%),
+    rgba(0,0,0,.035);
+  --ig-v185-border: rgba(238,188,94,.78);
+  --ig-v185-border-soft: rgba(238,188,94,.48);
+  --ig-v185-glow:
+    0 0 0 1px rgba(255,211,126,.11),
+    0 0 26px rgba(226,170,70,.16),
+    0 20px 48px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.085);
+}
+
+.v184-page-hero-copy,
+.v184-page-hero-info,
+.v184-info-grid > div,
+.v184-cta-panel,
+.v184-story-grid > article,
+.v184-contact-panel,
+.v184-tracking-wrap .v16-private-tracking,
+.v184-tracking-wrap .v16-tracking-result,
+.ig-page-productos .v16-catalog-controls,
+.ig-page-productos .v174-clickable-product-card,
+.ig-page-producto .v17-product-summary,
+.ig-page-producto .v17-product-tabs,
+.ig-page-producto .v175-gallery-shell,
+.ig-page-checkout .v17-checkout-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--ig-v185-glass) !important;
+  border-color: var(--ig-v185-border) !important;
+  box-shadow: var(--ig-v185-glow) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(1.65) !important;
+  backdrop-filter: blur(28px) saturate(1.65) !important;
+}
+
+.v184-page-hero-copy::before,
+.v184-page-hero-info::before,
+.v184-info-grid > div::before,
+.v184-cta-panel::before,
+.v184-story-grid > article::before,
+.v184-contact-panel::before,
+.v184-tracking-wrap .v16-private-tracking::before,
+.v184-tracking-wrap .v16-tracking-result::before,
+.ig-page-productos .v16-catalog-controls::before,
+.ig-page-productos .v174-clickable-product-card::before,
+.ig-page-producto .v17-product-summary::before,
+.ig-page-producto .v17-product-tabs::before,
+.ig-page-producto .v175-gallery-shell::before,
+.ig-page-checkout .v17-checkout-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% -12%, rgba(255,221,154,.15), transparent 48%),
+    linear-gradient(120deg, rgba(255,255,255,.045), transparent 30% 76%, rgba(229,173,78,.035));
+}
+
+.v184-work-grid .v15-unified-card,
+.ig-page-productos .v174-clickable-product-card {
+  background: var(--ig-v185-glass-soft) !important;
+  border-color: var(--ig-v185-border-soft) !important;
+}
+
+.v184-work-grid .v15-unified-card:hover,
+.ig-page-productos .v174-clickable-product-card:hover {
+  border-color: rgba(250,204,119,.96) !important;
+  box-shadow:
+    0 0 0 1px rgba(255,218,146,.15),
+    0 0 30px rgba(226,170,70,.20),
+    0 30px 74px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.10) !important;
+}
+
+.ig-page-productos .v174-clickable-product-card .v15-unified-card-content,
+.v184-work-grid .v15-unified-card-content {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.015), rgba(0,0,0,.105)) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+  backdrop-filter: blur(18px) saturate(1.35) !important;
+}
+
+.v184-page-hero-copy h1,
+.v184-cta-panel h2,
+.v184-story-grid h2,
+.v184-contact-action h2,
+.v184-internal-page h1,
+.v184-internal-page h2,
+.v184-internal-page h3 {
+  color: #fff8ec !important;
+  text-shadow: 0 0 16px rgba(255,220,170,.13);
+}
+
+.v184-page-hero-copy > p,
+.v184-cta-panel p,
+.v184-story-grid article > p,
+.v184-contact-action > p,
+.v184-page-hero-info strong {
+  color: #f3c36d !important;
+  text-shadow: 0 0 12px rgba(232,177,80,.12);
+}
+
+.v184-internal-page header,
+.ig-page-productos header,
+.ig-page-producto header,
+.ig-page-checkout header {
+  background:
+    linear-gradient(180deg, rgba(4,4,4,.30), rgba(4,4,4,.095)) !important;
+  border-bottom-color: rgba(238,188,94,.28) !important;
+  box-shadow:
+    0 0 24px rgba(226,170,70,.08),
+    0 12px 34px rgba(0,0,0,.18) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.45) !important;
+  backdrop-filter: blur(24px) saturate(1.45) !important;
+}
+
+.v184-internal-page footer,
+.ig-page-productos footer,
+.ig-page-producto footer,
+.ig-page-checkout footer {
+  background:
+    linear-gradient(180deg, rgba(4,4,4,.055), rgba(4,4,4,.16)) !important;
+  border-top-color: rgba(238,188,94,.20) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.40) !important;
+  backdrop-filter: blur(22px) saturate(1.40) !important;
+}
+
+.v184-page-hero-action,
+.v184-cta-panel > a,
+.v184-contact-action > a,
+.ig-page-productos .v174-product-card-button,
+.ig-page-producto .v17-product-summary button[type="button"],
+.ig-page-checkout .v17-checkout-panel button[type="submit"] {
+  box-shadow:
+    0 0 18px rgba(226,170,70,.15),
+    0 10px 28px rgba(178,118,35,.18),
+    inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+
+.v184-internal-page input,
+.v184-internal-page select,
+.v184-internal-page textarea,
+.ig-page-productos input,
+.ig-page-productos select,
+.ig-page-producto input,
+.ig-page-producto select,
+.ig-page-producto textarea,
+.ig-page-checkout input,
+.ig-page-checkout select,
+.ig-page-checkout textarea {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.045), rgba(0,0,0,.12)) !important;
+  border-color: rgba(238,188,94,.42) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+  backdrop-filter: blur(18px) saturate(1.35) !important;
+}
+
+@media (max-width: 767px) {
+  .v184-page-hero-copy,
+  .v184-page-hero-info,
+  .v184-info-grid > div,
+  .v184-cta-panel,
+  .v184-story-grid > article,
+  .v184-contact-panel,
+  .v184-tracking-wrap .v16-private-tracking,
+  .v184-tracking-wrap .v16-tracking-result,
+  .ig-page-productos .v16-catalog-controls,
+  .ig-page-productos .v174-clickable-product-card,
+  .ig-page-producto .v17-product-summary,
+  .ig-page-producto .v17-product-tabs,
+  .ig-page-producto .v175-gallery-shell,
+  .ig-page-checkout .v17-checkout-panel {
+    -webkit-backdrop-filter: blur(16px) saturate(1.30) !important;
+    backdrop-filter: blur(16px) saturate(1.30) !important;
+  }
+}
