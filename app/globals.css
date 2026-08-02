@@ -4416,3 +4416,319 @@ footer {
 @media(max-width:1080px){.v182-grid{grid-template-columns:1fr 1fr}.v182-benefits-panel{grid-column:1/-1;grid-template-columns:repeat(4,1fr);grid-template-rows:none;min-height:auto}.v182-benefit+.v182-benefit{border-top:none;border-left:1px solid rgba(235,180,78,.18)}}
 @media(max-width:767px){.v182-hero{padding:86px 0 10px}.v182-shell{width:min(100% - 18px,680px)}.v182-grid{grid-template-columns:1fr;gap:10px}.v182-copy,.v182-media,.v182-benefits-panel{min-height:auto}.v182-copy{padding:19px 16px}.v182-copy h1{font-size:37px}.v182-lead{font-size:13px}.v182-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:15px}.v182-media{min-height:250px}.v182-benefits-panel{grid-column:auto;grid-template-columns:1fr 1fr}.v182-benefit+.v182-benefit{border-left:none}.v182-benefit:nth-child(2),.v182-benefit:nth-child(4){border-left:1px solid rgba(235,180,78,.18)}.v182-benefit:nth-child(n+3){border-top:1px solid rgba(235,180,78,.18)}}
 @media(max-width:390px){.v182-shell{width:calc(100% - 12px)}.v182-copy h1{font-size:33px}.v182-actions{grid-template-columns:1fr}.v182-media{min-height:225px}.v182-benefits-panel{grid-template-columns:1fr}.v182-benefit:nth-child(2),.v182-benefit:nth-child(4){border-left:none}.v182-benefit+.v182-benefit{border-top:1px solid rgba(235,180,78,.18)}}
+
+
+/* =========================================================
+   V18.3 — PREMIUM GLASS UI GLOBAL
+   Unifica tarjetas, contenedores, formularios y botones.
+   ========================================================= */
+
+:root {
+  --ig-v183-glass:
+    linear-gradient(145deg, rgba(255,255,255,.032), transparent 38%),
+    rgba(5,5,5,.105);
+  --ig-v183-glass-strong:
+    linear-gradient(145deg, rgba(255,255,255,.045), transparent 38%),
+    rgba(5,5,5,.16);
+  --ig-v183-border: rgba(231,177,74,.52);
+  --ig-v183-border-hover: rgba(248,198,104,.92);
+  --ig-v183-text: rgba(255,255,255,.96);
+  --ig-v183-muted: rgba(255,255,255,.66);
+  --ig-v183-shadow:
+    0 22px 62px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.045);
+  --ig-v183-radius-lg: 20px;
+  --ig-v183-radius-md: 14px;
+}
+
+/* Paneles principales */
+.ig-card,
+.ig-glass-card,
+.v15-unified-card,
+.v16-category-card,
+.v16-benefits-grid,
+.v16-catalog-controls,
+.v16-private-tracking,
+.v16-tracking-result,
+.v17-product-summary,
+.v17-product-tabs,
+.v17-checkout-panel,
+.v17-cart-drawer,
+.v17-cart-item,
+.v175-gallery-shell,
+.v176-glass,
+.v181-category-card,
+.v181-product-card,
+.v181-benefit-strip,
+.v181-story-panel,
+.v182-panel {
+  background: var(--ig-v183-glass) !important;
+  border: 1px solid var(--ig-v183-border) !important;
+  box-shadow: var(--ig-v183-shadow) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.12) !important;
+  backdrop-filter: blur(18px) saturate(1.12) !important;
+}
+
+/* Paneles secundarios y elementos internos */
+.v16-benefits-grid > div,
+.v16-tracking-result > div,
+.v17-checkout-panel > div,
+.v176-side-card,
+.v176-bottom-item,
+.v176-mini-benefit,
+.v182-benefit {
+  background: transparent !important;
+}
+
+/* Tarjetas de productos de catálogo */
+.v174-clickable-product-card {
+  background: var(--ig-v183-glass) !important;
+  border-color: var(--ig-v183-border) !important;
+  border-radius: var(--ig-v183-radius-lg) !important;
+  box-shadow: var(--ig-v183-shadow) !important;
+  -webkit-backdrop-filter: blur(17px) saturate(1.10) !important;
+  backdrop-filter: blur(17px) saturate(1.10) !important;
+}
+
+.v174-clickable-product-card .v15-unified-card-content {
+  background:
+    linear-gradient(180deg, rgba(5,5,5,.035), rgba(5,5,5,.16)) !important;
+  border-top: 1px solid rgba(231,177,74,.16) !important;
+}
+
+/* Contenedores oscuros dentro de páginas */
+.ig-page-background [class*="rounded-"][class*="bg-[#"],
+.ig-page-productos [class*="rounded-"][class*="bg-[#"],
+.ig-page-producto [class*="rounded-"][class*="bg-[#"],
+.ig-page-trabajos [class*="rounded-"][class*="bg-[#"],
+.ig-page-empresas [class*="rounded-"][class*="bg-[#"],
+.ig-page-nosotros [class*="rounded-"][class*="bg-[#"],
+.ig-page-seguimiento [class*="rounded-"][class*="bg-[#"],
+.ig-page-contacto [class*="rounded-"][class*="bg-[#"],
+.ig-page-checkout [class*="rounded-"][class*="bg-[#"] {
+  background: var(--ig-v183-glass) !important;
+  border-color: rgba(231,177,74,.30) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.08) !important;
+  backdrop-filter: blur(16px) saturate(1.08) !important;
+}
+
+/* Hover unificado */
+.v174-clickable-product-card,
+.v16-category-card,
+.v181-category-card,
+.v181-product-card,
+.v182-panel,
+.ig-hover-lift {
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease,
+    background .28s ease;
+}
+
+.v174-clickable-product-card:hover,
+.v16-category-card:hover,
+.v181-category-card:hover,
+.v181-product-card:hover,
+.ig-hover-lift:hover {
+  transform: translateY(-4px);
+  border-color: var(--ig-v183-border-hover) !important;
+  background: var(--ig-v183-glass-strong) !important;
+  box-shadow:
+    0 30px 82px rgba(0,0,0,.38),
+    0 0 20px rgba(221,164,72,.10),
+    inset 0 1px 0 rgba(255,255,255,.065) !important;
+}
+
+/* Botones: tres variantes visuales */
+button,
+a[class*="button"],
+a[class*="Button"] {
+  border-radius: 11px;
+}
+
+.v182-primary,
+.v176-primary-button,
+.v174-product-card-button,
+.v17-product-summary button[type="button"],
+.v17-checkout-panel button[type="submit"],
+.ig-button-primary {
+  background: linear-gradient(135deg, #d6a14c, #ad7127) !important;
+  border: 1px solid rgba(255,219,153,.36) !important;
+  color: white !important;
+  box-shadow:
+    0 10px 28px rgba(178,118,35,.20),
+    inset 0 1px 0 rgba(255,255,255,.18) !important;
+}
+
+.v182-secondary,
+.v176-secondary-button,
+.ig-button-secondary {
+  background: rgba(6,6,6,.08) !important;
+  border: 1px solid var(--ig-v183-border) !important;
+  color: #efc16f !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.ig-icon-button,
+button[aria-label][class*="rounded-full"] {
+  background: rgba(6,6,6,.12) !important;
+  border-color: rgba(231,177,74,.42) !important;
+}
+
+/* Formularios */
+input,
+select,
+textarea {
+  background:
+    linear-gradient(180deg, rgba(4,4,4,.12), rgba(4,4,4,.21)) !important;
+  border: 1px solid rgba(231,177,74,.28) !important;
+  color: white !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(247,198,105,.82) !important;
+  box-shadow: 0 0 0 3px rgba(221,164,72,.12) !important;
+  outline: none !important;
+}
+
+/* Jerarquía tipográfica */
+.ig-page-background h1,
+.ig-page-background h2,
+.ig-page-background h3,
+.v181-home h2,
+.v181-home h3,
+.v182-hero h1 {
+  color: var(--ig-v183-text);
+}
+
+.ig-page-background p,
+.ig-page-background li,
+.ig-page-background dd,
+.v181-home p,
+.v181-home small,
+.v182-hero p,
+.v182-hero small {
+  color: var(--ig-v183-muted);
+}
+
+.ig-page-background h1,
+.ig-page-background h2,
+.v181-section-heading h2,
+.v182-copy h1 {
+  text-wrap: balance;
+}
+
+/* Espaciado coherente */
+.ig-page-background section.mx-auto,
+.ig-page-productos section.mx-auto,
+.ig-page-producto section.mx-auto,
+.ig-page-trabajos section.mx-auto,
+.ig-page-empresas section.mx-auto,
+.ig-page-nosotros section.mx-auto,
+.ig-page-seguimiento section.mx-auto,
+.ig-page-contacto section.mx-auto,
+.ig-page-checkout section.mx-auto {
+  width: min(1380px, calc(100% - 40px)) !important;
+}
+
+/* Header y footer integrados */
+header,
+.ig-header,
+.v15-header {
+  background:
+    linear-gradient(180deg, rgba(5,5,5,.38), rgba(5,5,5,.15)) !important;
+  border-bottom-color: rgba(231,177,74,.18) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.12) !important;
+  backdrop-filter: blur(20px) saturate(1.12) !important;
+}
+
+footer {
+  background:
+    linear-gradient(180deg, rgba(5,5,5,.10), rgba(5,5,5,.24)) !important;
+  border-top-color: rgba(231,177,74,.16) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+/* Carrito */
+.v17-cart-drawer {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.035), transparent 38%),
+    rgba(5,5,5,.84) !important;
+}
+
+.v17-cart-item {
+  background: rgba(255,255,255,.025) !important;
+}
+
+/* Móvil */
+@media (max-width: 767px) {
+  :root {
+    --ig-v183-glass:
+      linear-gradient(145deg, rgba(255,255,255,.025), transparent 38%),
+      rgba(5,5,5,.095);
+    --ig-v183-border: rgba(231,177,74,.46);
+    --ig-v183-shadow:
+      0 16px 44px rgba(0,0,0,.25),
+      inset 0 1px 0 rgba(255,255,255,.035);
+  }
+
+  .ig-page-background section.mx-auto,
+  .ig-page-productos section.mx-auto,
+  .ig-page-producto section.mx-auto,
+  .ig-page-trabajos section.mx-auto,
+  .ig-page-empresas section.mx-auto,
+  .ig-page-nosotros section.mx-auto,
+  .ig-page-seguimiento section.mx-auto,
+  .ig-page-contacto section.mx-auto,
+  .ig-page-checkout section.mx-auto {
+    width: calc(100% - 18px) !important;
+  }
+
+  .v174-clickable-product-card:hover,
+  .v16-category-card:hover,
+  .v181-category-card:hover,
+  .v181-product-card:hover,
+  .ig-hover-lift:hover {
+    transform: none !important;
+  }
+
+  .ig-card,
+  .ig-glass-card,
+  .v15-unified-card,
+  .v16-category-card,
+  .v16-benefits-grid,
+  .v16-catalog-controls,
+  .v16-private-tracking,
+  .v16-tracking-result,
+  .v17-product-summary,
+  .v17-product-tabs,
+  .v17-checkout-panel,
+  .v175-gallery-shell,
+  .v181-category-card,
+  .v181-product-card,
+  .v181-benefit-strip,
+  .v181-story-panel,
+  .v182-panel {
+    -webkit-backdrop-filter: blur(12px) saturate(1.06) !important;
+    backdrop-filter: blur(12px) saturate(1.06) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v174-clickable-product-card,
+  .v16-category-card,
+  .v181-category-card,
+  .v181-product-card,
+  .ig-hover-lift,
+  button,
+  a {
+    transition: none !important;
+  }
+}

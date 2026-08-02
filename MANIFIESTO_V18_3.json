@@ -1,0 +1,16 @@
+{
+  "version": "18.3.0",
+  "tipo": "version_completa",
+  "base": "18.2.0",
+  "cambio_principal": "Premium Glass UI global",
+  "archivo_principal_modificado": "app/globals.css",
+  "funcionalidades_conservadas": [
+    "Hero compacto V18.2",
+    "fondo unificado",
+    "carrito",
+    "checkout",
+    "seguimiento",
+    "tarjetas clickeables",
+    "responsive"
+  ]
+}

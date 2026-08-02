@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-2-hero-compact-premium",
-  "version": "18.2.0",
+  "name": "identidad-grabada-v18-3-premium-glass-ui",
+  "version": "18.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

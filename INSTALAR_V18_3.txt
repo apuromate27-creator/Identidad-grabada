@@ -1,0 +1,45 @@
+IDENTIDAD GRABADA — V18.3
+PREMIUM GLASS UI GLOBAL
+
+ESTA ES UNA VERSIÓN COMPLETA.
+
+INSTALACIÓN CON GITHUB DESKTOP
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Seleccioná el repositorio Identidad Grabada.
+4. Elegí Repository > Show in Explorer.
+5. Guardá una copia de seguridad.
+6. Copiá todo el contenido de esta versión.
+7. Pegalo dentro de la carpeta del repositorio.
+8. Elegí reemplazar los archivos existentes.
+9. Volvé a GitHub Desktop.
+10. En Summary escribí:
+    V18.3 - Premium Glass UI
+11. Hacé clic en Commit to main.
+12. Hacé clic en Push origin.
+13. Esperá el despliegue de Vercel.
+
+CAMBIOS
+
+- Un único estilo glass para tarjetas y contenedores.
+- Más transparencia y menos marrón.
+- Bordes dorados finos.
+- Hover unificado.
+- Botones primarios, secundarios e iconos coherentes.
+- Formularios con el mismo estilo visual.
+- Header y footer integrados.
+- Carrito adaptado al nuevo lenguaje visual.
+- Espaciado y jerarquía tipográfica más consistentes.
+- Aplicación global a Inicio, Productos, Producto, Trabajos,
+  Empresas, Nosotros, Seguimiento, Contacto y Checkout.
+- Ajustes específicos para celular.
+
+SE CONSERVAN
+
+- Hero compacto V18.2.
+- Fondo unificado.
+- Carrito y checkout.
+- Tarjetas clickeables.
+- Seguimiento.
+- Responsive existente.
