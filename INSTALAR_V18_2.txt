@@ -1,0 +1,24 @@
+IDENTIDAD GRABADA — V18.2
+HERO COMPACT PREMIUM
+
+VERSIÓN COMPLETA
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Entrá en Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá los archivos.
+7. En GitHub Desktop escribí: V18.2 - Hero Compact Premium
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
+
+CAMBIOS
+- Hero aproximadamente 35% más bajo.
+- Imagen principal panorámica.
+- Panel izquierdo más compacto.
+- Panel derecho más fino.
+- Botones, flechas e indicadores más pequeños.
+- Las categorías aparecen antes en pantalla.
+- Conserva el fondo único de V18.1.1.
