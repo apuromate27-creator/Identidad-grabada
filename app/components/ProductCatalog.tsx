@@ -58,7 +58,7 @@ export function ProductCatalog({
 
   return (
     <>
-      <div className="v16-catalog-controls v188-sticky-filters mt-10 rounded-[2rem] border border-[#d8aa62]/22 p-5 md:p-6">
+      <div className="v16-catalog-controls v1881-mobile-filters mt-10 rounded-[2rem] border border-[#d8aa62]/22 p-5 md:p-6">
         <div className="grid gap-4 lg:grid-cols-[1fr_auto]">
           <label className="relative block">
             <span className="sr-only">Buscar productos</span>
@@ -136,7 +136,7 @@ export function ProductCatalog({
           </button>
         </div>
       ) : (
-        <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        <div className="v1881-product-grid mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {filtered.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}

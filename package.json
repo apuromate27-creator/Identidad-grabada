@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-8-mobile-commerce",
-  "version": "18.8.0",
+  "name": "identidad-grabada-v18-8-1-mobile-rc",
+  "version": "18.8.1",
   "private": true,
   "scripts": {
     "dev": "next dev",

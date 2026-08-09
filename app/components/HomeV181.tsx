@@ -1,7 +1,6 @@
 
 import Link from "next/link";
 import { products } from "../data/products";
-import { MobileCarousel } from "./MobileCarousel";
 
 const categories = [
   {
@@ -53,12 +52,12 @@ export function HomeV181() {
           <span />
         </div>
 
-        <MobileCarousel ariaLabel="Categorías destacadas" className="v188-home-categories"><div className="v181-category-grid">
+        <div className="v181-category-grid">
           {categories.map((category) => (
             <Link
               key={category.title}
               href={category.href}
-              data-carousel-item className="v181-category-card"
+              className="v181-category-card"
             >
               <div
                 className="v181-category-photo"
@@ -77,7 +76,7 @@ export function HomeV181() {
               </div>
             </Link>
           ))}
-        </div></MobileCarousel>
+        </div>
 
         <div className="v181-benefit-strip">
           {benefits.map(([icon, title, text]) => (
@@ -100,12 +99,12 @@ export function HomeV181() {
           <span />
         </div>
 
-        <MobileCarousel ariaLabel="Productos destacados" className="v188-home-products"><div className="v181-products-grid">
+        <div className="v181-products-grid">
           {featured.map((product, index) => (
             <Link
               href={`/productos/${product.slug}`}
               key={product.slug}
-              data-carousel-item className="v181-product-card"
+              className="v181-product-card"
             >
               <div
                 className="v181-product-photo"
