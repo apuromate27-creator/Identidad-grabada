@@ -19,7 +19,7 @@ export type CartItem = {
   personalization: string;
 };
 
-type CartInput = Omit<CartItem, "id" | "quantity">;
+type CartInput = Omit<CartItem, "id" | "quantity"> & { quantity?: number };
 
 type CartContextValue = {
   items: CartItem[];
@@ -70,6 +70,8 @@ export function CartProvider({
   }, [items, hydrated]);
 
   function addItem(item: CartInput) {
+    const requestedQuantity = Math.max(1, Math.min(item.quantity ?? 1, 20));
+
     setItems((current) => {
       const existing = current.find(
         (entry) =>
@@ -80,17 +82,22 @@ export function CartProvider({
       if (existing) {
         return current.map((entry) =>
           entry.id === existing.id
-            ? { ...entry, quantity: entry.quantity + 1 }
+            ? {
+                ...entry,
+                quantity: Math.min(existing.quantity + requestedQuantity, 20),
+              }
             : entry
         );
       }
 
+      const { quantity: _quantity, ...rest } = item;
+
       return [
         ...current,
         {
-          ...item,
+          ...rest,
           id: `${item.slug}-${Date.now()}`,
-          quantity: 1,
+          quantity: requestedQuantity,
         },
       ];
     });

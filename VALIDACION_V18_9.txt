@@ -1,0 +1,5 @@
+V18.9 CSS presente: OK
+Cantidad en detalle: OK
+Sin grabado disponible: OK
+Archivo habilitado: OK
+CartContext soporta quantity opcional: OK

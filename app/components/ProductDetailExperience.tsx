@@ -22,11 +22,13 @@ export function ProductDetailExperience({
   const [added, setAdded] = useState(false);
   const [postalCode, setPostalCode] = useState("");
   const [shippingResult, setShippingResult] = useState("");
-  const [engravingType, setEngravingType] = useState("Nombre");
+  const [engravingType, setEngravingType] = useState("Sin grabado");
   const [engravingText, setEngravingText] = useState("");
   const [font, setFont] = useState("Elegante");
   const [position, setPosition] = useState("Frente");
   const [notes, setNotes] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [referenceFileName, setReferenceFileName] = useState("");
 
   useEffect(() => {
     try {
@@ -37,16 +39,20 @@ export function ProductDetailExperience({
   }, [product.slug]);
 
   const personalization = useMemo(() => {
-    const parts = [
-      `Tipo: ${engravingType}`,
-      engravingText ? `Texto/idea: ${engravingText}` : "",
-      `Tipografía: ${font}`,
-      `Posición: ${position}`,
-      notes ? `Notas: ${notes}` : "",
-    ].filter(Boolean);
+    const parts =
+      engravingType === "Sin grabado"
+        ? ["Sin grabado"]
+        : [
+            `Tipo: ${engravingType}`,
+            engravingText ? `Texto/idea: ${engravingText}` : "",
+            `Tipografía: ${font}`,
+            `Posición: ${position}`,
+            referenceFileName ? `Referencia: ${referenceFileName}` : "",
+            notes ? `Notas: ${notes}` : "",
+          ].filter(Boolean);
 
     return parts.join(" · ");
-  }, [engravingType, engravingText, font, position, notes]);
+  }, [engravingType, engravingText, font, position, referenceFileName, notes]);
 
   const toggleFavorite = () => {
     const next = !favorite;
@@ -64,6 +70,7 @@ export function ProductDetailExperience({
       price: product.price,
       priceValue: product.priceValue,
       personalization,
+      quantity,
     });
 
     setAdded(true);
@@ -166,7 +173,40 @@ export function ProductDetailExperience({
             <SummaryFact label="Material" value={product.material} />
           </div>
 
-          <div className="mt-7 grid gap-3 sm:grid-cols-2">
+          <div className="v189-selection mt-7 rounded-2xl border border-[#d8aa62]/18 p-4">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-[#e2b46d]">
+                  Tu selección
+                </p>
+                <p className="mt-1 text-sm font-bold text-stone-200">
+                  {engravingType === "Sin grabado"
+                    ? "Producto sin personalización"
+                    : `${engravingType}${engravingText ? ` · ${engravingText}` : ""}`}
+                </p>
+              </div>
+
+              <div className="v189-quantity flex items-center overflow-hidden rounded-xl border border-[#d8aa62]/24">
+                <button
+                  type="button"
+                  aria-label="Disminuir cantidad"
+                  onClick={() => setQuantity((value) => Math.max(1, value - 1))}
+                >
+                  −
+                </button>
+                <span aria-live="polite">{quantity}</span>
+                <button
+                  type="button"
+                  aria-label="Aumentar cantidad"
+                  onClick={() => setQuantity((value) => Math.min(20, value + 1))}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <button
               type="button"
               onClick={addToCart}
@@ -218,7 +258,7 @@ export function ProductDetailExperience({
               <div className="relative grid h-48 w-48 place-items-center rounded-full border-[14px] border-[#b68b52]/24">
                 <div className="absolute inset-5 rounded-full border border-[#e8c58f]/22" />
                 <p className="relative max-w-[150px] break-words text-center text-2xl font-black text-[#e8c58f]">
-                  {engravingText || "Tu diseño"}
+                  {engravingType === "Sin grabado" ? "Sin grabado" : engravingText || "Tu diseño"}
                 </p>
               </div>
             </div>
@@ -227,36 +267,40 @@ export function ProductDetailExperience({
           <div className="grid content-start gap-5">
             <OptionGroup
               label="¿Qué querés grabar?"
-              options={["Nombre", "Frase", "Fecha", "Iniciales", "Logo"]}
+              options={["Sin grabado", "Nombre", "Frase", "Fecha", "Iniciales", "Logo / diseño"]}
               value={engravingType}
               onChange={setEngravingType}
             />
 
-            <label className="grid gap-2">
-              <span className="text-sm font-bold text-stone-200">
-                Texto, nombre o idea
-              </span>
-              <input
-                value={engravingText}
-                onChange={(event) => setEngravingText(event.target.value)}
-                placeholder="Ej: Juan Pérez, una fecha o descripción del logo"
-                className="rounded-2xl border border-white/10 bg-[#1d130d]/55 px-5 py-4 text-white outline-none placeholder:text-stone-500 focus:border-[#b68b52]"
-              />
-            </label>
+            {engravingType !== "Sin grabado" && (
+              <>
+                <label className="grid gap-2">
+                  <span className="text-sm font-bold text-stone-200">
+                    Texto, nombre o idea
+                  </span>
+                  <input
+                    value={engravingText}
+                    onChange={(event) => setEngravingText(event.target.value)}
+                    placeholder="Ej: Juan Pérez, una fecha o descripción del logo"
+                    className="rounded-2xl border border-white/10 bg-[#1d130d]/55 px-5 py-4 text-white outline-none placeholder:text-stone-500 focus:border-[#b68b52]"
+                  />
+                </label>
 
-            <OptionGroup
-              label="Tipografía"
-              options={["Elegante", "Clásica", "Moderna"]}
-              value={font}
-              onChange={setFont}
-            />
+                <OptionGroup
+                  label="Tipografía"
+                  options={["Elegante", "Clásica", "Moderna"]}
+                  value={font}
+                  onChange={setFont}
+                />
 
-            <OptionGroup
-              label="Posición del grabado"
-              options={["Frente", "Lateral", "Virola", "A coordinar"]}
-              value={position}
-              onChange={setPosition}
-            />
+                <OptionGroup
+                  label="Posición del grabado"
+                  options={["Frente", "Lateral", "Virola", "A coordinar"]}
+                  value={position}
+                  onChange={setPosition}
+                />
+              </>
+            )}
 
             <label className="grid gap-2">
               <span className="text-sm font-bold text-stone-200">
@@ -271,16 +315,27 @@ export function ProductDetailExperience({
               />
             </label>
 
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#d8aa62]/24 bg-[#21140d]/32 p-5 text-sm text-stone-300">
-              <span className="grid h-10 w-10 place-items-center rounded-full border border-[#d8aa62]/30 text-[#e8c58f]">
-                ↑
-              </span>
-              <span>
-                <strong className="block text-white">Subir logo o referencia</strong>
-                JPG, PNG, PDF o SVG. La carga real se conectará en una etapa posterior.
-              </span>
-              <input type="file" className="hidden" disabled />
-            </label>
+            {engravingType !== "Sin grabado" && (
+              <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#d8aa62]/24 bg-[#21140d]/32 p-5 text-sm text-stone-300">
+                <span className="grid h-10 w-10 place-items-center rounded-full border border-[#d8aa62]/30 text-[#e8c58f]">
+                  ↑
+                </span>
+                <span className="min-w-0">
+                  <strong className="block text-white">Subir logo o referencia</strong>
+                  <span className="block truncate">
+                    {referenceFileName || "JPG, PNG, PDF o SVG. Guardaremos el nombre de la referencia en el pedido."}
+                  </span>
+                </span>
+                <input
+                  type="file"
+                  accept=".jpg,.jpeg,.png,.pdf,.svg"
+                  className="hidden"
+                  onChange={(event) =>
+                    setReferenceFileName(event.target.files?.[0]?.name || "")
+                  }
+                />
+              </label>
+            )}
           </div>
         </div>
       </section>
