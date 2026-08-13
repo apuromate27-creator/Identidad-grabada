@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-8-1-mobile-rc",
-  "version": "18.8.1",
+  "name": "identidad-grabada-v18-8-2-mobile-fixes",
+  "version": "18.8.2",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -1,0 +1,36 @@
+IDENTIDAD GRABADA — V18.8.2
+CORRECCIONES MOBILE
+
+BASE: V18.8.1
+
+CORRECCIONES
+1. HERO
+   - Indicadores centrados debajo de la imagen.
+   - Flecha anterior a la izquierda.
+   - Flecha siguiente a la derecha.
+   - Se evita que los controles se agrupen en el margen izquierdo.
+
+2. PRODUCTOS DESTACADOS
+   - "Más vendido" queda completamente dentro de la tarjeta.
+   - Badge principal y badge de destacado se reducen en móvil.
+   - Ambos comparten correctamente la parte superior de la tarjeta.
+
+3. BOTÓN VOLVER ARRIBA
+   - Tamaño más pequeño.
+   - Más pegado al margen derecho.
+   - Mejor separación respecto de WhatsApp y las tarjetas.
+
+ESCRITORIO
+- No se modifica.
+
+INSTALACIÓN
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad del repositorio actual.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo en el repositorio y reemplazá los archivos.
+7. Summary: V18.8.2 - Correcciones mobile
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.

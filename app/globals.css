@@ -5599,3 +5599,180 @@ textarea:focus {
     font-size: 9.5px !important;
   }
 }
+
+
+/* =========================================================
+   V18.8.2 — CORRECCIONES MOBILE
+   1) Controles del Hero centrados y separados.
+   2) Badge "Más vendido" contenido dentro de la tarjeta.
+   3) Botón volver-arriba más pequeño y mejor ubicado.
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* -------------------------------------------------------
+     HERO
+     Los puntos quedan centrados en la banda inferior.
+     Las flechas quedan una a cada lado de la imagen.
+     ------------------------------------------------------- */
+  .v182-media {
+    position: relative !important;
+    padding-bottom: 38px !important;
+  }
+
+  .v182-slide,
+  .v182-media-shade {
+    inset: 0 0 38px 0 !important;
+    bottom: 38px !important;
+  }
+
+  .v182-dots {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: 12px !important;
+    top: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    transform: translateX(-50%) !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 7px !important;
+    z-index: 8 !important;
+  }
+
+  .v182-dots button {
+    position: static !important;
+    flex: 0 0 auto !important;
+    width: 7px !important;
+    height: 7px !important;
+    min-width: 7px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .v182-dots button.active {
+    width: 25px !important;
+    min-width: 25px !important;
+  }
+
+  .v182-arrow {
+    position: absolute !important;
+    top: calc((100% - 38px) / 2) !important;
+    bottom: auto !important;
+    width: 38px !important;
+    height: 38px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 9 !important;
+  }
+
+  .v182-arrow-left {
+    left: 12px !important;
+    right: auto !important;
+  }
+
+  .v182-arrow-right {
+    right: 12px !important;
+    left: auto !important;
+  }
+
+  /* -------------------------------------------------------
+     PRODUCTOS DESTACADOS DEL HOME
+     Los badges comparten la misma línea sin desbordarse.
+     ------------------------------------------------------- */
+  .v181-product-top {
+    inset: auto !important;
+    top: 13px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: calc(100% - 24px) !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    overflow: visible !important;
+  }
+
+  .v181-product-top span,
+  .v181-product-top b {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    padding: 7px 9px !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  .v181-product-top span {
+    max-width: 58% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .v181-product-top b {
+    flex: 0 0 auto !important;
+    max-width: 40% !important;
+    font-size: 9px !important;
+  }
+
+  /* -------------------------------------------------------
+     VOLVER ARRIBA
+     Más discreto y separado del contenido.
+     ------------------------------------------------------- */
+  .ig-back-to-top {
+    right: .65rem !important;
+    bottom: 6.45rem !important;
+    width: 2.35rem !important;
+    height: 2.35rem !important;
+    font-size: .92rem !important;
+    border-width: 1px !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.28) !important;
+  }
+
+  .ig-back-to-top-visible {
+    transform: translateY(0) scale(1) !important;
+  }
+
+  .ig-back-to-top:hover {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .v182-arrow {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .v182-arrow-left {
+    left: 10px !important;
+  }
+
+  .v182-arrow-right {
+    right: 10px !important;
+  }
+
+  .v181-product-top {
+    top: 11px !important;
+    left: 10px !important;
+    right: 10px !important;
+    max-width: calc(100% - 20px) !important;
+  }
+
+  .v181-product-top span,
+  .v181-product-top b {
+    padding: 6px 8px !important;
+    font-size: 8.5px !important;
+  }
+
+  .ig-back-to-top {
+    right: .55rem !important;
+    bottom: 6.15rem !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    font-size: .86rem !important;
+  }
+}
