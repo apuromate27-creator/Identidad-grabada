@@ -5776,3 +5776,124 @@ textarea:focus {
     font-size: .86rem !important;
   }
 }
+
+
+/* =========================================================
+   V18.8.3 — CORRECCIONES DESKTOP
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  /* HERO DESKTOP */
+  .v182-media {
+    position: relative !important;
+    padding-bottom: 34px !important;
+  }
+
+  .v182-slide,
+  .v182-media-shade {
+    inset: 0 0 34px 0 !important;
+    bottom: 34px !important;
+  }
+
+  .v182-dots {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 11px !important;
+    width: auto !important;
+    margin: 0 !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 7px !important;
+    z-index: 8 !important;
+  }
+
+  .v182-dots button {
+    position: static !important;
+    flex: 0 0 auto !important;
+    width: 7px !important;
+    height: 7px !important;
+    min-width: 7px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .v182-dots button.active {
+    width: 24px !important;
+    min-width: 24px !important;
+  }
+
+  .v182-arrow {
+    position: absolute !important;
+    top: calc((100% - 34px) / 2) !important;
+    bottom: auto !important;
+    width: 38px !important;
+    height: 38px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 9 !important;
+  }
+
+  .v182-arrow-left {
+    left: 12px !important;
+    right: auto !important;
+  }
+
+  .v182-arrow-right {
+    right: 12px !important;
+    left: auto !important;
+  }
+
+  /* PRODUCTOS DESTACADOS DESKTOP */
+  .v181-product-top {
+    inset: auto !important;
+    top: 18px !important;
+    left: 18px !important;
+    right: 18px !important;
+    width: auto !important;
+    max-width: calc(100% - 36px) !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    overflow: visible !important;
+  }
+
+  .v181-product-top span,
+  .v181-product-top b {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .v181-product-top span {
+    max-width: 62% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .v181-product-top b {
+    flex: 0 0 auto !important;
+    max-width: 36% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .v181-product-top {
+    top: 17px !important;
+    left: 16px !important;
+    right: 16px !important;
+    max-width: calc(100% - 32px) !important;
+  }
+
+  .v181-product-top span,
+  .v181-product-top b {
+    font-size: 9.5px !important;
+    padding: 7px 10px !important;
+  }
+}

@@ -1,0 +1,4 @@
+CSS V18.8.3 presente: OK
+HomeV181 sin modificar: OK
+HeroV182 sin modificar: OK
+ProductCatalog sin modificar: OK

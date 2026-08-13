@@ -1,0 +1,22 @@
+IDENTIDAD GRABADA — V18.8.3
+CORRECCIONES DESKTOP
+
+BASE: V18.8.2
+
+CORRECCIONES
+- Indicadores del Hero centrados debajo de la imagen.
+- Flecha anterior a la izquierda y siguiente a la derecha.
+- Badge "Más vendido" completamente dentro de la tarjeta.
+- Mobile conserva V18.8.2 sin cambios.
+
+INSTALACIÓN
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá archivos.
+7. Summary: V18.8.3 - Correcciones desktop
+8. Commit to main.
+9. Push origin.
+10. Esperá el despliegue de Vercel.
