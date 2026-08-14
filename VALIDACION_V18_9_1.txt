@@ -1,0 +1,6 @@
+Botón Ampliar eliminado: OK
+Lightbox presente: OK
+Swipe móvil presente: OK
+Navegación anterior/siguiente: OK
+Teclado presente: OK
+CSS V18.9.1 presente: OK

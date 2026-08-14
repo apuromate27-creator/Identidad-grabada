@@ -1,0 +1,29 @@
+IDENTIDAD GRABADA — V18.9.1
+GALERÍA AMPLIADA DESLIZABLE
+
+BASE: V18.9
+
+CAMBIOS
+- Se elimina el botón visible "Ampliar".
+- Toda la imagen principal es clickeable/táctil.
+- Al tocar cualquier parte de la imagen se abre la galería ampliada.
+- Escritorio: flechas izquierda/derecha + teclado ← →.
+- Celular: swipe horizontal para pasar imágenes.
+- También se mantienen flechas en móvil.
+- Indicadores inferiores de posición.
+- Contador de imagen actual.
+- Cerrar con X, clic fuera o tecla Escape.
+- Las miniaturas siguen funcionando normalmente.
+- Se mantiene intacta la personalización y cantidad de V18.9.
+
+INSTALACIÓN
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá todo el contenido de esta versión.
+6. Pegalo dentro del repositorio y reemplazá archivos.
+7. Summary: V18.9.1 - Galería ampliada deslizable
+8. Commit to main.
+9. Push origin.
+10. Esperá Vercel.

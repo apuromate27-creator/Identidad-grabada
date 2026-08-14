@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useCart } from "./CartContext";
 import { ImageSlot } from "./ui";
 import type { Product } from "../data/products";
@@ -433,27 +433,64 @@ function ProductGallery({
   onSelectImage: (image: string) => void;
 }) {
   const [zoomed, setZoomed] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+
+  const currentIndex = Math.max(0, product.gallery.indexOf(selectedImage));
+
+  const selectByOffset = (offset: number) => {
+    if (!product.gallery.length) return;
+    const nextIndex =
+      (currentIndex + offset + product.gallery.length) % product.gallery.length;
+    onSelectImage(product.gallery[nextIndex]);
+  };
+
+  const openGallery = () => setZoomed(true);
+  const closeGallery = () => setZoomed(false);
+
+  useEffect(() => {
+    if (!zoomed) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "ArrowLeft") selectByOffset(-1);
+      if (event.key === "ArrowRight") selectByOffset(1);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [zoomed, currentIndex, product.gallery.length]);
+
+  const onTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const onTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null) return;
+
+    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
+    const delta = endX - touchStartX.current;
+    touchStartX.current = null;
+
+    if (Math.abs(delta) < 45) return;
+    selectByOffset(delta > 0 ? -1 : 1);
+  };
 
   return (
     <div className="space-y-4">
       <button
         type="button"
-        onClick={() => setZoomed(true)}
-        className="v17-product-main-image v175-gallery-shell group relative h-[520px] w-full overflow-hidden rounded-[2rem] border border-[#d8aa62]/20 md:h-[650px]"
-        aria-label="Ampliar imagen del producto"
+        onClick={openGallery}
+        className="v17-product-main-image v175-gallery-shell v1891-gallery-trigger group relative h-[520px] w-full overflow-hidden rounded-[2rem] border border-[#d8aa62]/20 md:h-[650px]"
+        aria-label={`Abrir galería de ${product.name}`}
       >
-        <div className="h-full transition duration-700 group-hover:scale-[1.035]">
+        <div className="h-full transition duration-700 group-hover:scale-[1.025]">
           <ImageSlot
             title={`${product.name} · Foto ${selectedImage}`}
           />
         </div>
 
         <span className="v175-gallery-counter">
-          {Math.max(1, product.gallery.indexOf(selectedImage) + 1)} / {product.gallery.length}
-        </span>
-
-        <span className="absolute bottom-5 right-5 rounded-full border border-white/12 bg-[#21140d]/48 px-4 py-2 text-xs font-bold text-white backdrop-blur">
-          Ampliar
+          {currentIndex + 1} / {product.gallery.length}
         </span>
       </button>
 
@@ -469,6 +506,7 @@ function ProductGallery({
                 ? "border-[#d8aa62] shadow-[0_0_0_2px_rgba(216,170,98,.12)]"
                 : "border-white/9 hover:border-[#d8aa62]/50",
             ].join(" ")}
+            aria-label={`Ver foto ${product.gallery.indexOf(image) + 1}`}
           >
             <ImageSlot title={`Foto ${image}`} small />
           </button>
@@ -477,28 +515,71 @@ function ProductGallery({
 
       {zoomed && (
         <div
-          className="fixed inset-0 z-[120] grid place-items-center bg-black/82 p-4 backdrop-blur-md"
+          className="v1891-lightbox fixed inset-0 z-[120] flex items-center justify-center bg-black/86 p-3 backdrop-blur-lg md:p-6"
           role="dialog"
           aria-modal="true"
-          aria-label={`Imagen ampliada de ${product.name}`}
-          onClick={() => setZoomed(false)}
+          aria-label={`Galería ampliada de ${product.name}`}
+          onClick={closeGallery}
         >
           <button
             type="button"
-            onClick={() => setZoomed(false)}
-            className="absolute right-5 top-5 grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-black/45 text-xl text-white"
-            aria-label="Cerrar imagen"
+            onClick={closeGallery}
+            className="v1891-lightbox-close absolute right-4 top-4 z-[4] grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-black/55 text-2xl text-white md:right-6 md:top-6"
+            aria-label="Cerrar galería"
           >
             ×
           </button>
 
           <div
-            className="h-[82vh] w-full max-w-5xl overflow-hidden rounded-[2rem] border border-[#d8aa62]/25"
+            className="v1891-lightbox-stage relative flex h-[86vh] w-full max-w-6xl items-center justify-center overflow-hidden rounded-[1.6rem] border border-[#d8aa62]/28 bg-black/20"
             onClick={(event) => event.stopPropagation()}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
           >
-            <ImageSlot
-              title={`${product.name} · Foto ${selectedImage}`}
-            />
+            <button
+              type="button"
+              onClick={() => selectByOffset(-1)}
+              className="v1891-lightbox-arrow v1891-lightbox-prev absolute left-3 z-[3] grid h-11 w-11 place-items-center rounded-full border border-[#d8aa62]/42 bg-black/48 text-3xl text-[#efc16f] backdrop-blur-md md:left-5 md:h-12 md:w-12"
+              aria-label="Imagen anterior"
+            >
+              ‹
+            </button>
+
+            <div className="v1891-lightbox-image h-full w-full">
+              <ImageSlot
+                title={`${product.name} · Foto ${selectedImage}`}
+              />
+            </div>
+
+            <button
+              type="button"
+              onClick={() => selectByOffset(1)}
+              className="v1891-lightbox-arrow v1891-lightbox-next absolute right-3 z-[3] grid h-11 w-11 place-items-center rounded-full border border-[#d8aa62]/42 bg-black/48 text-3xl text-[#efc16f] backdrop-blur-md md:right-5 md:h-12 md:w-12"
+              aria-label="Imagen siguiente"
+            >
+              ›
+            </button>
+
+            <div className="v1891-lightbox-counter absolute right-4 top-4 rounded-full border border-white/14 bg-black/55 px-3 py-1.5 text-xs font-bold text-white backdrop-blur md:right-5 md:top-5">
+              {currentIndex + 1} / {product.gallery.length}
+            </div>
+
+            <div className="v1891-lightbox-dots absolute bottom-4 left-1/2 z-[3] flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-2 backdrop-blur md:bottom-5">
+              {product.gallery.map((image, index) => (
+                <button
+                  key={image}
+                  type="button"
+                  onClick={() => onSelectImage(image)}
+                  aria-label={`Ir a imagen ${index + 1}`}
+                  className={[
+                    "h-2 rounded-full transition-all",
+                    selectedImage === image
+                      ? "w-7 bg-[#e2b45f]"
+                      : "w-2 bg-white/55 hover:bg-white",
+                  ].join(" ")}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}

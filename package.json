@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-9-product-detail",
-  "version": "18.9.0",
+  "name": "identidad-grabada-v18-9-1-gallery-lightbox",
+  "version": "18.9.1",
   "private": true,
   "scripts": {
     "dev": "next dev",

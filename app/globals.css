@@ -5966,3 +5966,83 @@ textarea:focus {
     height: 38px;
   }
 }
+
+
+/* =========================================================
+   V18.9.1 — GALERÍA LIGHTBOX DESLIZABLE
+   ========================================================= */
+
+.v1891-gallery-trigger {
+  cursor: zoom-in;
+}
+
+.v1891-lightbox-stage {
+  touch-action: pan-y;
+  box-shadow:
+    0 28px 90px rgba(0,0,0,.48),
+    inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.v1891-lightbox-image > * {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.v1891-lightbox-arrow,
+.v1891-lightbox-close {
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.v1891-lightbox-arrow:hover,
+.v1891-lightbox-close:hover {
+  transform: scale(1.06);
+  border-color: rgba(239,193,111,.78);
+  background: rgba(0,0,0,.68);
+}
+
+@media (max-width: 767px) {
+  .v1891-gallery-trigger {
+    cursor: pointer;
+  }
+
+  .v1891-lightbox {
+    padding: 0 !important;
+  }
+
+  .v1891-lightbox-stage {
+    height: 100dvh !important;
+    max-height: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: rgba(0,0,0,.18);
+  }
+
+  .v1891-lightbox-image {
+    height: 100% !important;
+  }
+
+  .v1891-lightbox-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .v1891-lightbox-arrow:hover {
+    transform: translateY(-50%);
+  }
+
+  .v1891-lightbox-close {
+    top: max(16px, env(safe-area-inset-top)) !important;
+  }
+
+  .v1891-lightbox-counter {
+    top: max(18px, env(safe-area-inset-top)) !important;
+    right: 62px !important;
+  }
+
+  .v1891-lightbox-dots {
+    bottom: max(18px, env(safe-area-inset-bottom)) !important;
+  }
+}
