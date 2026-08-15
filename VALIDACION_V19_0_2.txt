@@ -1,0 +1,4 @@
+scope: OK
+css: OK
+retiro: OK
+validacion: OK

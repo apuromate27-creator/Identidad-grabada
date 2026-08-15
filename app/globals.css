@@ -6230,3 +6230,23 @@ textarea:focus {
     border-radius: 13px !important;
   }
 }
+
+
+/* =========================================================
+   V19.0.2 — CHECKOUT MINIMAL PREMIUM
+   ========================================================= */
+.v1902-checkout-minimal .v17-checkout-panel{overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;padding:26px 0!important}
+.v1902-checkout-minimal .v17-checkout-panel+.v17-checkout-panel{border-top:1px solid rgba(255,255,255,.10)!important}
+.v1902-checkout-minimal .v17-checkout-panel>div:first-child,.v1902-checkout-minimal .v17-checkout-panel header{margin:0 0 22px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.v1902-checkout-minimal input,.v1902-checkout-minimal select,.v1902-checkout-minimal textarea{border:1px solid rgba(255,255,255,.14)!important;border-radius:12px!important;background:rgba(5,7,9,.72)!important;box-shadow:none!important;outline:none!important}
+.v1902-checkout-minimal input:hover,.v1902-checkout-minimal select:hover,.v1902-checkout-minimal textarea:hover{border-color:rgba(216,170,98,.28)!important}
+.v1902-checkout-minimal input:focus,.v1902-checkout-minimal select:focus,.v1902-checkout-minimal textarea:focus{border-color:rgba(216,170,98,.62)!important;box-shadow:0 0 0 3px rgba(216,170,98,.07)!important}
+.v1902-checkout-minimal .v17-checkout-steps{border:1px solid rgba(255,255,255,.08)!important;border-radius:18px!important;background:rgba(5,7,9,.66)!important;box-shadow:none!important;overflow:hidden!important}
+.v1902-checkout-minimal .v17-checkout-steps>*{border:0!important;box-shadow:none!important}
+.v1902-checkout-minimal .v17-checkout-summary,.v1902-checkout-minimal .v17-checkout-coupon,.v1902-checkout-minimal .v17-checkout-help,.v1902-checkout-minimal aside.v17-checkout-panel{border:0!important;border-radius:18px!important;background:rgba(7,9,10,.58)!important;box-shadow:none!important;-webkit-backdrop-filter:blur(10px) saturate(1.05)!important;backdrop-filter:blur(10px) saturate(1.05)!important}
+.v1902-checkout-minimal .v17-checkout-summary article{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding-inline:0!important}
+.v1902-checkout-minimal .v17-checkout-coupon{padding:20px 0!important;background:transparent!important;border-top:1px solid rgba(255,255,255,.10)!important;border-bottom:1px solid rgba(255,255,255,.10)!important;border-radius:0!important}
+.v1902-checkout-minimal .v17-checkout-help{padding:22px 0!important;background:transparent!important;border-radius:0!important}
+.v1902-checkout-minimal fieldset,.v1902-checkout-minimal .v17-checkout-panel section,.v1902-checkout-minimal .v17-checkout-panel .grid,.v1902-checkout-minimal .v17-checkout-panel .flex{border:0!important;outline:0!important;box-shadow:none!important}
+@media(min-width:1024px){.v1902-checkout-minimal form{column-gap:34px!important}.v1902-checkout-minimal .v17-checkout-panel{padding:28px 0!important}.v1902-checkout-minimal aside{padding-left:8px!important}}
+@media(max-width:767px){.v1902-checkout-minimal .v17-checkout-panel{padding:22px 0!important}.v1902-checkout-minimal .v17-checkout-panel>div:first-child,.v1902-checkout-minimal .v17-checkout-panel header{margin-bottom:18px!important}.v1902-checkout-minimal input,.v1902-checkout-minimal select,.v1902-checkout-minimal textarea{border-radius:11px!important}}
