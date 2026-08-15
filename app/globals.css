@@ -6394,3 +6394,385 @@ textarea:focus {
     border-radius: 14px !important;
   }
 }
+
+
+/* =========================================================
+   V19.1.0 — PERSONALIZADOR PRO / SIMULACIÓN DE GRABADO
+   ========================================================= */
+
+.v1910-personalizer {
+  background: rgba(4,6,7,.18) !important;
+}
+
+.v1910-mode-switch {
+  background: rgba(0,0,0,.22);
+}
+
+.v1910-mode-switch button {
+  min-height: 38px;
+  border-radius: 9px;
+  padding: 0 14px;
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+  font-weight: 900;
+  transition: .2s ease;
+}
+
+.v1910-mode-switch button.active {
+  background: linear-gradient(135deg,#d5a04a,#9e6322);
+  color: white;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16);
+}
+
+.v1910-editor-shell {
+  min-width: 0;
+}
+
+.v1910-editor-toolbar {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid rgba(216,170,98,.15);
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  background: rgba(7,9,10,.62);
+  padding: 13px 16px;
+}
+
+.v1910-editor-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid rgba(216,170,98,.22);
+  background: #12100e;
+  touch-action: none;
+  user-select: none;
+}
+
+.v1910-product-photo,
+.v1910-product-photo > * {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.v1910-product-photo {
+  z-index: -4;
+}
+
+.v1910-product-photo > * {
+  transform: scale(1.015);
+}
+
+.v1910-product-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 48%, transparent 24%, rgba(0,0,0,.05) 58%, rgba(0,0,0,.32) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.16));
+}
+
+.v1910-engraving-zone {
+  position: absolute;
+  left: 29%;
+  right: 29%;
+  top: 27%;
+  bottom: 20%;
+  border: 1px dashed rgba(239,193,111,.72);
+  border-radius: 48% 48% 42% 42%;
+  box-shadow: 0 0 0 999px rgba(0,0,0,.025);
+  pointer-events: none;
+}
+
+.v1910-engraving-zone span {
+  position: absolute;
+  left: 50%;
+  bottom: -31px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  border-radius: 999px;
+  background: rgba(0,0,0,.58);
+  padding: 5px 9px;
+  color: #e8c58f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.v1910-zone-crosshair {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%,-50%);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.v1910-zone-crosshair::before,
+.v1910-zone-crosshair::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: rgba(255,255,255,.22);
+  transform: translate(-50%,-50%);
+}
+.v1910-zone-crosshair::before { width: 30px; height: 1px; }
+.v1910-zone-crosshair::after { width: 1px; height: 30px; }
+
+.v1910-engraving-design {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  max-width: 220px;
+  min-width: 80px;
+  place-items: center;
+  cursor: grab;
+  transform-origin: center;
+  text-align: center;
+  pointer-events: none;
+  filter:
+    grayscale(1)
+    sepia(.42)
+    contrast(1.28)
+    brightness(.58);
+  opacity: .88;
+  mix-blend-mode: multiply;
+}
+
+.v1910-editor-stage.is-editing .v1910-engraving-design {
+  outline: 1px dashed rgba(255,211,125,.55);
+  outline-offset: 8px;
+}
+
+.v1910-engraving-design span {
+  max-width: 210px;
+  overflow-wrap: anywhere;
+  color: #2c160c;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: .98;
+  letter-spacing: .02em;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.06),
+    0 0 1px rgba(0,0,0,.55);
+}
+
+.v1910-engraving-design.font-serif span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.v1910-engraving-design.font-classic span {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: .025em;
+}
+
+.v1910-engraving-design.font-modern span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  letter-spacing: .055em;
+}
+
+.v1910-engraving-design img {
+  display: block;
+  max-width: 150px;
+  max-height: 120px;
+  object-fit: contain;
+  filter:
+    grayscale(1)
+    contrast(1.75)
+    brightness(.48);
+}
+
+.v1910-editor-stage.material-wood .v1910-engraving-design {
+  filter: grayscale(1) sepia(.55) contrast(1.35) brightness(.48);
+  opacity: .90;
+}
+
+.v1910-editor-stage.material-gourd .v1910-engraving-design {
+  filter: grayscale(1) sepia(.5) contrast(1.25) brightness(.55);
+  opacity: .84;
+}
+
+.v1910-editor-stage.material-metal .v1910-engraving-design {
+  filter: grayscale(1) contrast(1.18) brightness(.72);
+  opacity: .70;
+  mix-blend-mode: multiply;
+}
+
+.v1910-editor-stage.is-preview .v1910-engraving-design {
+  outline: 0;
+}
+
+.v1910-no-engraving {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(0,0,0,.48);
+  padding: 7px 11px;
+  color: rgba(255,255,255,.68);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.v1910-editor-status {
+  position: absolute;
+  left: 13px;
+  bottom: 13px;
+  display: flex;
+  max-width: calc(100% - 26px);
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 999px;
+  background: rgba(0,0,0,.52);
+  padding: 6px 9px;
+  color: rgba(255,255,255,.68);
+  font-size: 9px;
+  backdrop-filter: blur(8px);
+}
+
+.v1910-editor-status span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.v1910-editor-status strong {
+  flex: 0 0 auto;
+  color: #e8c58f;
+}
+
+.v1910-editor-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  border: 1px solid rgba(216,170,98,.14);
+  border-top: 0;
+  border-radius: 0 0 20px 20px;
+  background: rgba(7,9,10,.54);
+  padding: 11px 13px;
+}
+
+.v1910-editor-hints span {
+  border-radius: 999px;
+  background: rgba(255,255,255,.035);
+  padding: 5px 8px;
+  color: rgba(255,255,255,.58);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.v1910-upload,
+.v1910-fine-controls,
+.v1910-disclaimer {
+  background: rgba(255,255,255,.018) !important;
+}
+
+.v1910-fine-controls button,
+.v1910-reset {
+  min-height: 34px;
+  border: 1px solid rgba(216,170,98,.24);
+  border-radius: 9px;
+  background: rgba(0,0,0,.20);
+  padding: 0 10px;
+  color: #e8c58f;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.v1910-range {
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, rgba(216,170,98,.80), rgba(216,170,98,.22)) !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.v1910-range::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  border: 2px solid #e2b45f;
+  border-radius: 999px;
+  background: #17100c;
+  box-shadow: 0 3px 12px rgba(0,0,0,.35);
+}
+
+.v1910-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e2b45f;
+  border-radius: 999px;
+  background: #17100c;
+}
+
+@media (max-width: 767px) {
+  .v1910-personalizer {
+    padding: 18px !important;
+  }
+
+  .v1910-mode-switch {
+    width: 100%;
+  }
+
+  .v1910-mode-switch button {
+    flex: 1;
+  }
+
+  .v1910-editor-toolbar {
+    border-radius: 16px 16px 0 0;
+    padding: 11px 12px;
+  }
+
+  .v1910-editor-stage {
+    min-height: 440px;
+  }
+
+  .v1910-engraving-zone {
+    left: 22%;
+    right: 22%;
+    top: 26%;
+    bottom: 21%;
+  }
+
+  .v1910-engraving-design {
+    max-width: 180px;
+  }
+
+  .v1910-engraving-design span {
+    max-width: 170px;
+    font-size: 25px;
+  }
+
+  .v1910-engraving-design img {
+    max-width: 125px;
+    max-height: 105px;
+  }
+
+  .v1910-editor-hints {
+    border-radius: 0 0 16px 16px;
+  }
+
+  .v1910-fine-controls .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}

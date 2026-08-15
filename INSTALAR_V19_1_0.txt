@@ -1,0 +1,24 @@
+IDENTIDAD GRABADA — V19.1.0
+PERSONALIZADOR PRO
+
+BASE: V19.0.3
+
+INSTALACIÓN
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá esta versión dentro del repositorio.
+6. Reemplazá archivos.
+7. Commit: V19.1.0 - Personalizador Pro
+8. Push origin.
+9. Esperá Vercel.
+
+PRUEBAS RECOMENDADAS
+- Nombre o frase.
+- Logo PNG con fondo transparente.
+- Arrastre con mouse.
+- Arrastre táctil en celular.
+- Escala y rotación.
+- Alternar Editar / Vista previa.
+- Agregar la personalización al carrito.

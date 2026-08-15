@@ -1,0 +1,9 @@
+Personalizador Pro presente: OK
+Arrastre pointer: OK
+Escala: OK
+Rotación: OK
+Logo preview: OK
+Modo preview: OK
+Resumen guarda coordenadas: OK
+CSS V19.1.0: OK
+Checkout V19.0.3 conservado: OK

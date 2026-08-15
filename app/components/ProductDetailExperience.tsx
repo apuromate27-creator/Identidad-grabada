@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { type PointerEvent as ReactPointerEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useCart } from "./CartContext";
 import { ImageSlot } from "./ui";
 import type { Product } from "../data/products";
@@ -29,6 +29,12 @@ export function ProductDetailExperience({
   const [notes, setNotes] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [referenceFileName, setReferenceFileName] = useState("");
+  const [referencePreview, setReferencePreview] = useState("");
+  const [designX, setDesignX] = useState(50);
+  const [designY, setDesignY] = useState(58);
+  const [designScale, setDesignScale] = useState(1);
+  const [designRotation, setDesignRotation] = useState(0);
+  const [previewMode, setPreviewMode] = useState(false);
 
   useEffect(() => {
     try {
@@ -48,11 +54,38 @@ export function ProductDetailExperience({
             `Tipografía: ${font}`,
             `Posición: ${position}`,
             referenceFileName ? `Referencia: ${referenceFileName}` : "",
+            `Diseño: X ${Math.round(designX)}% · Y ${Math.round(designY)}% · Escala ${Math.round(designScale * 100)}% · Rotación ${Math.round(designRotation)}°`,
             notes ? `Notas: ${notes}` : "",
           ].filter(Boolean);
 
     return parts.join(" · ");
-  }, [engravingType, engravingText, font, position, referenceFileName, notes]);
+  }, [engravingType, engravingText, font, position, referenceFileName, designX, designY, designScale, designRotation, notes]);
+
+  const handleReferenceFile = (file?: File) => {
+    if (!file) {
+      setReferenceFileName("");
+      setReferencePreview("");
+      return;
+    }
+
+    setReferenceFileName(file.name);
+
+    if (file.type.startsWith("image/")) {
+      setReferencePreview((current) => {
+        if (current.startsWith("blob:")) URL.revokeObjectURL(current);
+        return URL.createObjectURL(file);
+      });
+    } else {
+      setReferencePreview("");
+    }
+  };
+
+  const resetDesign = () => {
+    setDesignX(50);
+    setDesignY(58);
+    setDesignScale(1);
+    setDesignRotation(0);
+  };
 
   const toggleFavorite = () => {
     const next = !favorite;
@@ -240,36 +273,71 @@ export function ProductDetailExperience({
         </aside>
       </div>
 
-      <section className="v17-personalizer mt-10 rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
-        <div className="grid gap-8 lg:grid-cols-[.82fr_1.18fr]">
+      <section className="v17-personalizer v1910-personalizer mt-10 rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[#e2b46d]">
-              Personalización
+              Personalizador Pro
             </p>
             <h2 className="mt-3 font-serif text-3xl text-white md:text-4xl">
-              Prepará tu idea de grabado
+              Visualizá tu grabado sobre el mate
             </h2>
-            <p className="mt-4 leading-relaxed text-stone-300">
-              Completá una propuesta inicial. Antes de producir te enviamos una
-              vista previa para confirmar todos los detalles.
+            <p className="mt-3 max-w-3xl leading-relaxed text-stone-300">
+              Mové, escalá y girá el diseño dentro de la zona grabable. La simulación
+              adapta el acabado al material para aproximarse al resultado del láser.
             </p>
-
-            <div className="v17-engraving-preview mt-6 flex min-h-72 items-center justify-center overflow-hidden rounded-[1.5rem] border border-[#d8aa62]/16">
-              <div className="relative grid h-48 w-48 place-items-center rounded-full border-[14px] border-[#b68b52]/24">
-                <div className="absolute inset-5 rounded-full border border-[#e8c58f]/22" />
-                <p className="relative max-w-[150px] break-words text-center text-2xl font-black text-[#e8c58f]">
-                  {engravingType === "Sin grabado" ? "Sin grabado" : engravingText || "Tu diseño"}
-                </p>
-              </div>
-            </div>
           </div>
 
-          <div className="grid content-start gap-5">
+          <div className="v1910-mode-switch flex rounded-xl border border-[#d8aa62]/22 p-1">
+            <button
+              type="button"
+              onClick={() => setPreviewMode(false)}
+              className={!previewMode ? "active" : ""}
+            >
+              Editar
+            </button>
+            <button
+              type="button"
+              onClick={() => setPreviewMode(true)}
+              className={previewMode ? "active" : ""}
+            >
+              Vista previa
+            </button>
+          </div>
+        </div>
+
+        <div className="grid gap-7 xl:grid-cols-[1.08fr_.92fr]">
+          <EngravingEditor
+            product={product}
+            selectedImage={selectedImage}
+            engravingType={engravingType}
+            engravingText={engravingText}
+            font={font}
+            referencePreview={referencePreview}
+            referenceFileName={referenceFileName}
+            designX={designX}
+            designY={designY}
+            designScale={designScale}
+            designRotation={designRotation}
+            previewMode={previewMode}
+            onPositionChange={(x, y) => {
+              setDesignX(x);
+              setDesignY(y);
+            }}
+            onScaleChange={setDesignScale}
+            onRotationChange={setDesignRotation}
+            onReset={resetDesign}
+          />
+
+          <div className="v1910-controls grid content-start gap-5">
             <OptionGroup
               label="¿Qué querés grabar?"
               options={["Sin grabado", "Nombre", "Frase", "Fecha", "Iniciales", "Logo / diseño"]}
               value={engravingType}
-              onChange={setEngravingType}
+              onChange={(value) => {
+                setEngravingType(value);
+                if (value === "Sin grabado") setPreviewMode(true);
+              }}
             />
 
             {engravingType !== "Sin grabado" && (
@@ -281,7 +349,7 @@ export function ProductDetailExperience({
                   <input
                     value={engravingText}
                     onChange={(event) => setEngravingText(event.target.value)}
-                    placeholder="Ej: Juan Pérez, una fecha o descripción del logo"
+                    placeholder="Ej: Juan Pérez, una fecha o una frase"
                     className="rounded-2xl border border-white/10 bg-[#1d130d]/55 px-5 py-4 text-white outline-none placeholder:text-stone-500 focus:border-[#b68b52]"
                   />
                 </label>
@@ -299,6 +367,64 @@ export function ProductDetailExperience({
                   value={position}
                   onChange={setPosition}
                 />
+
+                <label className="v1910-upload flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#d8aa62]/28 p-5 text-sm text-stone-300">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#d8aa62]/34 text-[#e8c58f]">
+                    ↑
+                  </span>
+                  <span className="min-w-0">
+                    <strong className="block text-white">Subir logo o diseño</strong>
+                    <span className="block truncate">
+                      {referenceFileName || "PNG, JPG o SVG para previsualizar. PDF queda registrado como referencia."}
+                    </span>
+                  </span>
+                  <input
+                    type="file"
+                    accept=".jpg,.jpeg,.png,.svg,.pdf"
+                    className="hidden"
+                    onChange={(event) => handleReferenceFile(event.target.files?.[0])}
+                  />
+                </label>
+
+                <div className="v1910-fine-controls grid gap-4 rounded-2xl border border-[#d8aa62]/16 p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-bold text-white">Ajuste fino</p>
+                      <p className="mt-1 text-xs text-stone-400">
+                        También podés arrastrar directamente el diseño sobre el producto.
+                      </p>
+                    </div>
+                    <button type="button" onClick={resetDesign} className="v1910-reset">
+                      Restablecer
+                    </button>
+                  </div>
+
+                  <RangeControl
+                    label="Tamaño"
+                    value={designScale}
+                    min={0.55}
+                    max={1.65}
+                    step={0.05}
+                    display={`${Math.round(designScale * 100)}%`}
+                    onChange={setDesignScale}
+                  />
+
+                  <RangeControl
+                    label="Rotación"
+                    value={designRotation}
+                    min={-35}
+                    max={35}
+                    step={1}
+                    display={`${Math.round(designRotation)}°`}
+                    onChange={setDesignRotation}
+                  />
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <button type="button" onClick={() => setDesignX(50)}>Centrar</button>
+                    <button type="button" onClick={() => setDesignScale((value) => Math.max(.55, value - .1))}>− Tamaño</button>
+                    <button type="button" onClick={() => setDesignScale((value) => Math.min(1.65, value + .1))}>+ Tamaño</button>
+                  </div>
+                </div>
               </>
             )}
 
@@ -315,27 +441,11 @@ export function ProductDetailExperience({
               />
             </label>
 
-            {engravingType !== "Sin grabado" && (
-              <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#d8aa62]/24 bg-[#21140d]/32 p-5 text-sm text-stone-300">
-                <span className="grid h-10 w-10 place-items-center rounded-full border border-[#d8aa62]/30 text-[#e8c58f]">
-                  ↑
-                </span>
-                <span className="min-w-0">
-                  <strong className="block text-white">Subir logo o referencia</strong>
-                  <span className="block truncate">
-                    {referenceFileName || "JPG, PNG, PDF o SVG. Guardaremos el nombre de la referencia en el pedido."}
-                  </span>
-                </span>
-                <input
-                  type="file"
-                  accept=".jpg,.jpeg,.png,.pdf,.svg"
-                  className="hidden"
-                  onChange={(event) =>
-                    setReferenceFileName(event.target.files?.[0]?.name || "")
-                  }
-                />
-              </label>
-            )}
+            <div className="v1910-disclaimer rounded-2xl border border-[#d8aa62]/16 p-4 text-xs leading-relaxed text-stone-400">
+              <strong className="text-[#e8c58f]">Vista previa orientativa.</strong>{" "}
+              La calabaza y la madera son materiales naturales: tono, textura y contraste
+              pueden variar. Antes de producir se confirma el diseño final.
+            </div>
           </div>
         </div>
       </section>
@@ -586,6 +696,230 @@ function ProductGallery({
     </div>
   );
 }
+
+
+function EngravingEditor({
+  product,
+  selectedImage,
+  engravingType,
+  engravingText,
+  font,
+  referencePreview,
+  referenceFileName,
+  designX,
+  designY,
+  designScale,
+  designRotation,
+  previewMode,
+  onPositionChange,
+  onScaleChange,
+  onRotationChange,
+  onReset,
+}: {
+  product: Product;
+  selectedImage: string;
+  engravingType: string;
+  engravingText: string;
+  font: string;
+  referencePreview: string;
+  referenceFileName: string;
+  designX: number;
+  designY: number;
+  designScale: number;
+  designRotation: number;
+  previewMode: boolean;
+  onPositionChange: (x: number, y: number) => void;
+  onScaleChange: (value: number) => void;
+  onRotationChange: (value: number) => void;
+  onReset: () => void;
+}) {
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  const dragging = useRef(false);
+
+  const material = product.material.toLowerCase();
+  const materialClass = material.includes("algarrobo")
+    ? "wood"
+    : material.includes("calabaza")
+      ? "gourd"
+      : material.includes("metal") || material.includes("acero")
+        ? "metal"
+        : "gourd";
+
+  const fontClass =
+    font === "Elegante"
+      ? "serif"
+      : font === "Moderna"
+        ? "modern"
+        : "classic";
+
+  const updatePointerPosition = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    const rect = stage.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+    onPositionChange(
+      Math.min(82, Math.max(18, x)),
+      Math.min(78, Math.max(28, y))
+    );
+  };
+
+  const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (previewMode || engravingType === "Sin grabado") return;
+    dragging.current = true;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    updatePointerPosition(event);
+  };
+
+  const onPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!dragging.current) return;
+    updatePointerPosition(event);
+  };
+
+  const onPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    dragging.current = false;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  };
+
+  const designLabel =
+    engravingType === "Sin grabado"
+      ? ""
+      : engravingText ||
+        (engravingType.includes("Logo") ? "TU LOGO" : "TU DISEÑO");
+
+  return (
+    <div className="v1910-editor-shell">
+      <div className="v1910-editor-toolbar">
+        <div>
+          <p className="text-xs uppercase tracking-[.18em] text-[#e2b46d]">
+            Simulación sobre producto
+          </p>
+          <p className="mt-1 text-sm text-stone-400">
+            {previewMode ? "Vista limpia del resultado" : "Arrastrá el diseño dentro del área punteada"}
+          </p>
+        </div>
+
+        {!previewMode && engravingType !== "Sin grabado" && (
+          <button type="button" onClick={onReset} className="v1910-reset">
+            Centrar diseño
+          </button>
+        )}
+      </div>
+
+      <div
+        ref={stageRef}
+        className={[
+          "v1910-editor-stage",
+          `material-${materialClass}`,
+          previewMode ? "is-preview" : "is-editing",
+        ].join(" ")}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
+        <div className="v1910-product-photo">
+          <ImageSlot title={`${product.name} · Foto ${selectedImage}`} />
+        </div>
+
+        <div className="v1910-product-vignette" />
+
+        {!previewMode && engravingType !== "Sin grabado" && (
+          <>
+            <div className="v1910-engraving-zone">
+              <span>Zona grabable orientativa</span>
+            </div>
+            <div className="v1910-zone-crosshair" />
+          </>
+        )}
+
+        {engravingType !== "Sin grabado" && (
+          <div
+            className={[
+              "v1910-engraving-design",
+              `font-${fontClass}`,
+              referencePreview ? "has-logo" : "",
+            ].join(" ")}
+            style={{
+              left: `${designX}%`,
+              top: `${designY}%`,
+              transform: `translate(-50%, -50%) rotate(${designRotation}deg) scale(${designScale})`,
+            }}
+          >
+            {referencePreview ? (
+              <img
+                src={referencePreview}
+                alt={referenceFileName || "Diseño cargado"}
+                draggable={false}
+              />
+            ) : (
+              <span>{designLabel}</span>
+            )}
+          </div>
+        )}
+
+        {engravingType === "Sin grabado" && (
+          <div className="v1910-no-engraving">
+            Producto sin grabado
+          </div>
+        )}
+
+        <div className="v1910-editor-status">
+          <span>{product.material}</span>
+          <strong>{previewMode ? "Vista previa" : "Edición"}</strong>
+        </div>
+      </div>
+
+      <div className="v1910-editor-hints">
+        <span>↔ Arrastrar</span>
+        <span>⤢ Escalar</span>
+        <span>↻ Rotar</span>
+        <span>Área: {product.engravingArea}</span>
+      </div>
+    </div>
+  );
+}
+
+function RangeControl({
+  label,
+  value,
+  min,
+  max,
+  step,
+  display,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  display: string;
+  onChange: (value: number) => void;
+}) {
+  return (
+    <label className="grid gap-2">
+      <span className="flex items-center justify-between gap-3 text-xs font-bold text-stone-300">
+        {label}
+        <strong className="text-[#e8c58f]">{display}</strong>
+      </span>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(event) => onChange(Number(event.target.value))}
+        className="v1910-range"
+      />
+    </label>
+  );
+}
+
 
 function ShippingCalculator({
   postalCode,
