@@ -1,0 +1,22 @@
+IDENTIDAD GRABADA — V19.0.1
+CHECKOUT CLEAN PANELS
+
+BASE: V19.0
+
+CAMBIO PRINCIPAL
+- Se eliminan los cuadros rectangulares extra alrededor de títulos y grupos.
+- Se conserva un único panel redondeado por sección.
+- Inputs con un solo borde.
+- Sidebar y resumen más limpios, como el ejemplo aprobado.
+- La funcionalidad de V19.0 se mantiene.
+
+INSTALACIÓN
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá el contenido de esta versión.
+6. Pegalo en el repositorio y reemplazá archivos.
+7. Commit: V19.0.1 - Checkout clean panels
+8. Push origin.
+9. Esperá Vercel.

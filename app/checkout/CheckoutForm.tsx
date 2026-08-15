@@ -217,7 +217,7 @@ export function CheckoutForm() {
   if (submitted) {
     return (
       <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-7 text-center md:p-10">
-        <div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-green-400/25 bg-green-950/28 text-3xl text-green-200">
+        <div className="v1901-checkout-clean mx-auto grid h-16 w-16 place-items-center rounded-full border border-green-400/25 bg-green-950/28 text-3xl text-green-200">
           ✓
         </div>
 

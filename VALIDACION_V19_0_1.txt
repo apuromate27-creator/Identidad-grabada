@@ -1,0 +1,4 @@
+Clase V19.0.1: OK
+CSS V19.0.1: OK
+Retiro se conserva: OK
+Validación se conserva: OK

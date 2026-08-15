@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v19-0-checkout-profesional",
-  "version": "19.0.0",
+  "name": "identidad-grabada-v19-0-1-checkout-clean-panels",
+  "version": "19.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
