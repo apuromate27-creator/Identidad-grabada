@@ -1,0 +1,6 @@
+Scope V19.0.3: OK
+Sección contacto estructural: OK
+Sección dirección estructural: OK
+CSS V19.0.3: OK
+Retiro conservado: OK
+Validación conservada: OK

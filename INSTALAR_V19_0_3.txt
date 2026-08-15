@@ -1,0 +1,25 @@
+IDENTIDAD GRABADA — V19.0.3
+CHECKOUT STRUCTURAL REBUILD
+
+BASE: última V19 disponible.
+
+CAMBIO PRINCIPAL
+Se modifica la estructura visual del checkout en CheckoutForm.tsx:
+- Las secciones dejan de ser tarjetas/paneles.
+- Se eliminan marcos rectangulares internos.
+- Los encabezados quedan libres.
+- Los inputs conservan su borde.
+- El resumen sigue siendo una zona diferenciada.
+
+La lógica funcional no se modifica.
+
+INSTALACIÓN
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá el contenido de esta versión.
+6. Reemplazá archivos.
+7. Commit: V19.0.3 - Checkout Structural Rebuild
+8. Push origin.
+9. Esperá Vercel.

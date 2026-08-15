@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v19-0-2-checkout-minimal-premium",
-  "version": "19.0.2",
+  "name": "identidad-grabada-v19-0-3-checkout-structural-rebuild",
+  "version": "19.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev",

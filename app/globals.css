@@ -6250,3 +6250,147 @@ textarea:focus {
 .v1902-checkout-minimal fieldset,.v1902-checkout-minimal .v17-checkout-panel section,.v1902-checkout-minimal .v17-checkout-panel .grid,.v1902-checkout-minimal .v17-checkout-panel .flex{border:0!important;outline:0!important;box-shadow:none!important}
 @media(min-width:1024px){.v1902-checkout-minimal form{column-gap:34px!important}.v1902-checkout-minimal .v17-checkout-panel{padding:28px 0!important}.v1902-checkout-minimal aside{padding-left:8px!important}}
 @media(max-width:767px){.v1902-checkout-minimal .v17-checkout-panel{padding:22px 0!important}.v1902-checkout-minimal .v17-checkout-panel>div:first-child,.v1902-checkout-minimal .v17-checkout-panel header{margin-bottom:18px!important}.v1902-checkout-minimal input,.v1902-checkout-minimal select,.v1902-checkout-minimal textarea{border-radius:11px!important}}
+
+
+/* =========================================================
+   V19.0.3 — CHECKOUT STRUCTURAL REBUILD
+   Reestructura visualmente el checkout para eliminar los
+   rectángulos internos reales, no solamente ocultarlos.
+   ========================================================= */
+
+.v1903-checkout-rebuild {
+  position: relative;
+}
+
+/* Left column becomes a continuous surface with real sections, not cards. */
+.v1903-checkout-rebuild .v1903-checkout-section {
+  position: relative;
+  margin: 0 !important;
+  padding: 28px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* True separation between sections. */
+.v1903-checkout-rebuild .v1903-checkout-section + .v1903-checkout-section {
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+}
+
+/* Heading area: remove the rectangular wrapper entirely. */
+.v1903-checkout-rebuild .v1903-checkout-section > div:first-child,
+.v1903-checkout-rebuild .v1903-checkout-section header {
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+/* Number indicator stays circular and premium. */
+.v1903-checkout-rebuild .v1903-checkout-section > div:first-child [class*="rounded-full"],
+.v1903-checkout-rebuild .v1903-checkout-section header [class*="rounded-full"] {
+  border: 1px solid rgba(216,170,98,.42) !important;
+  background: rgba(8,9,10,.35) !important;
+  box-shadow: none !important;
+}
+
+/* Inputs are the only framed elements in the left column. */
+.v1903-checkout-rebuild .v1903-checkout-section input,
+.v1903-checkout-rebuild .v1903-checkout-section select,
+.v1903-checkout-rebuild .v1903-checkout-section textarea {
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 12px !important;
+  background: rgba(5,7,9,.72) !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.v1903-checkout-rebuild .v1903-checkout-section input:focus,
+.v1903-checkout-rebuild .v1903-checkout-section select:focus,
+.v1903-checkout-rebuild .v1903-checkout-section textarea:focus {
+  border-color: rgba(216,170,98,.62) !important;
+  box-shadow: 0 0 0 3px rgba(216,170,98,.07) !important;
+}
+
+/* Remove any structural borders from fieldsets and grouping wrappers. */
+.v1903-checkout-rebuild .v1903-checkout-section fieldset,
+.v1903-checkout-rebuild .v1903-checkout-section .grid,
+.v1903-checkout-rebuild .v1903-checkout-section .flex,
+.v1903-checkout-rebuild .v1903-checkout-section section {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Stepper: one clean bar only. */
+.v1903-checkout-rebuild .v17-checkout-steps {
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 18px !important;
+  background: rgba(5,7,9,.70) !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+}
+
+.v1903-checkout-rebuild .v17-checkout-steps > * {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Sidebar remains grouped, but without double frames. */
+.v1903-checkout-rebuild .v1903-checkout-sidebar {
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: rgba(7,9,10,.58) !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: blur(10px) saturate(1.04) !important;
+  backdrop-filter: blur(10px) saturate(1.04) !important;
+}
+
+/* Summary product: remove nested rectangular frame. */
+.v1903-checkout-rebuild .v1903-checkout-sidebar article,
+.v1903-checkout-rebuild .v1903-checkout-sidebar > div {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.v1903-checkout-rebuild .v1903-checkout-sidebar article {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* Desktop spacing to match the approved reference. */
+@media (min-width: 1024px) {
+  .v1903-checkout-rebuild .v1903-checkout-section {
+    padding: 30px 0 !important;
+  }
+
+  .v1903-checkout-rebuild form {
+    column-gap: 36px !important;
+  }
+}
+
+/* Mobile: same flat structure, stacked. */
+@media (max-width: 767px) {
+  .v1903-checkout-rebuild .v1903-checkout-section {
+    padding: 22px 0 !important;
+  }
+
+  .v1903-checkout-rebuild .v1903-checkout-section > div:first-child,
+  .v1903-checkout-rebuild .v1903-checkout-section header {
+    margin-bottom: 18px !important;
+  }
+
+  .v1903-checkout-rebuild .v1903-checkout-sidebar {
+    border-radius: 14px !important;
+  }
+}

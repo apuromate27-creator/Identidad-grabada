@@ -217,7 +217,7 @@ export function CheckoutForm() {
   if (submitted) {
     return (
       <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-7 text-center md:p-10">
-        <div className="v1901-checkout-clean v1902-checkout-minimal mx-auto grid h-16 w-16 place-items-center rounded-full border border-green-400/25 bg-green-950/28 text-3xl text-green-200">
+        <div className="v1901-checkout-clean v1902-checkout-minimal v1903-checkout-rebuild mx-auto grid h-16 w-16 place-items-center rounded-full border border-green-400/25 bg-green-950/28 text-3xl text-green-200">
           ✓
         </div>
 
@@ -292,7 +292,7 @@ export function CheckoutForm() {
       <div className="space-y-6">
         <CheckoutProgress />
 
-        <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
+        <section className="v1903-checkout-section v1903-contact-section">
           <SectionHeader
             number="01"
             title="Datos de contacto"
@@ -330,7 +330,7 @@ export function CheckoutForm() {
           </div>
         </section>
 
-        <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
+        <section className="v1903-checkout-section v1903-address-section">
           <SectionHeader
             number="02"
             title={form.shipping === "retiro" ? "Retiro coordinado" : "Dirección de entrega"}
@@ -402,7 +402,7 @@ export function CheckoutForm() {
           )}
         </section>
 
-        <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
+        <section className="v1903-checkout-section">
           <SectionHeader
             number="03"
             title="Envío"
@@ -424,7 +424,7 @@ export function CheckoutForm() {
           </div>
         </section>
 
-        <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
+        <section className="v1903-checkout-section">
           <SectionHeader
             number="04"
             title="Forma de pago"
@@ -462,7 +462,7 @@ export function CheckoutForm() {
         </section>
       </div>
 
-      <aside className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-5 xl:sticky xl:top-24">
+      <aside className="v1903-checkout-sidebar v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-5 xl:sticky xl:top-24">
         <h2 className="text-2xl font-black text-white">
           Resumen del pedido
         </h2>
