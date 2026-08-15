@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v18-9-1-gallery-lightbox",
-  "version": "18.9.1",
+  "name": "identidad-grabada-v19-0-checkout-profesional",
+  "version": "19.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

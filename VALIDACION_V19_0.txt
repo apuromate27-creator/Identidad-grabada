@@ -1,0 +1,7 @@
+V19 CSS: OK
+Carrito persiste: OK
+Vaciar carrito drawer: OK
+Personalización visible: OK
+Retiro condicional: OK
+Validación dirección: OK
+Volver al producto: OK

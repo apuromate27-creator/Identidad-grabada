@@ -74,7 +74,7 @@ export function CartContent({
   onCheckout?: () => void;
   onContinue?: () => void;
 }) {
-  const { items, removeItem, updateQuantity, totalValue, hasQuotedItems } = useCart();
+  const { items, removeItem, updateQuantity, clearCart, totalValue, hasQuotedItems } = useCart();
 
   if (!items.length) {
     return (
@@ -104,9 +104,14 @@ export function CartContent({
                 <button type="button" onClick={() => removeItem(item.id)} className="text-xs text-red-300">🗑</button>
               </div>
               {item.personalization && (
-                <p className="mt-2 line-clamp-2 text-[11px] leading-relaxed text-stone-400">
-                  {item.personalization}
-                </p>
+                <details className="v190-cart-personalization mt-2">
+                  <summary className="cursor-pointer text-[11px] font-bold text-[#e8c58f]">
+                    Ver personalización
+                  </summary>
+                  <p className="mt-2 whitespace-pre-wrap text-[11px] leading-relaxed text-stone-400">
+                    {item.personalization}
+                  </p>
+                </details>
               )}
             </div>
           </div>
@@ -143,14 +148,24 @@ export function CartContent({
       </div>
 
       <Link href="/checkout" onClick={onCheckout}
-        className="block rounded-xl bg-[#b98239] py-3.5 text-center font-black text-white">
-        Finalizar compra
+        className="v190-primary-action block rounded-xl bg-[#b98239] py-3.5 text-center font-black text-white">
+        Continuar al checkout
       </Link>
-      <Link href="/checkout" onClick={onCheckout}
-        className="block rounded-xl border border-[#d8aa62]/35 py-3.5 text-center font-black text-[#e8c58f]">
-        Ver carrito completo
-      </Link>
-      <p className="pb-2 text-center text-[11px] text-stone-500">🔒 Compra 100% segura</p>
+
+      <div className="grid grid-cols-2 gap-2">
+        <Link href="/productos" onClick={onContinue}
+          className="block rounded-xl border border-[#d8aa62]/35 px-3 py-3 text-center text-sm font-black text-[#e8c58f]">
+          Seguir comprando
+        </Link>
+        <button type="button" onClick={clearCart}
+          className="rounded-xl border border-white/10 px-3 py-3 text-sm font-bold text-stone-400 transition hover:border-red-300/30 hover:text-red-200">
+          Vaciar carrito
+        </button>
+      </div>
+
+      <p className="pb-2 text-center text-[11px] leading-relaxed text-stone-500">
+        🔒 Tus productos y personalizaciones quedan guardados en este dispositivo.
+      </p>
     </div>
   );
 }

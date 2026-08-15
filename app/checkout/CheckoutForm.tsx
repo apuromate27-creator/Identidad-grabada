@@ -160,14 +160,20 @@ export function CheckoutForm() {
     totalValue - discountValue + shipping.price
   );
 
+  const deliveryComplete =
+    form.shipping === "retiro" ||
+    (form.address.trim() &&
+      form.city.trim() &&
+      form.province.trim() &&
+      form.postalCode.trim());
+
   const canSubmit =
     items.length > 0 &&
     accepted &&
     form.name.trim() &&
     form.email.trim() &&
     form.phone.trim() &&
-    form.city.trim() &&
-    form.postalCode.trim();
+    deliveryComplete;
 
   const orderNumber = useMemo(
     () => `IG-${Date.now().toString().slice(-6)}`,
@@ -327,9 +333,19 @@ export function CheckoutForm() {
         <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
           <SectionHeader
             number="02"
-            title="Dirección de entrega"
-            text="Completá la dirección donde querés recibir el pedido."
+            title={form.shipping === "retiro" ? "Retiro coordinado" : "Dirección de entrega"}
+            text={
+              form.shipping === "retiro"
+                ? "No necesitás completar una dirección. Coordinaremos lugar y horario después de confirmar."
+                : "Completá la dirección donde querés recibir el pedido."
+            }
           />
+
+          {form.shipping === "retiro" ? (
+            <div className="v190-pickup-note mt-6 rounded-2xl border border-[#d8aa62]/18 p-5 text-sm leading-relaxed text-stone-300">
+              ✓ Retiro sin costo seleccionado. Tus datos de contacto serán suficientes para coordinar la entrega.
+            </div>
+          ) : (
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="md:col-span-2">
@@ -383,6 +399,7 @@ export function CheckoutForm() {
               required
             />
           </div>
+          )}
         </section>
 
         <section className="v17-checkout-panel rounded-[2rem] border border-[#d8aa62]/22 p-6 md:p-8">
@@ -462,8 +479,14 @@ export function CheckoutForm() {
                     {item.name}
                   </p>
                   <p className="mt-1 text-sm text-[#e8c58f]">
-                    {item.price}
+                    {item.price} <span className="text-stone-500">c/u</span>
                   </p>
+                  <Link
+                    href={`/productos/${item.slug}`}
+                    className="mt-2 inline-flex text-[11px] font-bold text-stone-400 underline decoration-white/15 underline-offset-4 hover:text-[#e8c58f]"
+                  >
+                    Volver al producto
+                  </Link>
                 </div>
                 <button
                   type="button"

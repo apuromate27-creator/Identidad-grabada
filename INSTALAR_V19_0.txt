@@ -1,0 +1,16 @@
+IDENTIDAD GRABADA — V19.0
+CARRITO + CHECKOUT PROFESIONAL
+
+BASE: V18.9.1 estable.
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá el contenido de esta versión al repositorio.
+6. Reemplazá los archivos.
+7. Commit: V19.0 - Carrito y checkout profesional
+8. Push origin.
+9. Esperá el deployment de Vercel.
+
+Esta versión NO activa cobros reales.

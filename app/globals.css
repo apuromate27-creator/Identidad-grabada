@@ -6046,3 +6046,62 @@ textarea:focus {
     bottom: max(18px, env(safe-area-inset-bottom)) !important;
   }
 }
+
+
+/* =========================================================
+   V19.0 — CARRITO + CHECKOUT PROFESIONAL
+   ========================================================= */
+
+.v190-cart-personalization summary {
+  list-style: none;
+}
+.v190-cart-personalization summary::-webkit-details-marker {
+  display: none;
+}
+.v190-cart-personalization summary::after {
+  content: " +";
+  color: #d8aa62;
+}
+.v190-cart-personalization[open] summary::after {
+  content: " −";
+}
+
+.v190-primary-action {
+  box-shadow: 0 14px 34px rgba(185,130,57,.16);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.v190-primary-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(185,130,57,.22);
+}
+
+.v190-pickup-note {
+  background: rgba(255,255,255,.018);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 767px) {
+  .v17-cart-drawer {
+    max-width: 100% !important;
+  }
+
+  .v17-checkout-panel {
+    border-radius: 1.35rem !important;
+  }
+
+  form:has(.v17-checkout-panel) {
+    gap: 18px !important;
+  }
+
+  .v17-checkout-panel input,
+  .v17-checkout-panel select,
+  .v17-checkout-panel textarea {
+    font-size: 16px !important;
+  }
+
+  .v17-checkout-panel aside,
+  aside.v17-checkout-panel {
+    position: static !important;
+  }
+}
