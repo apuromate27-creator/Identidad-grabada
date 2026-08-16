@@ -6776,3 +6776,36 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   V19.1.1 — PERSONALIZADOR DE VIROLA
+   ========================================================= */
+.v1911-personalizer-type button{display:grid;gap:5px;min-height:78px;border:1px solid rgba(216,170,98,.18);border-radius:16px;background:rgba(255,255,255,.015);padding:15px 16px;text-align:left;transition:.2s ease}
+.v1911-personalizer-type button strong{color:#fff;font-size:13px}
+.v1911-personalizer-type button span{color:rgba(255,255,255,.52);font-size:11px;line-height:1.4}
+.v1911-personalizer-type button.active{border-color:rgba(226,180,95,.62);background:rgba(226,180,95,.08)}
+.v1911-virola-stage{position:relative;min-height:560px;overflow:hidden;border:1px solid rgba(216,170,98,.22);background:radial-gradient(circle at 50% 46%,rgba(104,70,38,.24),rgba(6,7,8,.96) 68%);touch-action:none;user-select:none}
+.v1911-virola-disc{position:absolute;left:50%;top:50%;width:min(78%,470px);aspect-ratio:1;transform:translate(-50%,-50%)}
+.v1911-virola-metal{position:absolute;inset:0;border:3px solid rgba(238,238,232,.68);border-radius:999px;background:radial-gradient(circle,transparent 0 52%,rgba(230,230,225,.94) 53% 61%,rgba(120,120,116,.86) 67%,rgba(238,238,232,.92) 76%,rgba(89,89,86,.88) 100%);box-shadow:0 20px 70px rgba(0,0,0,.42),inset 0 0 22px rgba(255,255,255,.22)}
+.v1911-virola-center{position:absolute;left:50%;top:50%;display:grid;width:50%;transform:translate(-50%,-50%);place-items:center;gap:5px;text-align:center;pointer-events:none}
+.v1911-virola-center span{color:rgba(255,255,255,.4);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.v1911-virola-center strong{color:rgba(255,255,255,.7);font-family:Georgia,"Times New Roman",serif;font-size:15px;font-weight:400}
+.v1911-virola-zone{position:absolute;left:50%;top:50%;width:min(75%,450px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px dashed rgba(238,190,99,.76);border-radius:999px;pointer-events:none}
+.v1911-virola-zone:after{content:"";position:absolute;inset:13%;border:1px dashed rgba(238,190,99,.42);border-radius:999px}
+.v1911-virola-zone span{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);white-space:nowrap;border-radius:999px;background:rgba(0,0,0,.58);padding:5px 9px;color:#e8c58f;font-size:9px;font-weight:800}
+.v1911-curved-text{position:absolute;left:50%;top:50%;z-index:5;width:0;height:0;transform-origin:center;pointer-events:none;filter:grayscale(1) contrast(1.55) brightness(.45);mix-blend-mode:multiply}
+.v1911-curved-text span{position:absolute;left:-9px;top:-9px;display:grid;width:18px;height:18px;place-items:center;color:#171717;font-size:18px;font-weight:900;transform-origin:9px 9px}
+.v1911-curved-text.font-serif span{font-family:Georgia,"Times New Roman",serif;font-style:italic}
+.v1911-curved-text.font-classic span{font-family:Georgia,"Times New Roman",serif}
+.v1911-curved-text.font-modern span{font-family:Arial,Helvetica,sans-serif}
+.v1911-virola-logo{position:absolute;left:50%;top:50%;z-index:5;width:68px;height:68px;transform-origin:center;pointer-events:none;filter:grayscale(1) contrast(1.7) brightness(.45);mix-blend-mode:multiply}
+.v1911-virola-logo img{width:100%;height:100%;object-fit:contain}
+.v1911-virola-status{position:absolute;left:50%;bottom:14px;z-index:6;display:flex;transform:translateX(-50%);gap:7px;white-space:nowrap}
+.v1911-virola-status span{border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(0,0,0,.52);padding:5px 8px;color:rgba(255,255,255,.62);font-size:9px}
+.v1911-virola-tools{background:rgba(255,255,255,.018)}
+.v1911-virola-tools input[type=range]{width:100%;height:5px;appearance:none;border:0!important;border-radius:999px!important;background:linear-gradient(90deg,rgba(216,170,98,.8),rgba(216,170,98,.22))!important}
+.v1911-virola-tools input[type=range]::-webkit-slider-thumb{width:18px;height:18px;appearance:none;border:2px solid #e2b45f;border-radius:999px;background:#17100c}
+.v1911-virola-tools .grid-cols-2 button{min-height:38px;border:1px solid rgba(216,170,98,.2);border-radius:10px;background:rgba(0,0,0,.16);color:rgba(255,255,255,.64);font-size:10px;font-weight:900}
+.v1911-virola-tools .grid-cols-2 button.active{border-color:rgba(226,180,95,.6);background:rgba(226,180,95,.1);color:#e8c58f}
+@media(max-width:767px){.v1911-virola-stage{min-height:440px}.v1911-virola-disc{width:min(88%,390px)}.v1911-virola-zone{width:min(85%,380px)}.v1911-curved-text span{font-size:16px}.v1911-virola-status{max-width:calc(100% - 24px);overflow-x:auto;scrollbar-width:none}.v1911-virola-status::-webkit-scrollbar{display:none}}

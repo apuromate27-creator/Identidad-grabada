@@ -5,6 +5,7 @@ import Link from "next/link";
 import { type PointerEvent as ReactPointerEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useCart } from "./CartContext";
 import { ImageSlot } from "./ui";
+import { VirolaPersonalizer } from "./VirolaPersonalizer";
 import type { Product } from "../data/products";
 
 type Tab = "descripcion" | "especificaciones" | "cuidados" | "envios";
@@ -35,6 +36,11 @@ export function ProductDetailExperience({
   const [designScale, setDesignScale] = useState(1);
   const [designRotation, setDesignRotation] = useState(0);
   const [previewMode, setPreviewMode] = useState(false);
+  const [personalizerType, setPersonalizerType] = useState<"body" | "virola">("body");
+  const [virolaAngle, setVirolaAngle] = useState(0);
+  const [virolaRadius, setVirolaRadius] = useState(70);
+  const [virolaScale, setVirolaScale] = useState(1);
+  const [virolaDirection, setVirolaDirection] = useState<"clockwise" | "counterclockwise">("clockwise");
 
   useEffect(() => {
     try {
@@ -54,12 +60,14 @@ export function ProductDetailExperience({
             `Tipografía: ${font}`,
             `Posición: ${position}`,
             referenceFileName ? `Referencia: ${referenceFileName}` : "",
-            `Diseño: X ${Math.round(designX)}% · Y ${Math.round(designY)}% · Escala ${Math.round(designScale * 100)}% · Rotación ${Math.round(designRotation)}°`,
+            personalizerType === "virola"
+              ? `Virola: ángulo ${Math.round(virolaAngle)}° · radio ${Math.round(virolaRadius)} · escala ${Math.round(virolaScale * 100)}% · sentido ${virolaDirection === "clockwise" ? "horario" : "antihorario"}`
+              : `Diseño: X ${Math.round(designX)}% · Y ${Math.round(designY)}% · Escala ${Math.round(designScale * 100)}% · Rotación ${Math.round(designRotation)}°`,
             notes ? `Notas: ${notes}` : "",
           ].filter(Boolean);
 
     return parts.join(" · ");
-  }, [engravingType, engravingText, font, position, referenceFileName, designX, designY, designScale, designRotation, notes]);
+  }, [engravingType, engravingText, font, position, referenceFileName, personalizerType, designX, designY, designScale, designRotation, virolaAngle, virolaRadius, virolaScale, virolaDirection, notes]);
 
   const handleReferenceFile = (file?: File) => {
     if (!file) {
@@ -306,7 +314,45 @@ export function ProductDetailExperience({
           </div>
         </div>
 
+        <div className="v1911-personalizer-type mb-6 grid gap-3 sm:grid-cols-2">
+          <button type="button" onClick={() => setPersonalizerType("body")}
+            className={personalizerType === "body" ? "active" : ""}>
+            <strong>Grabado sobre cuerpo</strong>
+            <span>Texto o logo sobre la superficie del mate.</span>
+          </button>
+          <button type="button" onClick={() => { setPersonalizerType("virola"); setPosition("Virola"); }}
+            className={personalizerType === "virola" ? "active" : ""}>
+            <strong>Grabado sobre virola</strong>
+            <span>Vista superior y diseño curvo sobre el aro metálico.</span>
+          </button>
+        </div>
+
         <div className="grid gap-7 xl:grid-cols-[1.08fr_.92fr]">
+          {personalizerType === "virola" ? (
+            <VirolaPersonalizer
+              product={product}
+              engravingType={engravingType}
+              engravingText={engravingText}
+              font={font}
+              referencePreview={referencePreview}
+              referenceFileName={referenceFileName}
+              previewMode={previewMode}
+              angle={virolaAngle}
+              radius={virolaRadius}
+              scale={virolaScale}
+              direction={virolaDirection}
+              onAngleChange={setVirolaAngle}
+              onRadiusChange={setVirolaRadius}
+              onScaleChange={setVirolaScale}
+              onDirectionChange={setVirolaDirection}
+              onReset={() => {
+                setVirolaAngle(0);
+                setVirolaRadius(70);
+                setVirolaScale(1);
+                setVirolaDirection("clockwise");
+              }}
+            />
+          ) : (
           <EngravingEditor
             product={product}
             selectedImage={selectedImage}
@@ -328,6 +374,7 @@ export function ProductDetailExperience({
             onRotationChange={setDesignRotation}
             onReset={resetDesign}
           />
+          )}
 
           <div className="v1910-controls grid content-start gap-5">
             <OptionGroup

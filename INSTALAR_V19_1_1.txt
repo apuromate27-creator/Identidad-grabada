@@ -1,0 +1,22 @@
+IDENTIDAD GRABADA — V19.1.1
+PERSONALIZADOR DE VIROLA
+
+BASE: V19.1.0
+
+1. Descomprimí el ZIP.
+2. Abrí GitHub Desktop.
+3. Repository > Show in Explorer.
+4. Hacé una copia de seguridad.
+5. Copiá el contenido de esta versión.
+6. Reemplazá archivos.
+7. Commit: V19.1.1 - Personalizador de Virola
+8. Push origin.
+9. Esperá Vercel.
+
+PRUEBAS:
+- Cambiar Cuerpo / Virola.
+- Escribir un nombre.
+- Ajustar ángulo, radio y tamaño.
+- Probar horario/antihorario.
+- Subir un logo.
+- Probar arrastre con mouse y celular.
