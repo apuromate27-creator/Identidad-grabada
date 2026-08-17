@@ -26,7 +26,7 @@ export function ProductDetailExperience({
   const [engravingType, setEngravingType] = useState("Sin grabado");
   const [engravingText, setEngravingText] = useState("");
   const [font, setFont] = useState("Elegante");
-  const [position, setPosition] = useState("Frente");
+  const [position, setPosition] = useState("Virola");
   const [notes, setNotes] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [referenceFileName, setReferenceFileName] = useState("");
@@ -36,7 +36,7 @@ export function ProductDetailExperience({
   const [designScale, setDesignScale] = useState(1);
   const [designRotation, setDesignRotation] = useState(0);
   const [previewMode, setPreviewMode] = useState(false);
-  const [personalizerType, setPersonalizerType] = useState<"body" | "virola">("body");
+  const [personalizerType, setPersonalizerType] = useState<"body" | "virola">("virola");
   const [virolaAngle, setVirolaAngle] = useState(0);
   const [virolaRadius, setVirolaRadius] = useState(70);
   const [virolaScale, setVirolaScale] = useState(1);
