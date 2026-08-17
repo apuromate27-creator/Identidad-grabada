@@ -6817,3 +6817,18 @@ textarea:focus {
 .v192-stage.original-view .v192-artwork{filter:none!important;mix-blend-mode:normal!important}.v192-stage.laser-view .v192-artwork{filter:grayscale(1) contrast(2.15) brightness(.42)!important;mix-blend-mode:multiply!important}.v192-stage.laser-view .v1911-curved-text span{color:#3d342d;text-shadow:0 1px 0 rgba(255,255,255,.12),0 -1px 1px rgba(0,0,0,.32)}
 .v192-quickbar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border-top:1px solid rgba(216,170,98,.12);background:rgba(216,170,98,.08)}.v192-quickbar button{min-height:44px;background:#120d09;color:#cfc6bc;font-size:10px;font-weight:850;transition:.2s}.v192-quickbar button:hover{background:#21160e;color:#e8c58f}.v192-help{border-left:2px solid rgba(216,170,98,.7);padding:3px 0 3px 12px;color:#8f8984;font-size:11px;line-height:1.55}.v192-help strong,.v192-help b{color:#d7c2a2}.v192-tools{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.08))}
 @media(max-width:767px){.v192-editor-head{align-items:flex-start;flex-direction:column}.v192-laser-switch{width:100%}.v192-laser-switch button{flex:1}.v192-stage{min-height:410px}.v192-quickbar{grid-template-columns:repeat(2,1fr)}.v192-material-tag{left:10px;top:10px}.v192-inner-mate span{font-size:10px}}
+
+/* V19.2.1 — prueba con fotografía real cenital y máscara de virola superior */
+.v192-stage{aspect-ratio:704/1086;min-height:0!important;height:auto;max-height:720px;margin-inline:auto;background:#020b1b;overflow:hidden}
+.v1921-real-mate{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}
+.v1921-ring-shade{position:absolute;left:50%;top:46%;width:80.5%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;box-shadow:0 0 0 999px rgba(0,0,0,.05);pointer-events:none}
+.v1921-real-zone{left:50%!important;top:46%!important;width:80.5%!important;aspect-ratio:1;transform:translate(-50%,-50%)!important;border-color:rgba(238,190,99,.9)!important}
+.v1921-real-zone:after{inset:13.2%!important;border-color:rgba(238,190,99,.68)!important}
+.v1921-real-zone span{bottom:-27px!important}
+.v1921-text-anchor{position:absolute;left:50%;top:46%;z-index:5;width:0;height:0}
+.v1921-text-anchor .v1911-curved-text{left:0;top:0}
+.v1921-real-artwork{left:50%!important;top:46%!important}
+.v192-stage.laser-view .v192-artwork,.v192-stage.laser-view .v1921-text-anchor{filter:grayscale(1) contrast(1.45) brightness(.72);mix-blend-mode:multiply;text-shadow:0 1px 0 rgba(255,255,255,.18)}
+.v192-stage.original-view .v192-artwork,.v192-stage.original-view .v1921-text-anchor{filter:none;mix-blend-mode:normal}
+.v192-stage .v1911-virola-status{bottom:12px}
+@media(max-width:767px){.v192-stage{width:100%;max-height:none}.v1921-real-zone span{display:none}}

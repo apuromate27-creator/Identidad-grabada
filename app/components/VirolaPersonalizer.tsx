@@ -46,8 +46,8 @@ export function VirolaPersonalizer({
   return <div className="v192-virola-shell">
     <div className="v192-editor-head">
       <div>
-        <p className="text-xs uppercase tracking-[.18em] text-[#e2b46d]">V19.2 · Personalizador de virola</p>
-        <p className="mt-1 text-sm text-stone-400">Foto/mockup + zona limitada + simulación visual de láser.</p>
+        <p className="text-xs uppercase tracking-[.18em] text-[#e2b46d]">V19.2.1 · Virola superior real</p>
+        <p className="mt-1 text-sm text-stone-400">Foto real cenital + anillo grabable delimitado + simulación visual de láser.</p>
       </div>
       <div className="v192-laser-switch" aria-label="Tipo de vista">
         <button type="button" className={laserView === "original" ? "active" : ""} onClick={() => setLaserView("original")}>Original</button>
@@ -60,16 +60,14 @@ export function VirolaPersonalizer({
         <div className="v192-material-tag"><span /> Alpaca · simulación orientativa</div>
         <div ref={stageRef} className={`v1911-virola-stage v192-stage ${previewMode ? "is-preview" : "is-editing"} ${laserView === "laser" ? "laser-view" : "original-view"}`}
           onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp}>
-          <div className="v1911-virola-disc">
-            <div className="v1911-virola-metal" />
-            <div className="v192-inner-mate"><span>A PURO MATE</span><small>Vista superior</small></div>
-          </div>
-          {!previewMode && engravingType !== "Sin grabado" && <div className="v1911-virola-zone"><span>Área segura de grabado</span></div>}
+          <img className="v1921-real-mate" src="/productos/mate-imperial-virola-superior-real.png" alt="Vista superior real del mate imperial" draggable={false} />
+          <div className="v1921-ring-shade" aria-hidden="true" />
+          {!previewMode && engravingType !== "Sin grabado" && <div className="v1911-virola-zone v1921-real-zone"><span>Anillo grabable real</span></div>}
           {engravingType !== "Sin grabado" && (referencePreview ?
-            <div className="v1911-virola-logo v192-artwork" style={{transform:`translate(-50%,-50%) rotate(${angle}deg) translateY(-${radius * 2}px) scale(${scale})`}}>
+            <div className="v1911-virola-logo v192-artwork v1921-real-artwork" style={{transform:`translate(-50%,-50%) rotate(${angle}deg) translateY(-${radius * 2}px) scale(${scale})`}}>
               <img src={referencePreview} alt={referenceFileName || "Logo"} draggable={false}/>
             </div> :
-            <CurvedText text={label} font={font} angle={angle} radius={radius} scale={scale} direction={direction}/>
+            <div className="v1921-text-anchor"><CurvedText text={label} font={font} angle={angle} radius={radius} scale={scale} direction={direction}/></div>
           )}
           {engravingType === "Sin grabado" && <div className="v1910-no-engraving">Elegí un tipo de grabado para comenzar</div>}
           <div className="v1911-virola-status"><span>{Math.round(angle)}°</span><span>Radio {Math.round(radius)}</span><span>{Math.round(scale*100)}%</span></div>
@@ -84,7 +82,7 @@ export function VirolaPersonalizer({
       </div>}
     </div>
 
-    <div className="v192-help"><strong>Cómo probarlo:</strong> arrastrá alrededor de la virola para ubicar el diseño, ajustá radio y tamaño, y alterná entre <b>Original</b> y <b>Vista grabado</b>.</div>
+    <div className="v192-help"><strong>Prueba de virola superior:</strong> la foto real define el anillo metálico. Arrastrá alrededor del aro, ajustá distancia y tamaño, y compará <b>Original</b> con <b>Vista grabado</b>. La guía punteada solo aparece durante la edición.</div>
 
     {engravingType !== "Sin grabado" && <div className="v1911-virola-tools v192-tools mt-4 grid gap-4 rounded-2xl border border-[#d8aa62]/16 p-4">
       <Range label="Posición alrededor de la virola" value={angle} min={-180} max={180} step={1} display={`${Math.round(angle)}°`} onChange={onAngleChange}/>
