@@ -6832,3 +6832,30 @@ textarea:focus {
 .v192-stage.original-view .v192-artwork,.v192-stage.original-view .v1921-text-anchor{filter:none;mix-blend-mode:normal}
 .v192-stage .v1911-virola-status{bottom:12px}
 @media(max-width:767px){.v192-stage{width:100%;max-height:none}.v1921-real-zone span{display:none}}
+
+/* V19.2.3 — editor por capas para la virola superior */
+.v1923-editor .v1923-item{position:absolute;z-index:6;transform-origin:center center;touch-action:none;cursor:grab;user-select:none;min-width:24px;min-height:24px}
+.v1923-editor .v1923-item:active{cursor:grabbing}
+.v1923-editor .v1923-item.selected{outline:1px dashed rgba(245,194,106,.95);outline-offset:7px;border-radius:3px}
+.v1923-editor .v1923-item .v1911-curved-text{position:relative;left:0;top:0;pointer-events:none;filter:grayscale(1) contrast(1.55) brightness(.45);mix-blend-mode:multiply}
+.v1923-editor .v1923-item .v1911-curved-text span{font-size:clamp(8px,1.25vw,17px);width:16px;height:16px;left:-8px;top:-8px;transform-origin:8px 8px}
+.v1923-editor .v1923-item.image-item{width:90px;height:90px;display:flex;align-items:center;justify-content:center}
+.v1923-editor .v1923-item.image-item img{width:100%;height:100%;object-fit:contain;pointer-events:none;filter:grayscale(1) contrast(1.8) brightness(.5);mix-blend-mode:multiply}
+.v1923-editor .v192-stage.original-view .v1923-item .v1911-curved-text,.v1923-editor .v192-stage.original-view .v1923-item.image-item img{filter:none;mix-blend-mode:normal}
+.v1923-quickbar{grid-template-columns:repeat(4,minmax(0,1fr))}
+.v1923-panel{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:14px;margin-top:14px}
+.v1923-layers,.v1923-controls{border:1px solid rgba(216,170,98,.16);border-radius:16px;background:rgba(255,255,255,.018);padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.v1923-panel-title{display:flex;align-items:center;justify-content:space-between;color:#e8c58f;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:3px}
+.v1923-panel-title span{border-radius:999px;background:rgba(216,170,98,.12);padding:3px 8px}
+.v1923-layers>button{display:grid;grid-template-columns:25px minmax(0,1fr);gap:2px 8px;text-align:left;align-items:center;padding:9px;border:1px solid rgba(255,255,255,.07);border-radius:10px;color:#d9d0c6;font-size:11px;overflow:hidden}
+.v1923-layers>button.active{border-color:rgba(232,197,143,.65);background:rgba(216,170,98,.09)}
+.v1923-layers>button>span:first-child{grid-row:span 2;display:grid;place-items:center;width:24px;height:24px;border-radius:6px;background:rgba(216,170,98,.12);color:#e8c58f;font-weight:900}
+.v1923-layers>button>span:nth-child(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v1923-layers>button small{font-size:9px;color:#8f8984}
+.v1923-text-field{display:grid;gap:6px;color:#cfc6bc;font-size:11px;font-weight:800}
+.v1923-text-field input{width:100%;border:1px solid rgba(216,170,98,.25);border-radius:9px;background:#0d0b09;padding:10px;color:#f4eee7;outline:none}
+.v1923-text-field input:focus{border-color:#d8aa62}
+.v1923-control-button{min-height:38px;border:1px solid rgba(216,170,98,.22);border-radius:9px;background:rgba(216,170,98,.06);color:#dfd3c3;font-size:10px;font-weight:800}
+.v1923-control-button:hover{background:rgba(216,170,98,.14)}
+.v1923-range{margin:4px 0 7px}
+@media(max-width:767px){.v1923-panel{grid-template-columns:1fr}.v1923-quickbar{grid-template-columns:repeat(2,minmax(0,1fr))}.v1923-editor .v1923-item.image-item{width:64px;height:64px}.v1923-editor .v1923-item .v1911-curved-text span{font-size:13px}}

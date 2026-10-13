@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v19-1-1-personalizador-virola",
-  "version": "19.2.2",
+  "name": "identidad-grabada-v19-2-3-editor-virola",
+  "version": "19.2.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
