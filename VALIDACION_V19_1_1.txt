@@ -1,5 +1,0 @@
-Componente virola: OK
-Selector cuerpo/virola: OK
-Estado ángulo: OK
-Resumen virola: OK
-CSS virola: OK

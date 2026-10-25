@@ -1,6 +1,6 @@
 {
-  "name": "identidad-grabada-v19-2-3-editor-virola",
-  "version": "19.2.3",
+  "name": "identidad-grabada-v19-0-3-checkout-structural-rebuild",
+  "version": "19.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
